@@ -101,12 +101,13 @@ gulp.task('build', function(cb) {
   return runSequence('clean', ['sass', 'js', 'images'], 'jekyll', cb);
 });
 
-gulp.task('serve', ['watch', 'jekyll:watch'], function() {
+gulp.task('serve', ['watch', 'jekyll:watch'], function(cb) {
   browserSync.init({ server: { baseDir: './_site/' }});
 
   // Delay for 1 second, otherwise spam browser with initial loads
   setTimeout(function() {
-    gulp.watch('_site/**/*.*').on('change', browserSync.reload);
+    gulp.watch('./_site/**/*.*').on('change', browserSync.reload);
+    cb();
   }, 1000);
 });
 
