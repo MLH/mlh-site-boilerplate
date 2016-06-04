@@ -1,0 +1,60 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $base-font-header;
+  font-weight: $base-font-header-weight;
+  line-height: $base-font-header-line-height;
+  margin-bottom: 2rem;
+}
+
+h1, .h1 {
+  font-size: 3rem;
+}
+
+h2, .h2 {
+  color: $medium-gray;
+  font-size: 2.25rem;
+  font-weight: $os-light-weight;
+}
+
+h3, .h3 {
+  font-size: 1.625rem;
+}
+
+h4, .h4 {
+  font-size: 1.25rem;
+}
+
+h5, .h5 {
+  font-size: 1.125rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+p, .p {
+  font-family: $base-font-body;
+  font-size: 1rem;
+  font-weight: $base-font-body-weight;
+  line-height: $base-line-height;
+  margin-bottom: 1rem;
+}
+
+strong, .bold {
+  font-weight: $os-bold-weight;
+}
+
+em, .em {
+  font-style: italic;
+}
+
+a, a:hover {
+  border-bottom: 1.5px dashed $soft-blue;
+  color: $soft-blue;
+  padding-bottom: 1px;
+}
+
+a:hover {
+  border-bottom: 1.5px solid $soft-blue;
+  color: $deep-blue;
+}

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body {% if page.custom_class %}class="{{ page.custom_class }}"{% endif %}>
+      {{ content }}
+
+      <script src="js/lib/jquery-2.2.2.min.js"></script>
+      <script src="js/app.min.js"></script>
+  </body>
+</html>

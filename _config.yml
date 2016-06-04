@@ -1,0 +1,15 @@
+# Site settings
+title: INSERT_SITE_TITLE
+description: >
+  INSERT_PAGE_DESCRIPTION
+baseurl: ""
+url: "http://*.mlh.io"
+
+# Build settings
+markdown: kramdown
+exclude: 
+ - node_modules
+ - gulpfile.js
+ - Gemfile
+ - Gemfile.lock
+ - package.json
