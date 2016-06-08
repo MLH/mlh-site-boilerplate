@@ -96,7 +96,7 @@ Spins up the Jekyll server for local development
 
 ## Special Thanks
 
-Big shout out to the [Minimill Project Template](git@github.com:MLH/mlh-site-boilerplate.git)
+Big shout out to the [Minimill Project Template](https://github.com/minimill/project-template)
 for inspiring this project.
 
 [mlh]: http://mlh.io
