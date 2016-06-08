@@ -25,9 +25,12 @@ gulp.task('sass:lint', function() {
 });
 
 gulp.task('sass:build', function() {
-  return gulp.src('./_sass/main.scss')
-    .pipe(rename({suffix: '.min'}))
+  // There is a known issue where Gulp stops compiling after the first SASS
+  // error it encounters.  Removing the return here fixes that issue.
+
+  gulp.src('./_sass/main.scss')
     .pipe(plumber())
+    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.init())
     .pipe(replace('/*!', '/*'))
     .pipe(sass({ outputStyle: 'compressed' }))
@@ -51,8 +54,8 @@ gulp.task('js:lint', function() {
 
 gulp.task('js:build', function() {
   return gulp.src(['./js/**/*.js', '!./js/**/*.min.js'])
-    .pipe(rename({suffix: '.min'}))
     .pipe(plumber())
+    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(sourcemaps.write())
@@ -78,11 +81,11 @@ gulp.task('images', function () {
 // Jekyll
 
 gulp.task('jekyll:watch', function() {
-  spawn('jekyll', ['build', '--incremental', '--watch'], { stdio: 'inherit' });
+  spawn('bundle', ['exec', 'jekyll', 'build', '--incremental', '--watch'], { stdio: 'inherit', env: process.env });
 });
 
 gulp.task('jekyll', function(cb) {
-  return spawn('jekyll', ['build'], { stdio: 'inherit' }).on('close', cb);
+  return spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit', env: process.env }).on('close', cb);
 });
 
 // Misc.
