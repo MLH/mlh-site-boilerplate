@@ -13,3 +13,4 @@ exclude:
  - Gemfile
  - Gemfile.lock
  - package.json
+ - README.md
