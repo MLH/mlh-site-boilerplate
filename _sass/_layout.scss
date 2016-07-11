@@ -1,3 +1,5 @@
+// scss-lint:disable ImportantRule
+
 @mixin column {
   box-sizing: border-box;
   float: left;
@@ -10,6 +12,10 @@
   margin: 0 auto;
   max-width: $content-width;
   width: 90%;
+
+  .row {
+    @include clearfix;
+  }
 
   [class^="col-"] {
     @include column;
@@ -28,6 +34,10 @@
 
   }
 
+  .visible-xs, .visible-sm, .visible-md {
+    display: none !important;
+  }
+
   .col-12 {
     width: 100%;
   }
@@ -38,6 +48,10 @@
 
   .col-10 {
     width: 83.333333%;
+  }
+
+  .col-9 {
+    width: 75%;
   }
 
   .col-8 {
@@ -77,6 +91,14 @@
   .content {
     width: 100%;
 
+    .hidden-md {
+      display: none !important;
+    }
+
+    .visible-md {
+      display: block !important;
+    }
+
     .col-md-12 {
       width: 100%;
     }
@@ -87,6 +109,10 @@
 
     .col-md-10 {
       width: 83.333333%;
+    }
+
+    .col-md-9 {
+      width: 75%;
     }
 
     .col-md-8 {
@@ -125,10 +151,12 @@
 
 @media screen and (max-width: $tablet-portrait) {
   .content {
-    .col-sm-centered {
-      float: none;
-      margin: 0 auto;
-      position: relative;
+    .hidden-sm {
+      display: none !important;
+    }
+
+    .visible-sm {
+      display: block !important;
     }
 
     .col-sm-12 {
@@ -141,6 +169,10 @@
 
     .col-sm-10 {
       width: 83.333333%;
+    }
+
+    .col-sm-9 {
+      width: 75%;
     }
 
     .col-sm-8 {
@@ -179,6 +211,14 @@
 
 @media screen and (max-width: $phone-portrait) {
   .content {
+    .hidden-xs {
+      display: none !important;
+    }
+
+    .visible-xs {
+      display: block !important;
+    }
+
     .col-xs-12 {
       width: 100%;
     }
@@ -189,6 +229,10 @@
 
     .col-xs-10 {
       width: 83.333333%;
+    }
+
+    .col-xs-9 {
+      width: 75%;
     }
 
     .col-xs-8 {
@@ -224,3 +268,4 @@
     }
   }
 }
+// scss-lint:enable ImportantRule

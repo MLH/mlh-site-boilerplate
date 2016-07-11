@@ -2,9 +2,35 @@
 <html>
   {% include head.html %}
   <body {% if page.custom_class %}class="{{ page.custom_class }}"{% endif %}>
-      {{ content }}
+    <header class="top-navigation">
+      <div class="content">
+        <a href="/"><img class="logo" src="{{ '/img/logos/mlh-logo.svg' | prepend: site.baseurl }}" alt="Major League Hacking" /></a>
 
-      <script src="js/lib/jquery-2.2.2.min.js"></script>
-      <script src="js/app.min.js"></script>
+        <nav>
+        <ul>
+          <li><a href="#1">Link #1</a></li>
+          <li><a href="#2">Link #2</a></li>
+          <li><a class="btn btn-small" href="mailto:hi@mlh.io">Contact Us</a></li>
+        </ul>
+        </nav>
+
+        <div class="flagship">
+          <p>Powered by</p>
+          <a href="http://www.dell.com/" target="_blank"><img src="/img/flagship/dell.png" /></a>
+          <a href="https://developer.microsoft.com/en-us/windows" target="_blank"><img src="/img/flagship/windows.png" /></a>
+        </div>
+      </div>
+    </header>
+
+    {{ content }}
+
+    <footer class="bottom-navigation">
+      <div class="content">
+        <p>&copy; Major League Hacking, Inc. 2016</p>
+      </div>
+    </footer>
+
+    <script src="/js/lib/jquery-2.2.2.min.js"></script>
+    <script src="/js/app.min.js"></script>
   </body>
 </html>

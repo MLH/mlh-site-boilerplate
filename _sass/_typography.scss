@@ -40,6 +40,16 @@ p, .p {
   margin-bottom: 1rem;
 }
 
+ol, ul {
+  list-style-position: inside;
+  list-style-type: square;
+  margin-bottom: 1rem;
+
+  li {
+    padding-left: 1rem;
+  }
+}
+
 strong, .bold {
   font-weight: $os-bold-weight;
 }
@@ -48,13 +58,20 @@ em, .em {
   font-style: italic;
 }
 
-a, a:hover {
-  border-bottom: 1.5px dashed $soft-blue;
+a {
   color: $soft-blue;
-  padding-bottom: 1px;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-a:hover {
-  border-bottom: 1.5px solid $soft-blue;
-  color: $deep-blue;
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }

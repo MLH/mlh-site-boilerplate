@@ -6,9 +6,9 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="/css/main.min.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="icon" href="{{ '/img/favicon.png' | prepend: site.baseurl }}">
+  <link rel="icon" href="{{ '/img/favicon.ico' | prepend: site.baseurl }}">
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
