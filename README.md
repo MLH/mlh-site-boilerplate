@@ -1,4 +1,4 @@
-MLH Site Boilerplate
+MLH/mlh-site-boilerplate
 ========================================
 
 This is the boilerplate that [Major League Hacking (MLH)][mlh] uses in the
@@ -60,6 +60,15 @@ Spins up the Jekyll server for local development
  - Spin up the Jeykll server with `--watch` and `--incremental` enabled
  - Watch the `_site/` directory for changes and sync to browser
 
+### `gulp deploy`
+
+Generates the website from `master` and deploys it to the `gh-pages` branch. This is so you can write custom logic in Jekyll and still have it deployed on a static hosting provider like [GitHub Pages][github-pages]
+
+ - Watch the `js/`, `_sass/`, and `img/` directories for changes and run
+   related tasks
+ - Spin up the Jeykll server with `--watch` and `--incremental` enabled
+ - Watch the `_site/` directory for changes and sync to browser
+
 ## Structure
 
 ```bash
@@ -100,6 +109,7 @@ Big shout out to the [Minimill Project Template](https://github.com/minimill/pro
 for inspiring this project.
 
 [mlh]: http://mlh.io
+[github-pages]: https://pages.github.com
 [jekyll]: https://jekyllrb.com
 [gulp]: http://gulpjs.com/
 [npm-install]: https://nodejs.org/en/download/
