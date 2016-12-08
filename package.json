@@ -1,7 +1,7 @@
 {
-  "name": "<<INSERT_SITE_NAME>>",
+  "name": "INSERT_SITE_NAME",
   "version": "0.0.3",
-  "description": "<<INSERT_PAGE_DESCRIPTION>>",
+  "description": "INSERT_PAGE_DESCRIPTION",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
