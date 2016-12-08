@@ -1,20 +1,21 @@
 var autoprefixer = require('gulp-autoprefixer')
-  , browserSync = require('browser-sync').create()
-  , gulp = require('gulp')
-  , imagemin = require('gulp-imagemin')
-  , jscs = require('gulp-jscs')
-  , jshint = require('gulp-jshint')
-  , plumber = require('gulp-plumber')
-  , pngquant = require('imagemin-pngquant')
-  , rename = require('gulp-rename')
-  , replace = require('gulp-replace')
-  , rimraf = require('rimraf')
-  , runSequence = require('run-sequence')
-  , sass = require('gulp-sass')
-  , scsslint = require('gulp-scss-lint')
-  , spawn = require('child_process').spawn
-  , sourcemaps = require('gulp-sourcemaps')
-  , uglify = require('gulp-uglify');
+  , browserSync  = require('browser-sync').create()
+  , ghPages      = require('gulp-gh-pages')
+  , gulp         = require('gulp')
+  , imagemin     = require('gulp-imagemin')
+  , jscs         = require('gulp-jscs')
+  , jshint       = require('gulp-jshint')
+  , plumber      = require('gulp-plumber')
+  , pngquant     = require('imagemin-pngquant')
+  , rename       = require('gulp-rename')
+  , replace      = require('gulp-replace')
+  , rimraf       = require('rimraf')
+  , runSequence  = require('run-sequence')
+  , sass         = require('gulp-sass')
+  , scsslint     = require('gulp-scss-lint')
+  , spawn        = require('child_process').spawn
+  , sourcemaps   = require('gulp-sourcemaps')
+  , uglify       = require('gulp-uglify');
 
 // SASS
 
@@ -86,6 +87,13 @@ gulp.task('jekyll:watch', function() {
 
 gulp.task('jekyll', function(cb) {
   return spawn('bundle', ['exec', 'jekyll', 'build'], { stdio: 'inherit', env: process.env }).on('close', cb);
+});
+
+// Deploy
+
+gulp.task('deploy', function(){
+  return gulp.src('./_site/**/*')
+    .pipe(ghPages());
 });
 
 // Misc.
