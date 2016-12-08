@@ -113,7 +113,7 @@ gulp.task('build', function(cb) {
 });
 
 gulp.task('serve', ['watch', 'jekyll:watch'], function(cb) {
-  browserSync.init({ server: { baseDir: './_site/' }});
+  browserSync.init({ server: { baseDir: './_site/' }, notify: false });
 
   // Delay for 1 second, otherwise spam browser with initial loads
   setTimeout(function() {

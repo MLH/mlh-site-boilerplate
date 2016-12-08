@@ -1,0 +1,26 @@
+<nav class="site-nav new-nav">
+  <div class="content">
+    <a href="{{ site.baseurl }}">
+      <img src="{{ 'img/logos/mlh-logo-color.svg' | prepend: site.baseurl }}" alt="Major League Hacking" />
+    </a>
+    <ul class="hidden-md">
+      {% include main_navigation_links.html %}
+    </ul>
+    <ul class="visible-md">
+      <li>
+        <button class="hamburger hamburger--collapse" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="visible-md">
+    <ul class="hamburger-active-menu">
+      {% include main_navigation_links.html %}
+    </ul>
+    </ul>
+  </div>
+</nav>

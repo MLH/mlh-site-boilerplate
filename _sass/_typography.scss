@@ -40,16 +40,6 @@ p, .p {
   margin-bottom: 1rem;
 }
 
-ol, ul {
-  list-style-position: inside;
-  list-style-type: square;
-  margin-bottom: 1rem;
-
-  li {
-    padding-left: 1rem;
-  }
-}
-
 strong, .bold {
   font-weight: $os-bold-weight;
 }
@@ -58,20 +48,39 @@ em, .em {
   font-style: italic;
 }
 
-a {
+a, a:hover {
   color: $soft-blue;
-  text-decoration: none;
+}
 
-  &:focus,
-  &:hover {
-    text-decoration: underline;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
 .text-center {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-right {
   text-align: right;
+}
+
+table {
+  border: 1px solid $medium-gray;
+  margin-bottom: 2rem;
+  width: 100%;
+
+  thead th {
+    background: $deep-yellow;
+    color: $dark-gray;
+    font-weight: $os-bold-weight;
+  }
+
+  tr > td {
+    border: 1px solid $medium-gray;
+    padding: 0.5rem 1rem;
+  }
 }

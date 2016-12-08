@@ -2,7 +2,7 @@
 title: INSERT_SITE_TITLE
 description: >
   INSERT_SITE_DESCRIPTION
-baseurl: ""
+baseurl: "/"
 url: "http://*.mlh.io"
 
 # Build settings

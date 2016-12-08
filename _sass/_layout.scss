@@ -1,9 +1,12 @@
 // scss-lint:disable ImportantRule
-
 @mixin column {
   box-sizing: border-box;
   float: left;
   padding: 0 1.25rem;
+}
+
+.visible-xs, .visible-sm, .visible-md {
+  display: none !important;
 }
 
 .content {
@@ -13,15 +16,28 @@
   max-width: $content-width;
   width: 90%;
 
+  &.below-menu {
+    margin-top: 50px;
+  }
+
+  &.full-width {
+    max-width: none;
+    width: 100%;
+  }
+
   .row {
     @include clearfix;
   }
 
-  [class^="col-"] {
+  [class*="col-"] {
     @include column;
 
     display: block;
     float: left;
+
+    &.col-no-padding {
+      padding: 0;
+    }
 
     &.col-centered {
       float: none;
@@ -31,11 +47,6 @@
     &.col-right {
       float: right;
     }
-
-  }
-
-  .visible-xs, .visible-sm, .visible-md {
-    display: none !important;
   }
 
   .col-12 {
@@ -48,10 +59,6 @@
 
   .col-10 {
     width: 83.333333%;
-  }
-
-  .col-9 {
-    width: 75%;
   }
 
   .col-8 {
@@ -88,16 +95,24 @@
 }
 
 @media screen and (max-width: $tablet-landscape) {
+  .visible-md {
+    display: block !important;
+  }
+
+  .text-left-md {
+    text-align: left !important;
+  }
+
+  .text-center-md {
+    text-align: center !important;
+  }
+
+  .text-right-md {
+    text-align: right !important;
+  }
+
   .content {
     width: 100%;
-
-    .hidden-md {
-      display: none !important;
-    }
-
-    .visible-md {
-      display: block !important;
-    }
 
     .col-md-12 {
       width: 100%;
@@ -109,10 +124,6 @@
 
     .col-md-10 {
       width: 83.333333%;
-    }
-
-    .col-md-9 {
-      width: 75%;
     }
 
     .col-md-8 {
@@ -147,18 +158,30 @@
       width: 8.333333%;
     }
   }
+
+  .hidden-md {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: $tablet-portrait) {
+  .visible-sm {
+    display: block !important;
+  }
+
+  .text-left-sm {
+    text-align: left !important;
+  }
+
+  .text-center-sm {
+    text-align: center !important;
+  }
+
+  .text-right-sm {
+    text-align: right !important;
+  }
+
   .content {
-    .hidden-sm {
-      display: none !important;
-    }
-
-    .visible-sm {
-      display: block !important;
-    }
-
     .col-sm-12 {
       width: 100%;
     }
@@ -169,10 +192,6 @@
 
     .col-sm-10 {
       width: 83.333333%;
-    }
-
-    .col-sm-9 {
-      width: 75%;
     }
 
     .col-sm-8 {
@@ -207,18 +226,30 @@
       width: 8.333333%;
     }
   }
+
+  .hidden-sm {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: $phone-portrait) {
+  .visible-xs {
+    display: block !important;
+  }
+
+  .text-left-xs {
+    text-align: left !important;
+  }
+
+  .text-center-xs {
+    text-align: center !important;
+  }
+
+  .text-right-xs {
+    text-align: right !important;
+  }
+
   .content {
-    .hidden-xs {
-      display: none !important;
-    }
-
-    .visible-xs {
-      display: block !important;
-    }
-
     .col-xs-12 {
       width: 100%;
     }
@@ -229,10 +260,6 @@
 
     .col-xs-10 {
       width: 83.333333%;
-    }
-
-    .col-xs-9 {
-      width: 75%;
     }
 
     .col-xs-8 {
@@ -266,6 +293,10 @@
     .col-xs-1 {
       width: 8.333333%;
     }
+  }
+
+  .hidden-xs {
+    display: none !important;
   }
 }
 // scss-lint:enable ImportantRule

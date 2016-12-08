@@ -1,0 +1,359 @@
+$color-nav-bottom: #EDEDED;
+
+$flat-red: #DF4E50;
+$flat-blue: #4E92DF;
+$flat-yellow: #EBC62C;
+$flat-green: #2ECC71;
+
+.full-height {
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+input {
+  border: 1px solid $medium-gray;
+  border-radius: 1px;
+  color: $dark-gray;
+  padding: 0.75rem 0.5rem;
+  width: 90%;
+}
+
+[type='checkbox'] {
+  width: auto;
+}
+
+.checkbox {
+  padding: 0.5rem 0.25rem;
+
+  label {
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+  }
+}
+
+[type='email'] {
+  &:focus {
+    border-color: $deep-yellow;
+    box-shadow: 0 0 0.25rem $deep-yellow;
+    outline: none;
+  }
+}
+
+[type='submit'], .btn, .btn:hover {
+  background: $soft-blue;
+  border: 1px solid $deep-blue;
+  border-radius: 3px;
+  color: $white;
+  cursor: pointer;
+  font-weight: $os-bold-weight;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $deep-blue;
+  }
+}
+
+.site-nav {
+  background: $white;
+  border-bottom: 1px solid $color-nav-bottom;
+  height: 4rem;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
+  // scss-lint:disable NestingDepth, SelectorDepth
+  .content {
+    padding: 0 0.5rem;
+
+    img {
+      float: left;
+      height: 2rem;
+      margin: 1rem 0;
+    }
+
+    ul {
+      float: right;
+      margin: 1rem 0;
+
+      li {
+        display: block;
+        float: left;
+        margin-left: 0.0625rem;
+        text-align: left;
+
+        a:not(.btn) {
+          border-bottom: 0;
+          color: $medium-gray;
+          float: left;
+          font-weight: $os-bold-weight;
+          line-height: 1rem;
+          padding: 0.5rem 1rem;
+        
+          &:hover { color: $soft-blue; }
+        }
+
+        .btn {
+          float: left;
+          font-size: 0.875rem;
+          line-height: 1rem;
+          padding: 0.4375rem 0.75rem;
+          vertical-align: middle;
+        }
+
+        .hamburger {
+          outline: none;
+          position: relative;
+          top: -10px;
+
+          .hamburger-inner,
+          .hamburger-inner:before,
+          .hamburger-inner:after { background: $medium-gray; }
+        }
+      }
+    }
+  }
+
+  .hamburger-active-menu {
+    background: $dark-gray;
+    display: none;
+    margin: -31px 0 0;
+
+    li a {
+      display: block;
+
+      &:not(.btn) {
+        color: $white;
+        padding: 10px;
+
+        &:hover, &:active, &:visited {
+          background: darken($dark-gray, 10%);
+          color: $white;
+        }
+      }
+
+      &.btn {
+        border-radius: 0;
+        text-align: left;
+      }
+    }
+  }
+  // scss-lint:enable NestingDepth, SelectorDepth
+
+  &.new-nav {
+    ul:not(.hamburger-active-menu) li {
+      margin-left: 20px;
+
+      .btn:hover { color: inherit; }
+    }
+    
+    ul li a {
+      &:not(.btn) { font-weight: 200; }
+      &.btn { padding: 10px 15px; }
+    }
+  }
+}
+
+.jump-target::before {
+  content: '';
+  display: block;
+  height: 6rem; // fixed header height
+  margin: -6rem 0 0; // negative fixed header height
+}
+
+.jump-target-sm::before {
+  content: '';
+  display: block;
+  height: 4rem; // fixed header height
+  margin: -4rem 0 0; // negative fixed header height
+}
+
+.site-footer {
+  background: $dark-gray;
+  color: $white;
+  height: 4rem;
+  padding: 1rem 0.5rem;
+
+  img {
+    float: left;
+    height: 2rem;
+  }
+
+  p {
+    line-height: 2rem;
+    vertical-align: middle;
+  }
+
+  .mlh-logo.white {
+    background-position: center left;
+    display: block;
+    height: 30px;
+    width: 100%;
+  }
+}
+
+// Logos
+
+.mlh-logo.color {
+  background: url('/img/logos/mlh-logo-color.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.mlh-logo.grayscale {
+  background: url('/img/logos/mlh-logo-grayscale.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.mlh-logo.black {
+  background: url('/img/logos/mlh-logo-black.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.mlh-logo.white {
+  background: url('/img/logos/mlh-logo-white.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+// Buttons
+
+.btn[class*="btn-flat"] {
+  font-weight: 500;
+
+  &:hover { text-decoration: none; }
+}
+
+.btn.btn-extra-padding {
+  padding: 20px 30px;
+}
+
+// scss-lint:disable ImportantRule
+.btn.btn-flat-red {
+  background: $flat-red !important;
+  border: 0;
+  color: $white !important;
+
+  &:hover {
+    background: darken($flat-red, 10%) !important;
+    color: $white !important;
+  }
+}
+
+.btn.btn-flat-blue {
+  background: $flat-blue !important;
+  border: 0;
+  color: $white !important;
+
+  &:hover {
+    background: darken($flat-blue, 10%) !important;
+    color: $white !important;
+  }
+}
+
+.btn.btn-flat-yellow {
+  background: $flat-yellow;
+  border: 0;
+  color: $dark-gray;
+
+  &:hover {
+    background: darken($flat-yellow, 10%) !important;
+    color: $dark-gray !important;
+  }
+}
+
+.btn.btn-flat-green {
+  background: $flat-green;
+  border: 0;
+  color: $white !important;
+
+  &:hover {
+    background: darken($flat-green, 10%) !important;
+    color: $white !important;
+  }
+}
+
+.btn.btn-flat-gray {
+  background: $medium-gray;
+  border: 0;
+  color: $white !important;
+
+  &:hover {
+    background: $medium-gray;
+    color: $white !important;
+  }
+}
+// scss-lint:enable ImportantRule
+
+// FAQs
+
+.faqs {
+  background: $deep-yellow;
+  color: $dark-gray;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+
+  .intro-text {
+    padding-bottom: 5rem;
+    padding-top: 1rem;
+
+    h2 {
+      color: $dark-gray;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .faq-item {
+    padding-bottom: 2rem;
+  }
+}
+
+// Medium
+@media screen and (max-width: $tablet-landscape) {
+  .faqs {
+    padding: 3rem 0;
+  }
+}
+
+// Small
+@media screen and (max-width: $tablet-portrait) {
+  .faqs .faq-item {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+// Extra Small
+@media screen and (max-width: $phone-portrait) {
+  .faqs {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .intro-text p {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+// Large screens
+@media (max-width: 1240px) {
+}
