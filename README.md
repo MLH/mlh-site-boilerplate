@@ -83,6 +83,10 @@ Generates the website from `master` and deploys it to the `gh-pages` branch. Thi
     └── head.html                         # HTML for the <head> tag
     └── main_navigation.html              # HTML for the <nav> tag
     └── main_navigation_links.html        # Links inside of main_navigation.html
+    └── tracking/                         # Tracking codes
+        └── google_analytics.html         # Google Analytics Tracking Code
+        └── twitter.html                  # Twitter Tracking Code
+        └── facebook.html                 # Facebook Tracking Code
 ├── _layouts/                             # Jekyll HTML layouts
     └── default.html                      # The default template for HTML pages
 ├── _sass/                                # Stylesheets directory

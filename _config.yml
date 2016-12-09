@@ -5,6 +5,11 @@ description: >
 baseurl: "/"
 url: "http://*.mlh.io"
 
+tracking:
+  google_analytics_id: '' # Example: UA-43729070-14
+  twitter_id: '' # Example: "nv0ih"
+  facebook_id: '' # Example: 261635320842380
+
 # Build settings
 markdown: kramdown
 exclude:
