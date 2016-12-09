@@ -72,35 +72,41 @@ Generates the website from `master` and deploys it to the `gh-pages` branch. Thi
 ## Structure
 
 ```bash
-├── .gitignore                  # Defines which files Git should diregard
-├── .ruby-version               # Defines the required version of Ruby
-├── .scss-lint.yml              # Rules for linting SASS files
-├── Gemfile                     # Ruby Dependencies
-├── Gemfile.lock                # Ruby Dependencies with explicit versions
-├── README.md                   # How to use this project
-├── _config.yml                 # Jekyll configuration
-├── _includes/                  # Jekyll HTML partials
-    └── head.html               # HTML for the <head> tag
-├── _layouts/                   # Jekyll HTML layouts
-    └── default.html            # The default template for HTML pages
-├── _sass/                      # Stylesheets directory
-    ├── _base.scss              # Base styles
-    ├── _layout.scss            # Grid system
-    ├── _typography.scss        # Typography tyles
-    ├── _util.scss              # SASS helper functions
-    ├── lib/                    # External CSS libraries
-        ├── animate.mn.scss     # CSS animations
-        └── reset.min.scss      # CSS reset
-    └── main.scss               # Variable definitions and list of SASS partials to compile
-├── gulpfile.js                 # Defines gulp tasks for development
-├── img/                        # Images and SVGs
-├── index.html                  # The default HTML page
-├── js/                         # Javascript libraries and scripts
-    ├── app.js                  # The default Javascript file
-    ├── app.min.js              # The minified default Javascript file
-    └── lib/                    # External JS libraries
-        └── jquery-2.2.2.min.js # jQuery
-└── package.json                # Javascript Dependencies
+├── .gitignore                            # Defines which files Git should diregard
+├── .ruby-version                         # Defines the required version of Ruby
+├── .scss-lint.yml                        # Rules for linting SASS files
+├── Gemfile                               # Ruby Dependencies
+├── Gemfile.lock                          # Ruby Dependencies with explicit versions
+├── README.md                             # How to use this project
+├── _config.yml                           # Jekyll configuration
+├── _includes/                            # Jekyll HTML partials
+    └── head.html                         # HTML for the <head> tag
+    └── main_navigation.html              # HTML for the <nav> tag
+    └── main_navigation_links.html        # Links inside of main_navigation.html
+├── _layouts/                             # Jekyll HTML layouts
+    └── default.html                      # The default template for HTML pages
+├── _sass/                                # Stylesheets directory
+    ├── _base.scss                        # Base styles
+    ├── _layout.scss                      # Grid system
+    ├── _shared.scss                      # Shared styles
+    ├── _typography.scss                  # Typography styles
+    ├── _util.scss                        # SASS helper functions
+    ├── lib/                              # External CSS libraries
+        ├── animate.mn.scss               # CSS animations
+        └── reset.min.scss                # CSS reset
+        └── hamburgers.min.scss           # CSS Hamburgers Menu
+    └── main.scss                         # Variable definitions and list of SASS partials to compile
+├── gulpfile.js                           # Defines gulp tasks for development
+├── img/                                  # Images and SVGs
+├── index.html                            # The default HTML page
+├── js/                                   # Javascript libraries and scripts
+    ├── app.js                            # The default Javascript file
+    ├── app.min.js                        # The minified default Javascript file
+    └── lib/                              # External JS libraries
+        └── jquery-2.2.2.min.js           # jQuery
+        └── jquery-anchorjumps-1.0.min.js # jQuery
+        └── jquery-waypoints.min.js       # jQuery
+└── package.json                          # Javascript Dependencies
 ```
 
 ## Special Thanks
