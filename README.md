@@ -83,20 +83,20 @@ Generates the website from `master` and deploys it to the `gh-pages` branch. Thi
     └── head.html                         # HTML for the <head> tag
     └── main_navigation.html              # HTML for the <nav> tag
     └── main_navigation_links.html        # Links inside of main_navigation.html
-    └── tracking/                         # Tracking codes
+    ├── tracking/                         # Tracking codes
         └── google_analytics.html         # Google Analytics Tracking Code
         └── twitter.html                  # Twitter Tracking Code
         └── facebook.html                 # Facebook Tracking Code
 ├── _layouts/                             # Jekyll HTML layouts
     └── default.html                      # The default template for HTML pages
 ├── _sass/                                # Stylesheets directory
-    ├── _base.scss                        # Base styles
-    ├── _layout.scss                      # Grid system
-    ├── _shared.scss                      # Shared styles
-    ├── _typography.scss                  # Typography styles
-    ├── _util.scss                        # SASS helper functions
+    └── _base.scss                        # Base styles
+    └── _layout.scss                      # Grid system
+    └── _shared.scss                      # Shared styles
+    └── _typography.scss                  # Typography styles
+    └── _util.scss                        # SASS helper functions
     ├── lib/                              # External CSS libraries
-        ├── animate.mn.scss               # CSS animations
+        └── animate.min.scss              # CSS animations
         └── reset.min.scss                # CSS reset
         └── hamburgers.min.scss           # CSS Hamburgers Menu
     └── main.scss                         # Variable definitions and list of SASS partials to compile
@@ -104,13 +104,13 @@ Generates the website from `master` and deploys it to the `gh-pages` branch. Thi
 ├── img/                                  # Images and SVGs
 ├── index.html                            # The default HTML page
 ├── js/                                   # Javascript libraries and scripts
-    ├── app.js                            # The default Javascript file
-    ├── app.min.js                        # The minified default Javascript file
-    └── lib/                              # External JS libraries
+    └── app.js                            # The default Javascript file
+    └── app.min.js                        # The minified default Javascript file
+    ├── lib/                              # External JS libraries
         └── jquery-2.2.2.min.js           # jQuery
         └── jquery-anchorjumps-1.0.min.js # jQuery
         └── jquery-waypoints.min.js       # jQuery
-└── package.json                          # Javascript Dependencies
+├── package.json                          # Javascript Dependencies
 ```
 
 ## Special Thanks
