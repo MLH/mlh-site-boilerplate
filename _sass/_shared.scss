@@ -74,13 +74,19 @@ input {
 
     img {
       float: left;
-      height: 2rem;
-      margin: 1rem 0;
+      height: 1.5rem;
+      margin: 1.25rem 0;
     }
 
     ul {
       float: right;
       margin: 1rem 0;
+
+      &:not(.hamburger-active-menu) li {
+        margin-left: 20px;
+
+        .btn:hover { color: inherit; }
+      }
 
       li {
         display: block;
@@ -90,20 +96,20 @@ input {
 
         a:not(.btn) {
           border-bottom: 0;
-          color: $medium-gray;
+          color: $dark-gray;
           float: left;
-          font-weight: $os-bold-weight;
+          font-weight: 200;
           line-height: 1rem;
           padding: 0.5rem 1rem;
         
-          &:hover { color: $soft-blue; }
+          &:hover { color: $dark-gray; }
         }
 
         .btn {
           float: left;
           font-size: 0.875rem;
           line-height: 1rem;
-          padding: 0.4375rem 0.75rem;
+          padding: 10px 15px;
           vertical-align: middle;
         }
 
@@ -140,24 +146,12 @@ input {
 
       &.btn {
         border-radius: 0;
+        padding: 10px 15px;
         text-align: left;
       }
     }
   }
   // scss-lint:enable NestingDepth, SelectorDepth
-
-  &.new-nav {
-    ul:not(.hamburger-active-menu) li {
-      margin-left: 20px;
-
-      .btn:hover { color: inherit; }
-    }
-    
-    ul li a {
-      &:not(.btn) { font-weight: 200; }
-      &.btn { padding: 10px 15px; }
-    }
-  }
 }
 
 .jump-target::before {
@@ -297,61 +291,16 @@ input {
 }
 // scss-lint:enable ImportantRule
 
-// FAQs
-
-.faqs {
-  background: $deep-yellow;
-  color: $dark-gray;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
-
-  .intro-text {
-    padding-bottom: 5rem;
-    padding-top: 1rem;
-
-    h2 {
-      color: $dark-gray;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
-  }
-
-  .faq-item {
-    padding-bottom: 2rem;
-  }
-}
-
 // Medium
 @media screen and (max-width: $tablet-landscape) {
-  .faqs {
-    padding: 3rem 0;
-  }
 }
 
 // Small
 @media screen and (max-width: $tablet-portrait) {
-  .faqs .faq-item {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
 }
 
 // Extra Small
 @media screen and (max-width: $phone-portrait) {
-  .faqs {
-    padding-bottom: 3rem;
-    padding-top: 3rem;
-
-    h2 {
-      font-size: 1.8rem;
-    }
-
-    .intro-text p {
-      font-size: 1.125rem;
-    }
-  }
 }
 
 // Large screens
