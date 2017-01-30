@@ -1,5 +1,4 @@
-MLH/mlh-site-boilerplate
-========================================
+# MLH/mlh-site-boilerplate
 
 This is the boilerplate that [Major League Hacking (MLH)][mlh] uses in the
 development of static websites.  It combines [Jekyll][jekyll] with
