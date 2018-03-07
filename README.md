@@ -17,6 +17,21 @@ $ npm install -g gulp
 $ gem install bundler
 ```
 
+Make sure that the Gemfile reflects your system's current Ruby version. If it doesn't, make sure to change the Gemfile to reflect your Ruby version.
+
+```bash
+$ ruby -v
+```
+
+Write down the Ruby version you see.
+
+```
+// inside ./Gemfile
+...
+-ruby "2.2.4" // change this to the current Ruby version, ignoring anything past the release number.
+...
+```
+
 Now let's install the development dependencies by running the NPM installer and
 bundler:
 
