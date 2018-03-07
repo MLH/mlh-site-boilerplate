@@ -6,11 +6,29 @@ development of static websites.  It combines [Jekyll][jekyll] with
 
 ## Setup
 
-Before you start, make sure you have [npm][npm-install] installed and the
-relevant version of Ruby (probably using [rvm][rvm]).
+If you're using a macOS device or Linux device, install [npm][npm-install] and [rvm][rvm].
+
+**IMPORTANT:** For Windows users, use a  Unix-like environment on top of 
+Windows like [Windows Subsystem for Linux][bash-windows].
+
+Installing [npm][npm-bash] and [rvm][rvm-install] on Windows with the 
+Windows Subsystem for Linux uses the following commands:
+
+```bash
+$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+$ sudo apt-get install rvm
+$ rvm install "ruby-2.2.4"
+$ rvm use 2.2.4
+```
+
+**Note:** Other environments like [MSYS2][msys2] will require you to use
+their package manager so check [npm][npm-bash] and [rvm][rvm-install] for
+the particular commands for your Unix environment.
 
 You will also need [gulp][gulp] and [bundler][bundler] eventually, so lets get
-those now too.
+those now too. Gulp will be installed globaly, bundler will be installed
+locally while Ruby is locally configured to version 2.2.4.
 
 ```bash
 $ npm install -g gulp
@@ -122,5 +140,9 @@ for inspiring this project.
 [jekyll]: https://jekyllrb.com
 [gulp]: http://gulpjs.com/
 [npm-install]: https://nodejs.org/en/download/
+[npm-bash]: https://nodejs.org/en/download/package-manager/
 [rvm]: https://rvm.io/
+[rvm-install]: https://rvm.io/rvm/install
 [bundler]: http://bundler.io/
+[bash-windows]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+[msys2]: http://www.msys2.org/
