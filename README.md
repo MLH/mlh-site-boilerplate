@@ -1,5 +1,7 @@
 # MLH/mlh-site-boilerplate
 
+[HackFAU Github Page Website](https://chrisbcarl.github.io/hackfau/)
+
 This is the boilerplate that [Major League Hacking (MLH)][mlh] uses in the
 development of static websites.  It combines [Jekyll][jekyll] with
 [Gulp][gulp] to speed up common development tasks.
