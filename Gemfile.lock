@@ -22,16 +22,16 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     mercenary (0.3.6)
-    rainbow (2.1.0)
+    rake (12.3.0)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     rouge (1.10.1)
     safe_yaml (1.0.4)
     sass (3.4.22)
-    scss-lint (0.38.0)
-      rainbow (~> 2.0)
-      sass (~> 3.4.1)
+    scss_lint (0.55.0)
+      rake (>= 0.9, < 13)
+      sass (~> 3.4.20)
 
 PLATFORMS
   ruby
@@ -40,10 +40,10 @@ DEPENDENCIES
   jekyll
   jekyll-watch
   kramdown
-  scss-lint
+  scss_lint
 
 RUBY VERSION
    ruby 2.2.4p230
 
 BUNDLED WITH
-   1.12.4
+   1.16.1
