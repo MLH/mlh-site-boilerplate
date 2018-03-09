@@ -1,32 +1,83 @@
 # MLH/mlh-site-boilerplate
 
-This is the boilerplate that [Major League Hacking (MLH)][mlh] uses in the
-development of static websites.  It combines [Jekyll][jekyll] with
-[Gulp][gulp] to speed up common development tasks.
+This is the boilerplate that [Major League Hacking (MLH)][mlh] uses in the  
+development of static websites. The basic flow to setup and run the  
+website is to install a Shell (Terminal, Bash, or a Subsystem), install  
+[Node.js and npm][nodejs], [rvm][rvm], switch to Ruby 2.2.4 with rvm,  
+install [Gulp][gulp] to speed up common development tasks, and install  
+[bundler][bundler] to preprocess the [Jekyll][jekyll] templated webpages.  
 
 ## Setup
 
-Before you start, make sure you have [npm][npm-install] installed and the
-relevant version of Ruby (probably using [rvm][rvm]).
+### **For macOS Users**
 
-You will also need [gulp][gulp] and [bundler][bundler] eventually, so lets get
-those now too.
+Install macOS Command Line Developer Tools by opening Terminal.app (use  
+Spotlight to search for it), type ```gcc```, and accept the conditions.  
+
+Download and open the macOS Installer for Node.js to get [Node Package  
+Manager (npm)][npm-macOS].
+
+**Note:** Make sure you select the "Current" option not "LTS".  
+
+Next, install [rvm][rvm-macOS]. The first command downloads scripts  
+It downloads setup scripts that you must execute in order to have  
+global access from any terminal window.
 
 ```bash
-$ npm install -g gulp
-$ gem install bundler
+curl -sSL https://get.rvm.io | bash -s stable
 ```
 
-Now let's install the development dependencies by running the NPM installer and
-bundler:
+Open Finder, go to your User folder, press CMD + SHIFT + . and open  
+the file .bash_profile. Add the following line to the top.
+
+``` bash
+source ~/.profile
+```
+
+Skip to the section [For All Users](#for-all-users) to continue.
+
+### **For Ubuntu and Windows 10 Users**
+
+**IMPORTANT:** For Windows 10 users, use a Ubuntu environment on top of  
+Windows like [Windows Subsystem for Linux][bash-windows].  
+
+Installing [npm][npm-linux] and [rvm][rvm-linux] on the Bash terminal  
+for both Windows and Ubuntu becomes: 
 
 ```bash
-$ npm install
-$ bundle install
+$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+$ sudo apt-get install rvm
 ```
 
-**Note:** These steps may require the use of `sudo` depending on your
-environment.
+**Note:** Other Linux environments like [MSYS2][msys2] on top of  
+Windows 10 or Debian Linux and Red Hat Linux operating systems will  
+require you to use their own package manager so check [npm][npm-bash]  
+and [rvm][rvm-macOS] for the particular commands for your  
+Unix environment.
+
+### <a name="for-all-users"></a>**For All Users**
+
+Install [Gulp][gulp] globally since you will need these programs  
+eventually. Clone this repository into a folder of your choice, then  
+change directory to go into the respository folder you just cloned.  
+Install the Node dependencies with npm and switch the Ruby version  
+to Ruby-2.2.4 with rvm and install [Bundler][bundler] afterwards.  
+The last step is installing all other dependencies with bundler.
+
+```bash
+sudo npm install -g gulp
+
+git clone https://github.com/MLH/mlh-site-boilerplate.git
+cd mlh-site-boilerplate
+npm install
+
+sudo rvm install "ruby-2.2.4"
+sudo rvm use 2.2.4
+sudo gem install bundler
+
+bundle install
+```
 
 ## Developing
 
@@ -61,7 +112,9 @@ Spins up the Jekyll server for local development
 
 ### `gulp deploy`
 
-Generates the website from `master` and deploys it to the `gh-pages` branch. This is so you can write custom logic in Jekyll and still have it deployed on a static hosting provider like [GitHub Pages][github-pages]
+Generates the website from `master` and deploys it to the `gh-pages`  
+branch. This is so you can write custom logic in Jekyll and still have  
+it deployed on a static hosting provider like [GitHub Pages][github-pages].
 
  - Watch the `js/`, `_sass/`, and `img/` directories for changes and run
    related tasks
@@ -117,10 +170,20 @@ Generates the website from `master` and deploys it to the `gh-pages` branch. Thi
 Big shout out to the [Minimill Project Template](https://github.com/minimill/project-template)
 for inspiring this project.
 
+[rvm]: https://rvm.io/
+[rvm-macOS]: https://rvm.io/rvm/install
+[rvm-linux]: https://rvm.io/rvm/install
+
+[nodejs]: https://nodejs.org/
+[npm-macOS]: https://nodejs.org/en/download/
+[npm-linux]: https://nodejs.org/en/download/package-manager/
+
+[bash-windows]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+[msys2-windows]: http://www.msys2.org/
+[homebrew-mac]: https://brew.sh
+
 [mlh]: http://mlh.io
 [github-pages]: https://pages.github.com
 [jekyll]: https://jekyllrb.com
 [gulp]: http://gulpjs.com/
-[npm-install]: https://nodejs.org/en/download/
-[rvm]: https://rvm.io/
 [bundler]: http://bundler.io/
