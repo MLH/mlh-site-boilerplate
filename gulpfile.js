@@ -15,8 +15,8 @@ var autoprefixer = require('gulp-autoprefixer')
   , scsslint     = require('gulp-scss-lint')
   , spawn        = require('child_process').spawn
   , sourcemaps   = require('gulp-sourcemaps')
-  , uglify       = require('gulp-uglify')
-  , webserver    = require('gulp-webserver');
+  , uglify       = require('gulp-uglify');
+
 // SASS
 
 gulp.task('sass:lint', function() {
@@ -109,29 +109,19 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', function(cb) {
-  return runSequence('clean', ['sass', 'js', 'images'], cb);
+  return runSequence('clean', ['sass', 'js', 'images'], 'jekyll', cb);
 });
 
-// gulp.task('serve', ['watch', 'jekyll:watch'], function(cb) {
-//   browserSync.init({ server: { baseDir: './_site/' }, notify: false });
+gulp.task('serve', ['watch', 'jekyll:watch'], function(cb) {
+  browserSync.init({ server: { baseDir: './_site/' }, notify: false });
 
-//   // Delay for 1 second, otherwise spam browser with initial loads
-//   setTimeout(function() {
-//     gulp.watch('./_site/**/*.*').on('change', browserSync.reload);
-//     cb();
-//   }, 1000);
-// });
-
-gulp.task('webserver', function() {
-  gulp.src('./')
-    .pipe(webserver({
-      fallback: './index.html',
-      livereload: true,
-      directoryListing: false,
-      open: true
-    }));
+  // Delay for 1 second, otherwise spam browser with initial loads
+  setTimeout(function() {
+    gulp.watch('./_site/**/*.*').on('change', browserSync.reload);
+    cb();
+  }, 1000);
 });
 
 gulp.task('default', function(cb) {
-  return runSequence('build', 'webserver', cb);
+  return runSequence('build', 'serve', cb);
 });

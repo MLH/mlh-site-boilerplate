@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body {% if page.custom_class %}class="{{ page.custom_class }}"{% endif %}>
+    {% include main_navigation.html %}
+
+    {{ content }}
+    
+    <footer class="site-footer">
+      <div class="content">
+        <div class="col-5 hidden-xs">
+          <a href="https://mlh.io" class="mlh-logo white" alt="Major League Hacking" title="Major League Hacking"></a>
+        </div>
+        <div class="col-7 col-xs-12">
+          <p class="text-right text-center-xs">Major League Hacking, Inc &copy; 2017</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/lib/jquery-2.2.2.min.js"></script>
+    <script src="/js/lib/jquery.waypoints.min.js"></script>
+    <script src="/js/lib/jquery.anchorjump-1.0.min.js"></script>
+    <script src="/js/app.min.js"></script>
+
+    {% include tracking/facebook.html %}
+    {% include tracking/twitter.html %}
+    {% include tracking/google_analytics.html %}
+
+  </body>
+</html>

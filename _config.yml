@@ -1,0 +1,21 @@
+# Site settings
+title: INSERT_SITE_TITLE
+description: >
+  INSERT_SITE_DESCRIPTION
+baseurl: "/"
+url: "http://*.mlh.io"
+
+tracking:
+  google_analytics_id: '' # Example: UA-43729070-14
+  twitter_id: '' # Example: "nv0ih"
+  facebook_id: '' # Example: 261635320842380
+
+# Build settings
+markdown: kramdown
+exclude:
+ - node_modules
+ - gulpfile.js
+ - Gemfile
+ - Gemfile.lock
+ - package.json
+ - README.md
