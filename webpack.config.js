@@ -1,6 +1,7 @@
 "use strict";
 
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -8,6 +9,11 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 // const BrowserSync = require('browser-sync-webpack-plugin');
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'index_bundle.min.js'
+  },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
