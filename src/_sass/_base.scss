@@ -22,7 +22,7 @@ input {
   padding: 0;
 }
 
-*, *:before, *:after, &:focus {
+*, *:before, *:after, *:focus {
   box-sizing: inherit;
   outline: none;
 }
