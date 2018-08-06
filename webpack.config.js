@@ -1,10 +1,33 @@
 "use strict";
 
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
 // const BrowserSync = require('browser-sync-webpack-plugin');
 
 module.exports = {
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "src/index.html",
+      filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
+  ],
   module: {
     //  loader configuration
     rules: [
@@ -37,16 +60,5 @@ module.exports = {
         ]
       }
     ]
-  },
-  
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "src/index.html",
-      filename: "./index.html"
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ]
+  }
 };
