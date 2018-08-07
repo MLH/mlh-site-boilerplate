@@ -30,12 +30,29 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({})
     ]
   },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.hbs",
+      mobile: true,
+      googleAnalytics: "UA-XXXX-XX",
+      custom: {
+        title: "INSERT_SITE_NAME",
+        fallbackTitle: "MLH",
+        description: "INSERT_SITE_DESCRIPTION",
+        fallbackDescription: "default"
+      }
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].min.css",
+      chunkFilename: "[id].min.css"
+    }),
+  ],
   module: {
     //  loader configuration
     rules: [
       {
-        test: /\.html$/,
-        use: [{ loader: "html-loader", options: { minimize: true } }]
+        test: /\.hbs$/,
+        loader: "handlebars-loader"
       },
       {
         test: /\.(png|jpe?g|svg|ico)/i,

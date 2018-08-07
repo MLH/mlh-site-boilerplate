@@ -14,7 +14,10 @@
   },
   "author": "Major League Hacking <hi@mlh.io>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "handlebars": "^4.0.11",
+    "handlebars-loader": "^1.7.0"
+  },
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "clean-webpack-plugin": "^0.1.19",

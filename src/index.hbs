@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  {{> _includes/head}}
+  {{!-- <body {% if page.custom_class %}class="{{ page.custom_class }}"{% endif %}> --}}
+  <body>
+    {{> _includes/main_navigation}}
+
+    {{!-- {{ content }} --}}
+
+    <footer class="site-footer">
+      <div class="content">
+        <div class="col-5 hidden-xs">
+          <a href="https://mlh.io" class="mlh-logo white" alt="Major League Hacking" title="Major League Hacking"></a>
+        </div>
+        <div class="col-7 col-xs-12">
+          <p class="text-right text-center-xs">Major League Hacking, Inc &copy; 2017</p>
+        </div>
+      </div>
+    </footer>
+
+    {{> _includes/tracking/facebook}}
+    {{> _includes/tracking/twitter}}
+    {{> _includes/tracking/google_analytics}}
+
+  </body>
+</html>
