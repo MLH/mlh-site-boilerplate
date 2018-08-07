@@ -9,7 +9,7 @@ Before you start, make sure you have [npm][npm-install] installed and the
 relevant version of Ruby (probably using [rvm][rvm] or [rbenv][rbenv]).
 
 You will also need [bundler][bundler] eventually, so lets get
-those now too.
+it now too.
 
 ```bash
 $ gem install bundler
@@ -28,43 +28,30 @@ environment.
 
 ## Developing
 
-To launch the development server, just run gulp:
+To launch the development server, just run:
 
 ```bash
 $ npm run start
 ```
 
-## Gulp Commands
+## npm Commands
 
 An overview of the Gulp commands available:
 
-### `gulp build`
+### `npm run build`
 
-Builds the site into the `_site` directory.
+Builds the site into the `dist` directory.
 
- - Cleans any precompiled assets in `_site`
+ - Cleans any precompiled assets in `dist`
  - Lints and compiles SASS
  - Lints and compiles Javascript
  - Optimizes images
- - Compiles the Jekyll site
 
-### `gulp serve`
+### `npm run start`
 
-Spins up the Jekyll server for local development
+Spins up webpack dev server for local development and opens the project on port
 
- - Watch the `js/`, `_sass/`, and `img/` directories for changes and run
-   related tasks
- - Spin up the Jeykll server with `--watch` and `--incremental` enabled
- - Watch the `_site/` directory for changes and sync to browser
-
-### `gulp deploy`
-
-Generates the website from `master` and deploys it to the `gh-pages` branch. This is so you can write custom logic in Jekyll and still have it deployed on a static hosting provider like [GitHub Pages][github-pages]
-
- - Watch the `js/`, `_sass/`, and `img/` directories for changes and run
-   related tasks
- - Spin up the Jeykll server with `--watch` and `--incremental` enabled
- - Watch the `_site/` directory for changes and sync to browser
+ - Watches the `js/`, `_sass/`, and `img/` inside `_src/` directories for changes and updates the browser.
 
 ## Structure
 
@@ -75,7 +62,6 @@ Generates the website from `master` and deploys it to the `gh-pages` branch. Thi
 ├── Gemfile                               # Ruby Dependencies
 ├── Gemfile.lock                          # Ruby Dependencies with explicit versions
 ├── README.md                             # How to use this project
-├── _config.yml                           # Jekyll configuration
 ├── _includes/                            # Jekyll HTML partials
     └── head.html                         # HTML for the <head> tag
     └── main_navigation.html              # HTML for the <nav> tag

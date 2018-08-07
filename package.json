@@ -1,5 +1,5 @@
 {
-  "name": "INSERT_SITE_NAME",
+  "name": "insert_site_name",
   "version": "1.0.0",
   "description": "INSERT_PAGE_DESCRIPTION.",
   "main": "index.js",
@@ -16,12 +16,20 @@
   "license": "MIT",
   "dependencies": {
     "handlebars": "^4.0.11",
-    "handlebars-loader": "^1.7.0"
+    "handlebars-loader": "^1.7.0",
+    "eslint-config-standard": "^11.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "expose-loader": "^0.7.5",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",

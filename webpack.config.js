@@ -90,6 +90,16 @@ module.exports = {
         ]
       },
       {
+        test: /.js/,
+        enforce: 'pre',
+        exclude: [/node_modules/, path.resolve(__dirname, "src/js/lib"),],
+        use: [
+          {
+            loader: `eslint-loader`
+          }
+        ]
+      },
+      {
         test: /\.exec\.js$/,
         use: [ 'script-loader' ]
       }
