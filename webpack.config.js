@@ -5,10 +5,9 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-var PACKAGE = require('./package.json');
-var version = PACKAGE.version;
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-// const BrowserSync = require('browser-sync-webpack-plugin');
+const PACKAGE = require('./package.json');
+const version = PACKAGE.version;
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let pathsToClean = [
   'dist',
@@ -37,10 +36,16 @@ module.exports = {
       mobile: true,
       site: {
         title: "", // Add site title here
+        default_title: "MLH",
         description: "", // Add site description here
+        default_description: "The official collegiate hackathon league.",
         baseurl: "/",
         url: "http://*.mlh.io",
         custom_class: ""
+      },
+      social: {
+        facebook_image: "",
+        twitter_image: ""
       },
       tracking: {
         google_analytics_id: "", // Example: UA-43729070-14
