@@ -1,19 +1,17 @@
 # MLH/mlh-site-boilerplate
 
 This is the boilerplate that [Major League Hacking (MLH)][mlh] uses in the
-development of static websites.  It combines [Jekyll][jekyll] with
-[Gulp][gulp] to speed up common development tasks.
+development of static websites.  It uses [Webpack][webpack] to automate and speed up common development tasks.
 
 ## Setup
 
 Before you start, make sure you have [npm][npm-install] installed and the
-relevant version of Ruby (probably using [rvm][rvm]).
+relevant version of Ruby (probably using [rvm][rvm] or [rbenv][rbenv]).
 
-You will also need [gulp][gulp] and [bundler][bundler] eventually, so lets get
+You will also need [bundler][bundler] eventually, so lets get
 those now too.
 
 ```bash
-$ npm install -g gulp
 $ gem install bundler
 ```
 
@@ -33,7 +31,7 @@ environment.
 To launch the development server, just run gulp:
 
 ```bash
-$ gulp
+$ npm run start
 ```
 
 ## Gulp Commands
@@ -124,3 +122,5 @@ for inspiring this project.
 [npm-install]: https://nodejs.org/en/download/
 [rvm]: https://rvm.io/
 [bundler]: http://bundler.io/
+[webpack]: https://webpack.js.org/
+[rbenv]: https://github.com/rbenv/rbenv
