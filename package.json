@@ -16,7 +16,10 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^9.1.0",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
+    "expose-loader": "^0.7.5",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
@@ -26,6 +29,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-loader": "^2.1.6",
     "sass-loader": "^7.1.0",
+    "script-loader": "^0.7.2",
     "url-loader": "^1.0.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
