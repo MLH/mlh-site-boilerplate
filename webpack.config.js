@@ -31,6 +31,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(pathsToClean),
     new HtmlWebPackPlugin({
       template: "./src/index.hbs",
       mobile: true,
@@ -83,16 +84,5 @@ module.exports = {
         use: [ 'script-loader' ]
       }
     ]
-  },
-  plugins: [
-    new CleanWebpackPlugin(pathsToClean),
-    new HtmlWebPackPlugin({
-      template: "src/index.html",
-      filename: "./index.html"
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].min.css",
-      chunkFilename: "[id].min.css"
-    })
-  ]
+  }
 };
