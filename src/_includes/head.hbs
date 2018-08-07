@@ -7,6 +7,7 @@
   <title>{{#if htmlWebpackPlugin.options.site.title}}{{htmlWebpackPlugin.options.site.title}}{{else}}{{htmlWebpackPlugin.options.site.default_title}}{{/if}}</title>
   <meta name="description" content="{{#if htmlWebpackPlugin.options.site.description}}{{htmlWebpackPlugin.options.site.description}}{{else}}{{htmlWebpackPlugin.options.site.default_description}}{{/if}}">
 
+<<<<<<< HEAD
   {{!-- <link rel="canonical" href="{{ page.url | replace:'index.html', '' | prepend: site.url }}"> --}}
   {{!-- <link rel="icon" href="{{ 'img/favicon.ico' | prepend: site.baseurl }}"> --}}
 
@@ -20,6 +21,11 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">{% endif %} --}}
   {{!-- <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}"> --}}
+=======
+      {{!-- {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" --}}
+    {{!-- <link rel="canonical" href="{{ page.url | replace:'index.html', '' | prepend: site.url }}"> --}}
+    {{!-- <link rel="icon" href="{{ 'img/favicon.ico' | prepend: site.baseurl }}"> --}}
+>>>>>>> update webpack to generate multiple html sites
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@MLHacks">

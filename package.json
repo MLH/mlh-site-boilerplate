@@ -2,6 +2,7 @@
   "name": "insert_site_name",
   "version": "1.0.0",
   "description": "INSERT_PAGE_DESCRIPTION.",
+  "webpack_bundle_version": "1.0.0",
   "main": "index.js",
   "browserslist": [
     "last 2 versions"
@@ -25,13 +26,11 @@
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "expose-loader": "^0.7.5",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",

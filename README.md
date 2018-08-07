@@ -36,11 +36,11 @@ $ npm run start
 
 ## npm Commands
 
-An overview of the Gulp commands available:
+An overview of the NPM commands available:
 
 ### `npm run build`
 
-Builds the site into the `dist` directory.
+Builds static html and assets into the `dist` directory.
 
  - Cleans any precompiled assets in `dist`
  - Lints and compiles SASS
@@ -56,44 +56,43 @@ Spins up webpack dev server for local development and opens the project on port
 ## Structure
 
 ```bash
-├── .gitignore                            # Defines which files Git should diregard
-├── .ruby-version                         # Defines the required version of Ruby
-├── .scss-lint.yml                        # Rules for linting SASS files
-├── Gemfile                               # Ruby Dependencies
-├── Gemfile.lock                          # Ruby Dependencies with explicit versions
-├── README.md                             # How to use this project
-├── _includes/                            # Jekyll HTML partials
-    └── head.html                         # HTML for the <head> tag
-    └── main_navigation.html              # HTML for the <nav> tag
-    └── main_navigation_links.html        # Links inside of main_navigation.html
-    ├── tracking/                         # Tracking codes
-        └── google_analytics.html         # Google Analytics Tracking Code
-        └── twitter.html                  # Twitter Tracking Code
-        └── facebook.html                 # Facebook Tracking Code
-├── _layouts/                             # Jekyll HTML layouts
-    └── default.html                      # The default template for HTML pages
-├── _sass/                                # Stylesheets directory
-    └── _base.scss                        # Base styles
-    └── _layout.scss                      # Grid system
-    └── _shared.scss                      # Shared styles
-    └── _typography.scss                  # Typography styles
-    └── _util.scss                        # SASS helper functions
-    ├── lib/                              # External CSS libraries
-        └── animate.min.scss              # CSS animations
-        └── reset.min.scss                # CSS reset
-        └── hamburgers.min.scss           # CSS Hamburgers Menu
-    └── main.scss                         # Variable definitions and list of SASS partials to compile
-├── gulpfile.js                           # Defines gulp tasks for development
-├── img/                                  # Images and SVGs
-├── index.html                            # The default HTML page
-├── js/                                   # Javascript libraries and scripts
-    └── app.js                            # The default Javascript file
-    └── app.min.js                        # The minified default Javascript file
-    ├── lib/                              # External JS libraries
-        └── jquery-2.2.2.min.js           # jQuery
-        └── jquery-anchorjumps-1.0.min.js # jQuery
-        └── jquery-waypoints.min.js       # jQuery
-├── package.json                          # Javascript Dependencies
+├── .gitignore                                # Defines which files Git should diregard
+├── .eslintrc.js                              # Configuration file for eslint
+├── .scss-lint.yml                            # Rules for linting SASS files
+├── config.js                                 # Site configuration
+├── Gemfile                                   # Ruby Dependencies
+├── Gemfile.lock                              # Ruby Dependencies with explicit versions
+├── README.md                                 # How to use this project
+├── src/                                      # Folder containing all the resources for the website
+    ├── _includes/                            # HTML partials
+        └── head.hbs                          # HTML for the <head> tag
+        └── main_navigation.hbs               # HTML for the <nav> tag
+        └── main_navigation_links.hbs         # Links inside of main_navigation.hbs
+        ├── tracking/                         # Tracking codes
+            └── google_analytics.hbs          # Google Analytics Tracking Code
+            └── twitter.hbs                   # Twitter Tracking Code
+            └── facebook.hbs                  # Facebook Tracking Code
+    ├── _sass/                                # Stylesheets directory
+        └── _base.scss                        # Base styles
+        └── _layout.scss                      # Grid system
+        └── _shared.scss                      # Shared styles
+        └── _typography.scss                  # Typography styles
+        └── _util.scss                        # SASS helper functions
+        ├── lib/                              # External CSS libraries
+            └── animate.min.scss              # CSS animations
+            └── reset.min.scss                # CSS reset
+            └── hamburgers.min.scss           # CSS Hamburgers Menu
+        └── main.scss                         # Variable definitions and list of SASS partials to compile
+    ├── img/                                  # Images and SVGs
+    ├── index.hbs                             # The default HTML page
+    ├── js/                                   # Javascript libraries and scripts
+        └── app.js                            # The default Javascript file
+        ├── lib/                              # External JS libraries
+            └── jquery-2.2.2.min.js           # jQuery
+            └── jquery-anchorjumps-1.0.min.js # jQuery
+            └── jquery-waypoints.min.js       # jQuery
+├── webpack.config.js                         # Defines webpack tasks for development
+├── package.json                              # Javascript Dependencies
 ```
 
 ## Special Thanks
