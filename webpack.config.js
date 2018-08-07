@@ -69,7 +69,7 @@ module.exports = {
     //  loader configuration
     rules: [
       {
-        test: /\.hb    "expose-loader": "^0.7.5",s$/,
+        test: /\.hbs$/,
         loader: "handlebars-loader"
       },
       {
