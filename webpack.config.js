@@ -35,16 +35,17 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.hbs",
       mobile: true,
-      custom: {
-        title: "INSERT_SITE_NAME",
-        fallbackTitle: "MLH",
-        description: "INSERT_SITE_DESCRIPTION",
-        fallbackDescription: "default"
+      site: {
+        title: "", // Add site title here
+        description: "", // Add site description here
+        baseurl: "/",
+        url: "http://*.mlh.io",
+        custom_class: ""
       },
       tracking: {
-        google_analytics_id: '', // Example: UA-43729070-14
-        twitter_id: '', // Example: "nv0ih"
-        facebook_id: '', // Example: 261635320842380
+        google_analytics_id: "", // Example: UA-43729070-14
+        twitter_id: "", // Example: "nv0ih"
+        facebook_id: "", // Example: 261635320842380
       }
     }),
     new MiniCssExtractPlugin({
