@@ -29,6 +29,7 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({})
     ]
   },
+<<<<<<< HEAD
   plugins: [
     new CleanWebpackPlugin(pathsToClean),
     new HtmlWebPackPlugin({
@@ -58,6 +59,8 @@ module.exports = {
       chunkFilename: "[id].min.css"
     }),
   ],
+=======
+>>>>>>> add reload after webpack.config changes and disable webserver from opening new window every time
   module: {
     //  loader configuration
     rules: [
@@ -104,5 +107,29 @@ module.exports = {
         use: [ 'script-loader' ]
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(pathsToClean),
+    new HtmlWebPackPlugin({
+      template: "./src/index.hbs",
+      mobile: true,
+      site: {
+        title: "", // Add site title here
+        description: "", // Add site description here
+        baseurl: "/",
+        url: "http://*.mlh.io",
+        custom_class: ""
+      },
+      tracking: {
+        google_analytics_id: "", // Example: UA-43729070-14
+        twitter_id: "", // Example: "nv0ih"
+        facebook_id: "", // Example: 261635320842380
+      }
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].min.css",
+      chunkFilename: "[id].min.css"
+    }),
+  ],
+  devServer: { open: false }
 };

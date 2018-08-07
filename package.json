@@ -10,14 +10,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "watch": "webpack --watch --mode development",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "./node_modules/.bin/nodemon --watch webpack.config.js ./node_modules/.bin/webpack-dev-server --mode development"
   },
   "author": "Major League Hacking <hi@mlh.io>",
   "license": "MIT",
   "dependencies": {
     "handlebars": "^4.0.11",
     "handlebars-loader": "^1.7.0",
-    "eslint-config-standard": "^11.0.0"
+    "eslint-config-standard": "^11.0.0",
+    "nodemon": "^1.18.3"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.0",
