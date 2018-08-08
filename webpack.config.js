@@ -48,7 +48,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, buildDestination),
-    filename: `index_bundle.v${versionJS}.min.js`
+    filename: `boilerplate.v${versionJS}.min.js`
   },
   optimization: {
     minimizer: [
@@ -109,7 +109,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(buildDestination),
     new MiniCssExtractPlugin({
-      filename: `[name].v${versionCSS}.min.css`,
+      filename: `boilerplate.v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
     }),
   ].concat(generateHtmlPlugins('./src')),
