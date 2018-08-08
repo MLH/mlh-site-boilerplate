@@ -12,9 +12,7 @@ const config = {
     twitter_image_url: ''
   },
   tracking: {
-    google_analytics_id: 'UA-XXXXXXXX-XX',
-    twitter_id: 'XXXXX',
-    facebook_id: 'XXXXXXXXXXXXXXXX'
+    segment_id: 'UA-XXXXXXXX-XX'
   }
 }
 
