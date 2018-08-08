@@ -1,14 +1,28 @@
 {
-  "name": "INSERT_SITE_NAME",
-  "version": "0.0.3",
-  "description": "INSERT_PAGE_DESCRIPTION",
+  "name": "insert_site_name",
+  "version": "1.0.0",
+  "description": "INSERT_PAGE_DESCRIPTION.",
+  "webpack_bundle_version": "1.0.0",
   "main": "index.js",
+  "browserslist": [
+    "last 2 versions"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode development",
+    "start": "./node_modules/.bin/nodemon --watch webpack.config.js ./node_modules/.bin/webpack-dev-server --mode development"
   },
   "author": "Major League Hacking <hi@mlh.io>",
   "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.0.11",
+    "handlebars-loader": "^1.7.0",
+    "eslint-config-standard": "^11.0.0",
+    "nodemon": "^1.18.3"
+  },
   "devDependencies": {
+<<<<<<< HEAD
     "browser-sync": "^2.11.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -27,6 +41,39 @@
     "jshint": "^2.9.2",
     "rimraf": "^2.5.2",
     "run-sequence": "^1.2.1"
+=======
+    "autoprefixer": "^9.1.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "img-loader": "^3.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "postcss-loader": "^2.1.6",
+    "sass-loader": "^7.1.0",
+    "script-loader": "^0.7.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   },
-  "dependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MLH/mlh-site-boilerplate.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/MLH/mlh-site-boilerplate/issues"
+>>>>>>> updates_remove_jekyll_gulp_to_webpack_add_versioning
+  },
+  "homepage": "https://github.com/MLH/mlh-site-boilerplate#readme"
 }

@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html>
+  {{> ./head}}
+  <body {{#if htmlWebpackPlugin.options.site.title}} class="{{ htmlWebpackPlugin.options.site.custom_class }}" {{/if}}>
+    {{> ./main_navigation}}
