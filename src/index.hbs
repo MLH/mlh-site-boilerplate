@@ -1,11 +1,21 @@
-{{> _includes/header}}
+<!DOCTYPE html>
+<html>
+  <head>
+    {{> ./_includes/head}}
+  </head>
 
-  <div class="content below-menu">
-    <br />
-    <h1 class="text-center">Heading 1</h1>
-    <h2 class="text-center">Heading 2</h2>
-    <h3 class="text-center">Heading 3</h3>
-    <h4 class="text-center">Heading 4</h4>
-  </div>
+  <body {{#if htmlWebpackPlugin.options.site.title}} class="{{ htmlWebpackPlugin.options.site.custom_class }}" {{/if}}>
 
-{{> _includes/footer}}
+    {{> ./_includes/main_navigation}}
+
+    <div class="content below-menu">
+      <br />
+      <h1 class="text-center">Heading 1</h1>
+      <h2 class="text-center">Heading 2</h2>
+      <h3 class="text-center">Heading 3</h3>
+      <h4 class="text-center">Heading 4</h4>
+    </div>
+
+    {{> ./_includes/footer}}
+  </body>
+</html>

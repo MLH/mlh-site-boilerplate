@@ -1,18 +1,20 @@
 const config = {
-    template: "./src/index.hbs",
-    filename: "./index.html",
-    mobile: true,
     site: {
-      title: "", // Add site title here
-      description: "", // Add site description here
+      title: "insert_site_name",
+      description: "insert_site_description",
       baseurl: "/",
-      url: "http://*.mlh.io",
-      custom_class: ""
+      url: "http://example.mlh.io",
+      custom_class: "",
+      favicon_url: "img/favicon.ico"
+    },
+    social: {
+      facebook_image_url: "",
+      twitter_image_url: ""
     },
     tracking: {
-      google_analytics_id: "", // Example: UA-43729070-14
-      twitter_id: "", // Example: "nv0ih"
-      facebook_id: "", // Example: 261635320842380
+      google_analytics_id: "UA-XXXXXXXX-XX",
+      twitter_id: "XXXXX",
+      facebook_id: "XXXXXXXXXXXXXXXX",
     }
 }
 

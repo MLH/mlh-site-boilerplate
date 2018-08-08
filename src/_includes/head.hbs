@@ -1,32 +1,30 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{#if htmlWebpackPlugin.options.site.title}}{{htmlWebpackPlugin.options.site.title}}{{else}}{{htmlWebpackPlugin.options.site.default_title}}{{/if}}</title>
-  <meta name="description" content="{{#if htmlWebpackPlugin.options.site.description}}{{htmlWebpackPlugin.options.site.description}}{{else}}{{htmlWebpackPlugin.options.site.default_description}}{{/if}}">
+<title>{{htmlWebpackPlugin.options.site.title}}</title>
+<meta name="description" content="{{htmlWebpackPlugin.options.site.description}}">
 
-  {{!-- <link rel="canonical" href="{{ page.url | replace:'index.html', '' | prepend: site.url }}"> --}}
-  {{!-- <link rel="icon" href="{{ 'img/favicon.ico' | prepend: site.baseurl }}"> --}}
+{{!-- <link rel="canonical" href="{{ page.url | replace:'index.html', '' | prepend: site.url }}"> --}}
+{{!-- <link rel="icon" href="{{ 'img/favicon.ico' | prepend: site.baseurl }}"> --}}
 
-  <meta property="fb:app_id" content="1612424139009027" />
-  <meta property="og:site_name" content="Major League Hacking">
-  <meta property="og:title" content="{{#if htmlWebpackPlugin.options.site.title}}{{htmlWebpackPlugin.options.site.title}}{{else}}{{htmlWebpackPlugin.options.site.default_title}}{{/if}}">
-  <meta property="og:description" content="{{#if htmlWebpackPlugin.options.site.description}}{{htmlWebpackPlugin.options.site.description}}{{else}}{{htmlWebpackPlugin.options.site.default_description}}{{/if}}">
-  <meta property="og:type" content="website">
-  {{!-- {% if page.facebook_image %}<meta property="og:image" content="{{ page.facebook_image | prepend: site.baseurl | prepend: site.url }}">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">{% endif %} --}}
-  {{!-- <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}"> --}}
+<meta property="fb:app_id" content="1612424139009027" />
+<meta property="og:site_name" content="Major League Hacking">
+<meta property="og:title" content="{{htmlWebpackPlugin.options.site.title}}">
+<meta property="og:description" content="{{htmlWebpackPlugin.options.site.description}}">
+<meta property="og:type" content="website">
+{{!-- {% if page.facebook_image %}<meta property="og:image" content="{{ page.facebook_image | prepend: site.baseurl | prepend: site.url }}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">{% endif %} --}}
+{{!-- <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}"> --}}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@MLHacks">
-  <meta name="twitter:creator" content="@MLHacks">
-  <meta name="twitter:title" content="{{#if htmlWebpackPlugin.options.site.title}}{{htmlWebpackPlugin.options.site.title}}{{else}}{{htmlWebpackPlugin.options.site.default_title}}{{/if}}">
-  <meta name="twitter:description" content="{{#if htmlWebpackPlugin.options.site.description}}{{htmlWebpackPlugin.options.site.description}}{{else}}{{htmlWebpackPlugin.options.site.default_description}}{{/if}}">
-  {{!-- {% if page.twitter_image %}<meta name="twitter:image" content="{{ page.twitter_image | prepend: site.baseurl | prepend: site.url }}">{% endif %} --}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MLHacks">
+<meta name="twitter:creator" content="@MLHacks">
+<meta name="twitter:title" content="{{htmlWebpackPlugin.options.site.title}}">
+<meta name="twitter:description" content="{{htmlWebpackPlugin.options.site.description}}">
+{{!-- {% if page.twitter_image %}<meta name="twitter:image" content="{{ page.twitter_image | prepend: site.baseurl | prepend: site.url }}">{% endif %} --}}
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
-</head>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>

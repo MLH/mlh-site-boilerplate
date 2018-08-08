@@ -1,29 +1,36 @@
 "use strict";
 
-const path = require('path')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const PACKAGE = require('./package.json')
-const version = PACKAGE.webpack_bundle_version
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const project_config = require('./config.js')
+const CleanWebpackPlugin  = require('clean-webpack-plugin'),
+  HtmlWebPackPlugin       = require('html-webpack-plugin'),
+  MiniCssExtractPlugin    = require('mini-css-extract-plugin'),
+  OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
+  Package                 = require('./package.json'),
+  path                    = require('path'),
+  project_config          = require('./config.js'),
+  UglifyJsPlugin          = require('uglifyjs-webpack-plugin');
 
-const fs = require('fs')
+const versionJS  = Package.webpack_bundle_version_js,
+      versionCSS = Package.webpack_bundle_version_css;
 
-const pathsToClean = [
-  'dist',
-]
+// project_config overwrites default_config, edit project_config to customize the values below or add new fields
+const default_config = {
+  site: {
+    title: "MLH",
+    description: "The official collegiate hackathon league.",
+    baseurl: "/",
+    favicon_url: "img/favicon.ico"
+  }
+}
+
+const site_config = {...default_config, ...project_config};
 
 function generateHtmlPlugins (templateDir) {
+  const fs = require('fs');
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
-  
-  // console.log(templateFiles)
+
   return templateFiles
     .filter(item => item.includes('.hbs'))
     .map(item => {
-      // Split names and extension
       const parts = item.split('.')
         const name = parts[0]
         const extension = parts[1]
@@ -31,49 +38,35 @@ function generateHtmlPlugins (templateDir) {
           template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
           filename: `${name}.html`,
           mobile: true,
-          site: {
-            title: project_config.title,
-            description: project_config.desctiption,
-            baseurl: project_config.description,
-            url: project_config.url,
-            custom_class: project_config.custom_class
-          },
-          tracking: {
-            google_analytics_id: project_config.google_analytics_id,
-            twitter_id: project_config.twitter_id,
-            facebook_id: project_config.facebook_id
-          }
+          ...site_config
         })
     })
 }
-
-const htmlPlugins = generateHtmlPlugins('./src')
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: `index_bundle.v${version}.min.js`
+    filename: `index_bundle.v${versionJS}.min.js`
   },
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true // set to true if you want JS source maps
+        sourceMap: true
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
   },
   module: {
-    //  loader configuration
     rules: [
       {
         test: /\.hbs$/,
         loader: "handlebars-loader"
       },
       {
-        test: /\.(png|jpe?g|svg|ico)/i,
+        test: /\.(png|jpe?g|svg|ico|gif)/i,
         use: [
           {
             loader: "url-loader",
@@ -113,11 +106,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(pathsToClean),
+    new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
-      filename: "[name].min.css",
+      filename: `[name].v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
     }),
-  ].concat(htmlPlugins),
+  ].concat(generateHtmlPlugins('./src')),
   devServer: { open: false }
 };
