@@ -16,12 +16,12 @@
   "author": "Major League Hacking <hi@mlh.io>",
   "license": "MIT",
   "dependencies": {
+  },
+  "devDependencies": {
     "handlebars": "^4.0.11",
     "handlebars-loader": "^1.7.0",
     "eslint-config-standard": "^11.0.0",
-    "nodemon": "^1.18.3"
-  },
-  "devDependencies": {
+    "nodemon": "^1.18.3",
     "autoprefixer": "^9.1.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
