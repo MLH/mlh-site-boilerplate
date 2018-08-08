@@ -9,8 +9,9 @@ const CleanWebpackPlugin  = require('clean-webpack-plugin'),
   project_config          = require('./config.js'),
   UglifyJsPlugin          = require('uglifyjs-webpack-plugin');
 
-const versionJS  = Package.webpack_bundle_version_js,
-      versionCSS = Package.webpack_bundle_version_css;
+const versionJS        = Package.webpack_bundle_version_js,
+      versionCSS       = Package.webpack_bundle_version_css,
+      buildDestination = './dist';
 
 // project_config overwrites default_config, edit project_config to customize the values below or add new fields
 const default_config = {
@@ -46,7 +47,7 @@ function generateHtmlPlugins (templateDir) {
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, buildDestination),
     filename: `index_bundle.v${versionJS}.min.js`
   },
   optimization: {
@@ -92,7 +93,7 @@ module.exports = {
       {
         test: /.js/,
         enforce: 'pre',
-        exclude: [/node_modules/, path.resolve(__dirname, "src/js/lib"),],
+        exclude: [/node_modules/, path.resolve(__dirname, "src/js/lib"),path.resolve(__dirname, "config.js")],
         use: [
           {
             loader: `eslint-loader`
@@ -106,7 +107,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(buildDestination),
     new MiniCssExtractPlugin({
       filename: `[name].v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
