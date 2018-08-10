@@ -12,7 +12,7 @@ const config = {
     twitter_image_url: ''
   },
   tracking: {
-    segment_id: 'UA-XXXXXXXX-XX'
+    segment_id: '' // UA-XXXXXXXX-XX
   }
 }
 

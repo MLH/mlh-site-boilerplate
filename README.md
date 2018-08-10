@@ -51,7 +51,8 @@ Builds static html and assets into the `dist` directory.
 
 Spins up webpack dev server for local development and opens the project on port
 
- - Watches the `js/`, `_sass/`, and `img/` inside `_src/` directories for changes and updates the browser.
+ - Watches the `js/`, `_sass/`, and `img/` inside `_src/` directories for changes
+ - Builds the assets into `./dist` folder and serves them on port `localhost:8080`
 
 ## Structure
 
