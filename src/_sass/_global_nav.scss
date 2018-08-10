@@ -1,0 +1,312 @@
+.global_nav {
+  height: 72px;
+  box-shadow: 0 2px 0 #f5f5f5;
+  background-color: #ffffff;
+  display: flex;
+  width: 100%;
+
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: auto; 
+  margin-right: auto; 
+    margin: 0 auto; 
+    background: white;
+    border: 1px solid black;
+    width: 100%;
+    height: 95vh;
+    max-width: 355px;
+    max-height: 622px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+    background-color: #ffffff;
+    padding-top: 30px;
+
+    .close-menu, .close-menu:after {
+      content: '';
+      position: absolute;
+      top: 17px;
+      right: 23px;
+      width: 3px;
+      height: 23px;
+      transform: rotate(-45deg);
+      border-radius: 2px;
+      background-color: #4052a4;
+    }
+
+    .close-menu:after {
+      top: 0;
+      right: 0;
+      transform: rotate(90deg);
+    }
+
+    .main-links {
+      li {
+        display: flex;
+        padding: 13px 0;
+        img {
+          width: 24px;
+          height: 24px;
+          margin-left: 32px;
+        }
+
+        a {
+          margin-left: 24px;
+          color: black;
+        }
+      }
+    }
+
+    .about-links {
+      margin-top: 8px;
+      border-top: 1px solid #e5e5e5;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 16px;
+
+      li {
+        width: 50%;
+        padding: 16px;
+      }
+
+      a {
+        color: black;
+      }
+    }
+
+    .login-links {
+      background-color: #4052a4;
+      display: flex;
+      flex-direction: row;
+      height: 65px;
+      align-items: center;
+
+      li {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .divider {
+        width: 1px;
+        height: 22px;
+        opacity: 0.5;
+        background-color: white;
+      }
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  .mobile-nav.is-active {
+    display: block;
+  }
+
+  .content {
+    .logo {
+      img {
+        margin-top: 8px;
+        width: 130px;
+      }
+    }
+
+    .nav-right {
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      
+      .hamburger-button {
+        float: right;
+        width: auto;
+        height: 100%;;
+      }
+
+      .hamburger-inner {
+        position: relative;
+      }
+
+      .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+        background-color: #4052a4;
+        width: 24px;
+        height: 3px;
+        border-radius: 2px;
+      }
+
+      .hamburger-inner:after {
+        top: -9px;
+      }
+
+      .hamburger-inner:before {
+        top: 9px;
+      }
+
+
+    }
+
+    .desktop-nav {
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+      }
+
+      .nav-item-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .nav-item {
+        margin-left: 30px;
+      }
+
+      li {
+        color: #1c1e20;
+        font-family: "Open Sans";
+        font-size: 16px;
+        letter-spacing: -0.2px;
+        // background-color: red;
+      }
+
+      // border-bottom: 2px solid #4052a4;
+
+      .reveal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border-bottom: 2px solid white;
+
+        ul {
+          display: none;
+          position: absolute;
+          top: 4em;
+          padding: 0;
+          margin: 0;
+          max-width: 300px;
+          border: 1px solid #e5e5e5;
+          background-color: #ffffff;
+          padding-bottom: 16px;
+          padding-top: 16px;
+          // margin-left: -10%;
+        
+          li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 24px;
+
+            div {
+              margin-left: 16px;
+            }
+
+            a {
+              color: #1c1e20;
+            }
+
+            p {
+              line-height: 24px;
+              padding-right: 16px;
+              color: #959595;
+            }
+          }
+
+          .nav-about-group {
+            display: block;
+            padding-left: 32px;
+            padding-right: 32px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+          }
+          .border {
+            width: 100%;
+            height: 1px;
+            background-color: #d5d5d5;
+            margin-left: 0;
+          }
+        }
+        ul:after, ul:before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 100%;
+          width: 0;
+          height: 0;
+        }
+
+        /* this border color controlls the color of the triangle (what looks like the fill of the triangle) */
+        ul:after {
+          left: calc(50% - 8px);
+          border: 8px solid transparent;
+          border-bottom-color: white;
+        }
+
+        /* this border color controlls the outside, thin border */
+        ul:before {
+          left: calc(50% - 9px);
+          border: 9px solid transparent;
+          border-bottom-color: #e5e5e5;
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+        }
+
+        li:hover {
+          background-color: #f9f9f9;
+        }
+      }
+
+      .reveal:hover {
+        border-bottom: 2px solid #4052a4;
+        
+        ul { display: block};  
+      }
+    
+      .nav-btn {
+        height: 48px;
+        border-radius: 1px;
+        background-color: #4052a4;
+        box-sizing: border-box;
+        border: 1px solid #4052a4;
+        color: white;
+        padding: 13px 24px;
+      }
+      *:hover {
+        cursor: pointer;
+      }
+      .nav-btn:hover {
+        color: #4052a4;
+        box-sizing: border-box;
+        border: 1px solid #4052a4;
+        background-color: white;
+      }
+
+      .nav-btn-white {
+        background-color: white;        
+        color: #4052a4;
+      }
+
+      .nav-btn-white:hover {
+        color: white;        
+        background-color: #4052a4;
+      }
+
+      .login-btns{
+        display: flex;
+      }
+    }
+  }
+}

@@ -7,5 +7,13 @@ $(document).ready(function () {
     $('.hamburger-active-menu').fadeToggle()
   })
 
+  $('.hamburger-button').click(function () {
+    $('.mobile-nav').toggleClass('is-active')
+  })
+
+  $('.close-menu').click(function () {
+    $('.mobile-nav').toggleClass('is-active')
+  })
+
   $('a[href^="#"]').anchorjump()
 })
