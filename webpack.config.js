@@ -102,12 +102,10 @@ module.exports = (env, argv) => ({
       chunkFilename: "[id].min.css"
     }),
     new BrowserSyncPlugin({
+      open: false,
       host: 'localhost',
-      port: 3000,
-      server: { baseDir: ['.'] }
+      port: 8080,
+      server: { baseDir: ['.']}
     })
   ].concat(generateHtmlPlugins('./src')),
-  devServer: {
-    open: false
-  }
 });
