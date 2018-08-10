@@ -5,22 +5,13 @@ development of static websites.  It uses [Webpack][webpack] to automate and spee
 
 ## Setup
 
-Before you start, make sure you have [npm][npm-install] installed and the
-relevant version of Ruby (probably using [rvm][rvm] or [rbenv][rbenv]).
-
-You will also need [bundler][bundler] eventually, so lets get
-it now too.
-
-```bash
-$ gem install bundler
-```
+Before you start, make sure you have [npm][npm-install] installed
 
 Now let's install the development dependencies by running the NPM installer and
 bundler:
 
 ```bash
 $ npm install
-$ bundle install
 ```
 
 **Note:** These steps may require the use of `sudo` depending on your
@@ -51,7 +42,8 @@ Builds static html and assets into the `dist` directory.
 
 Spins up webpack dev server for local development and opens the project on port
 
- - Watches the `js/`, `_sass/`, and `img/` inside `_src/` directories for changes and updates the browser.
+ - Watches the `js/`, `_sass/`, and `img/` inside `_src/` directories for changes
+ - Builds the assets into `dist` folder and serves them on port `localhost:8080`
 
 ## Structure
 
@@ -60,8 +52,6 @@ Spins up webpack dev server for local development and opens the project on port
 ├── .eslintrc.js                              # Configuration file for eslint
 ├── .scss-lint.yml                            # Rules for linting SASS files
 ├── config.js                                 # Site configuration
-├── Gemfile                                   # Ruby Dependencies
-├── Gemfile.lock                              # Ruby Dependencies with explicit versions
 ├── README.md                                 # How to use this project
 ├── src/                                      # Folder containing all the resources for the website
     ├── _includes/                            # HTML partials

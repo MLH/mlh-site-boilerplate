@@ -1,29 +1,18 @@
 "use strict";
 
-const CleanWebpackPlugin  = require('clean-webpack-plugin'),
-  HtmlWebPackPlugin       = require('html-webpack-plugin'),
-  MiniCssExtractPlugin    = require('mini-css-extract-plugin'),
-  OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
-  Package                 = require('./package.json'),
-  path                    = require('path'),
-  project_config          = require('./config.js'),
-  UglifyJsPlugin          = require('uglifyjs-webpack-plugin');
-
-const versionJS        = Package.webpack_bundle_version_js,
-      versionCSS       = Package.webpack_bundle_version_css,
-      buildDestination = './dist';
-
-// project_config overwrites default_config, edit project_config to customize the values below or add new fields
-const default_config = {
-  site: {
-    title: "MLH",
-    description: "The official collegiate hackathon league.",
-    baseurl: "/",
-    favicon_url: "img/favicon.ico"
-  }
-}
-
-const site_config = {...default_config, ...project_config};
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+  ,BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+  ,HtmlWebPackPlugin = require('html-webpack-plugin')
+  ,MiniCssExtractPlugin = require('mini-css-extract-plugin')
+  ,OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+  ,Package = require('./package.json')
+  ,path = require('path')
+  ,project_config = require('./config.js')
+  ,UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+  ,buildDestination = './dist'
+  ,versionJS = Package.webpack_bundle_version_js
+  ,SassLintPlugin = require('sass-lint-webpack') 
+  ,versionCSS       = Package.webpack_bundle_version_css;
 
 function generateHtmlPlugins (templateDir) {
   const fs = require('fs');
@@ -37,18 +26,18 @@ function generateHtmlPlugins (templateDir) {
         const extension = parts[1]
         return new HtmlWebPackPlugin({
           template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-          filename: `${name}.html`,
+          filename: `../${name}.html`,
           mobile: true,
-          ...site_config
+          ...project_config
         })
     })
 }
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, buildDestination),
-    filename: `boilerplate.v${versionJS}.min.js`
+    filename: `mlh.v${versionJS}.min.js`
   },
   optimization: {
     minimizer: [
@@ -86,8 +75,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          "postcss-loader",
-          "sass-loader"
+          "sass-loader",
         ]
       },
       {
@@ -107,11 +95,17 @@ module.exports = {
     ]
   },
   plugins: [
+    new SassLintPlugin(),
     new CleanWebpackPlugin(buildDestination),
     new MiniCssExtractPlugin({
-      filename: `boilerplate.v${versionCSS}.min.css`,
+      filename: `mlh.v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
     }),
+    new BrowserSyncPlugin({
+      open: false,
+      host: 'localhost',
+      port: 8080,
+      server: { baseDir: ['.']}
+    })
   ].concat(generateHtmlPlugins('./src')),
-  devServer: { open: false }
-};
+});
