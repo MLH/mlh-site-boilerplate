@@ -10,12 +10,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin-left: auto; 
-  margin-right: auto; 
     margin: 0 auto; 
     background: white;
     border: 1px solid black;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2.5vh;
     height: 95vh;
     max-width: 355px;
     max-height: 622px;
@@ -25,11 +26,17 @@
     background-color: #ffffff;
     padding-top: 30px;
 
-    .close-menu, .close-menu:after {
-      content: '';
+    .close-menu {
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
       position: absolute;
       top: 17px;
       right: 23px;
+    }
+
+    .close-menu-inner, .close-menu-inner:after {
+      content: '';
       width: 3px;
       height: 23px;
       transform: rotate(-45deg);
@@ -37,7 +44,8 @@
       background-color: #4052a4;
     }
 
-    .close-menu:after {
+    .close-menu-inner:after {
+      position: absolute;
       top: 0;
       right: 0;
       transform: rotate(90deg);
@@ -126,7 +134,8 @@
       .hamburger-button {
         float: right;
         width: auto;
-        height: 100%;;
+        height: 100%;
+        cursor: pointer;
       }
 
       .hamburger-inner {
@@ -186,11 +195,17 @@
         align-items: center;
         box-sizing: border-box;
         border-bottom: 2px solid white;
-
-        ul {
+        
+        .dropdown-wrapper {
           display: none;
           position: absolute;
-          top: 4em;
+          top: 43px;
+          padding-top: 25px;
+          width: 300px;
+          // background: red;
+        }
+        
+        ul {
           padding: 0;
           margin: 0;
           max-width: 300px;
@@ -227,7 +242,6 @@
             padding-right: 32px;
             padding-top: 16px;
             padding-bottom: 16px;
-
           }
           .border {
             width: 100%;
@@ -240,13 +254,13 @@
           content: '';
           display: block;
           position: absolute;
-          bottom: 100%;
           width: 0;
           height: 0;
         }
 
         /* this border color controlls the color of the triangle (what looks like the fill of the triangle) */
         ul:after {
+          top: 10px;
           left: calc(50% - 8px);
           border: 8px solid transparent;
           border-bottom-color: white;
@@ -254,6 +268,7 @@
 
         /* this border color controlls the outside, thin border */
         ul:before {
+          top: 8px;
           left: calc(50% - 9px);
           border: 9px solid transparent;
           border-bottom-color: #e5e5e5;
@@ -266,13 +281,16 @@
 
         li:hover {
           background-color: #f9f9f9;
+          a {
+            color: #4052a4;
+          }
         }
       }
 
       .reveal:hover {
         border-bottom: 2px solid #4052a4;
         
-        ul { display: block};  
+        .dropdown-wrapper { display: block};
       }
     
       .nav-btn {

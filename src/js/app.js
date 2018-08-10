@@ -8,11 +8,13 @@ $(document).ready(function () {
   })
 
   $('.hamburger-button').click(function () {
-    $('.mobile-nav').toggleClass('is-active')
+    $('.mobile-nav').addClass('is-active')
+    $('.hamburger-button').css('display', 'none')
   })
 
   $('.close-menu').click(function () {
     $('.mobile-nav').toggleClass('is-active')
+    $('.hamburger-button').css('display', 'block')
   })
 
   $('a[href^="#"]').anchorjump()

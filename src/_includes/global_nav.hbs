@@ -5,7 +5,8 @@
     </a>
     <ul class="hidden-md col-8 desktop-nav">
       <li class="reveal nav-item">
-          Resources
+        Resources
+        <div class="dropdown-wrapper">
           <ul>
             <li>
               <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
@@ -36,49 +37,54 @@
               </div>
             </li>
           </ul>
+        </div>
       </li>
       <li class="reveal nav-item">
         Hackathons
-        <ul>
-          <li>
-            <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
-            <div>
-              <a>Hackathons</a>
-              <p>Official MLH Hackathons worldwide</p>
-            </div>
-          </li>
-          <li>
-            <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
-            <div>
-              <a>LocalHost</a>
-              <p>Hackathons on a smaller scale</p>
-            </div>
-          </li>
-          <li>
-            <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
-            <div>
-              <a>Local Hack Day</a>
-              <p>Simlutaneous hacking across the globe</p>
-            </div>
-          </li>
-        </ul>
+        <div class="dropdown-wrapper">
+          <ul>
+            <li>
+              <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+              <div>
+                <a>Hackathons</a>
+                <p>Official MLH Hackathons worldwide</p>
+              </div>
+            </li>
+            <li>
+              <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+              <div>
+                <a>LocalHost</a>
+                <p>Hackathons on a smaller scale</p>
+              </div>
+            </li>
+            <li>
+              <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+              <div>
+                <a>Local Hack Day</a>
+                <p>Simlutaneous hacking across the globe</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </li>
       <li class="reveal nav-item">
         About
-        <ul>
-          <li class="nav-about-group">
-            <a>About Major League Hacking</a>
-            <p>
-              MLH is the official student hackathon league, powering over 200 weekend-long invention competitions that inspire innovation, cultivate communities and teach computer science skills to more than 65,000 students worldwide.
-            </p>
-          </li>
-          <div class="nav-about-group">
-            <div class="border"></div>
-          </div>
-          <li class="nav-about-group"><a>FAQs</a></li>
-          <li class="nav-about-group"><a>Contact Us</a></li>
-          <li class="nav-about-group"><a>MLH Shop</a></li>
-        </ul>
+        <div class="dropdown-wrapper">
+          <ul>
+            <li class="nav-about-group">
+              <a>About Major League Hacking</a>
+              <p>
+                MLH is the official student hackathon league, powering over 200 weekend-long invention competitions that inspire innovation, cultivate communities and teach computer science skills to more than 65,000 students worldwide.
+              </p>
+            </li>
+            <div class="nav-about-group">
+              <div class="border"></div>
+            </div>
+            <li class="nav-about-group"><a>FAQs</a></li>
+            <li class="nav-about-group"><a>Contact Us</a></li>
+            <li class="nav-about-group"><a>MLH Shop</a></li>
+          </ul>
+        </div>
       </li>
       <div class="login-btns">
         <li><a class="nav-btn nav-btn-white nav-item">Log In</a></li>
@@ -92,7 +98,9 @@
     </div>
   </div>
   <div class="mobile-nav">
-    <div class="close-menu"></div>
+    <div class="close-menu">
+      <div class="close-menu-inner"></div>
+    </div>
     <ul class="main-links">
       <li><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><a>Hackathons</a></li>
       <li><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><a>Careers & Internship</a></li>
@@ -115,3 +123,25 @@
     </ul>
   </div>
 </nav>
+
+{{!-- <style>
+  .red, .green, .blue {
+    width: 100px;
+    height: 100px;
+  }
+  .red {
+    display: none;
+    background: red;
+  }
+  .green {
+    display: block;
+    background: green;
+  }.blue {
+    background: blue;
+  }
+</style>
+<div class="red">
+  <div class="blue">
+    <div class="green"></div>
+  </div>
+</div> --}}
