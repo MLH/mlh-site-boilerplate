@@ -1,6 +1,7 @@
 "use strict";
 
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+  ,BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   ,HtmlWebPackPlugin = require('html-webpack-plugin')
   ,MiniCssExtractPlugin = require('mini-css-extract-plugin')
   ,OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -10,9 +11,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
   ,UglifyJsPlugin = require('uglifyjs-webpack-plugin')
   ,buildDestination = './dist'
   ,versionJS = Package.webpack_bundle_version_js
+  ,SassLintPlugin = require('sass-lint-webpack') 
   ,versionCSS       = Package.webpack_bundle_version_css;
-  const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-  console.log('lol')
+
 function generateHtmlPlugins (templateDir) {
   const fs = require('fs');
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
@@ -72,7 +73,7 @@ module.exports = (env, argv) => ({
       {
         test: /\.scss$/,
         use: [
-          argv.mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           "css-loader",
           "sass-loader",
         ]
@@ -94,7 +95,8 @@ module.exports = (env, argv) => ({
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(buildDestination),
+    new SassLintPlugin(),
+    new CleanWebpackPlugin(buildDestination),
     new MiniCssExtractPlugin({
       filename: `mlh.v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
@@ -106,6 +108,6 @@ module.exports = (env, argv) => ({
     })
   ].concat(generateHtmlPlugins('./src')),
   devServer: {
-    open: false 
+    open: false
   }
 });
