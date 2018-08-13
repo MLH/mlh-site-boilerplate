@@ -61,6 +61,17 @@ $hover-color: #f9f9f9;
       transform: rotate(90deg);
     }
 
+    a {
+      text-decoration: none;
+      width: 100%;
+    }
+    .mobile-main-links:hover {
+      cursor: pointer;
+      background: $hover-color;
+      .mobile-link-text {
+        color: $nav-blue;
+      }
+    }
     .main-links {
       li {
         display: flex;
@@ -70,8 +81,7 @@ $hover-color: #f9f9f9;
           height: 24px;
           margin-left: 32px;
         }
-
-        a {
+        .mobile-link-text {
           margin-left: 24px;
           color: $black;
         }
