@@ -5,7 +5,7 @@ development of static websites.  It uses [Webpack][webpack] to automate and spee
 
 ## Setup
 
-Before you start, make sure you have [npm][npm-install] installed
+Before you start, make sure you have [npm][npm-install] installed.
 
 Now let's install the development dependencies by running the NPM installer and
 bundler:
@@ -42,8 +42,9 @@ Builds static html and assets into the `dist` directory.
 
 Spins up webpack dev server for local development and opens the project on port
 
- - Watches the `js/`, `_sass/`, and `img/` inside `_src/` directories for changes
+ - Watches the `js/`, `_sass/` inside `_src/` directories for changes
  - Builds the assets into `dist` folder and serves them on port `localhost:8080`
+ - For easier hosting on github builds `index.html` file into root directory of the project
 
 ## Structure
 
@@ -53,6 +54,10 @@ Spins up webpack dev server for local development and opens the project on port
 ├── .scss-lint.yml                            # Rules for linting SASS files
 ├── config.js                                 # Site configuration
 ├── README.md                                 # How to use this project
+├── index.html                                # Default html page
+├── dist/                                     # Folder containing all the resources for the website
+    └── mlh.v.1.0.0.min.css                   # Minified css assets
+    └── mlh.v.1.0.0.min.js                    # Minified js assets
 ├── src/                                      # Folder containing all the resources for the website
     ├── _includes/                            # HTML partials
         └── head.hbs                          # HTML for the <head> tag

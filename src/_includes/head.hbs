@@ -7,6 +7,7 @@
 <meta name="description" content="{{htmlWebpackPlugin.options.site.description}}">
 
 <link rel="canonical" href="">
+
 <link rel="icon" href="{{{htmlWebpackPlugin.options.site.baseurl}}}/src/img/favicon.ico">
 
 <meta property="fb:app_id" content="{{htmlWebpackPlugin.options.social.fb_app_id}}" />
@@ -24,9 +25,9 @@
 
 <meta property="og:url" content="">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@MLHacks">
-<meta name="twitter:creator" content="@MLHacks">
+<meta name="twitter:card" content="{{htmlWebpackPlugin.options.social.twitter_card}}">
+<meta name="twitter:site" content="{{htmlWebpackPlugin.options.social.twitter-site}}">
+<meta name="twitter:creator" content="{{htmlWebpackPlugin.options.social.twitter-creator}}">
 <meta name="twitter:title" content="{{htmlWebpackPlugin.options.site.title}}">
 <meta name="twitter:description" content="{{htmlWebpackPlugin.options.site.description}}">
 {{#if htmlWebpackPlugin.options.site.twitter_image_url}}

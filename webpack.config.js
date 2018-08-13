@@ -1,29 +1,29 @@
 "use strict";
 
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-  ,BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-  ,HtmlWebPackPlugin = require('html-webpack-plugin')
-  ,MiniCssExtractPlugin = require('mini-css-extract-plugin')
-  ,OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-  ,Package = require('./package.json')
-  ,path = require('path')
-  ,project_config = require('./config.js')
-  ,UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-  ,buildDestination = './dist'
-  ,versionJS = Package.webpack_bundle_version_js
-  ,SassLintPlugin = require('sass-lint-webpack') 
-  ,versionCSS       = Package.webpack_bundle_version_css;
+  , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+  , HtmlWebPackPlugin = require('html-webpack-plugin')
+  , MiniCssExtractPlugin = require('mini-css-extract-plugin')
+  , OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+  , Package = require('./package.json')
+  , path = require('path')
+  , project_config = require('./config.js')
+  , SassLintPlugin = require('sass-lint-webpack')
+  , UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+  , buildDestination = './dist'
+  , versionJS = Package.webpack_bundle_version_js
+  , versionCSS = Package.webpack_bundle_version_css;
 
 function generateHtmlPlugins (templateDir) {
   const fs = require('fs');
-  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
 
   return templateFiles
     .filter(item => item.includes('.hbs'))
     .map(item => {
-      const parts = item.split('.')
+      const parts = item.split('.');
         const name = parts[0]
-        const extension = parts[1]
+          , extension = parts[1];
         return new HtmlWebPackPlugin({
           template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
           filename: `../${name}.html`,

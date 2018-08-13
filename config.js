@@ -2,8 +2,7 @@ const config = {
   site: {
     title: 'insert_site_title',
     description: 'insert_site_description',
-    baseurl: '',
-    url: 'http://example.mlh.io',
+    baseurl: 'http://example.mlh.io',
     custom_class: '',
     favicon_url: '/src/img/favicon.ico',
     site_name: "Major League Hacking",
@@ -17,7 +16,7 @@ const config = {
     twitter_image_url: 'twitter_img'
   },
   tracking: {
-    segment_id: '' // UA-XXXXXXXX-XX
+    segment_id: ''
   }
 }
 
