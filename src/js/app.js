@@ -10,11 +10,13 @@ $(document).ready(function () {
   $('.hamburger-button').click(function () {
     $('.mobile-nav').addClass('is-active')
     $('.hamburger-button').css('display', 'none')
+    $('html').css('overflow', 'hidden')
   })
 
   $('.close-menu').click(function () {
     $('.mobile-nav').toggleClass('is-active')
     $('.hamburger-button').css('display', 'block')
+    $('html').css('overflow', 'auto')
   })
 
   $('.sub-nav-control').on('click', function (e) {
@@ -34,11 +36,11 @@ $(document).ready(function () {
   window.onscroll = function () {
     var currentScrollPos = window.pageYOffset
     if (prevScrollpos > currentScrollPos) {
-      document.querySelector('.site-nav').style.top = '72px'
-      document.querySelector('.global_nav').style.top = '0'
+      $('.site-nav').css('top', '72px')
+      $('.global_nav').css('top', '0')
     } else {
-      document.querySelector('.global_nav').style.top = '-72px'
-      document.querySelector('.site-nav').style.top = '0'
+      $('.global_nav').css('top', '-72px')
+      $('.site-nav').css('top', '0')
     }
     prevScrollpos = currentScrollPos
   }
