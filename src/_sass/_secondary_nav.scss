@@ -1,0 +1,122 @@
+$secondary-nav-color: grey;
+$current-color: #e45b6b;
+
+.site-nav {
+  z-index: 999;
+  background-color: white;
+  position: fixed;
+  top: 72px;
+  height: 72px;
+  width: 100%;
+  transition: top cubic-bezier(0.71,-0.04, 0.32, 1.07) .2s;
+
+  .logo {
+    margin-top: 9px;
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    float: none;
+    padding: 0 1.25em;
+    justify-content: space-between;
+  }
+
+  .sub-nav-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .up {
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    
+    border-bottom: 8px solid $secondary-nav-color;
+  }
+
+  .down {
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    
+    border-top: 8px solid $secondary-nav-color;
+  }
+
+  .sub-nav-control {
+    margin-left: 10px;
+    transition: linear .2s;
+  }
+
+
+  .sub-nav-control:hover {
+    cursor: pointer;
+  }
+
+  .hello {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    
+    .secondary-nav-link {
+      color: $secondary-nav-color;
+      text-decoration: none;
+      font-family: "Open Sans";
+      font-size: 16px;
+      line-height: 16px;
+      padding-bottom: 8px;
+      /* Text style for "Workshop" */
+      letter-spacing: -0.2px;
+    }
+
+    .secondary-nav-link:hover {
+      cursor: pointer;
+      border-bottom: 2px solid $secondary-nav-color;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        margin-left: 40px;
+      }
+      .current {
+        color: $current-color;
+        border-bottom: 2px solid $current-color;    
+      }
+    }
+    
+  }
+
+  .mobile {
+    display: none;
+    width: 100%;
+    max-width: 375px;
+    background-color: #f9f9f9;
+    position: absolute;
+    left: 0;
+    top: 75px;
+
+    li {
+      padding: 15px 0;
+      padding-left: 65px;
+    }
+    .secondary-nav-link {
+      padding: 0;
+      margin: 0;
+      color: #e45b6b;
+      font-family: "Open Sans";
+      font-size: 16px;
+      line-height: 16px;
+      /* Text style for "Day-Of Res" */
+      letter-spacing: -0.2px;
+    }
+  }
+
+  .content:after {
+    content: none;
+  }  
+}

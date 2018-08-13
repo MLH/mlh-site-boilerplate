@@ -17,5 +17,34 @@ $(document).ready(function () {
     $('.hamburger-button').css('display', 'block')
   })
 
+  $('.sub-nav-control').on('click', function (e) {
+    var $button = $(e.target)
+    if ($button.hasClass('up')) {
+      $button.addClass('down')
+      $button.removeClass('up')
+      $('.mobile').css('display', 'none')
+    } else {
+      $button.addClass('up')
+      $button.removeClass('down')
+      $('.mobile').css('display', 'block')
+    }
+  })
+
+  var prevScrollpos = window.pageYOffset
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset
+    if (prevScrollpos > currentScrollPos) {
+      document.querySelector('.site-nav').style.top = '72px'
+      document.querySelector('.global_nav').style.top = '0'
+    } else {
+      document.querySelector('.global_nav').style.top = '-72px'
+      document.querySelector('.site-nav').style.top = '0'
+    }
+    prevScrollpos = currentScrollPos
+  }
+  if (window.location.pathname !== '/') {
+    $('.current-active').text($('a[href="' + window.location.pathname + '"]').html())
+  }
+  $('a[href="' + window.location.pathname + '"]').addClass('current')
   $('a[href^="#"]').anchorjump()
 })
