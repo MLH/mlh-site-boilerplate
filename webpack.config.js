@@ -1,8 +1,9 @@
 "use strict";
 
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+  , CleanWebpackPlugin = require('clean-webpack-plugin')
   , CopyWebpackPlugin = require('copy-webpack-plugin')
-  , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+  , ImageminPlugin = require('imagemin-webpack-plugin').default
   , HtmlWebPackPlugin = require('html-webpack-plugin')
   , MiniCssExtractPlugin = require('mini-css-extract-plugin')
   , OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -14,8 +15,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
   , buildDestination = './dist'
   , versionJS = Package.webpack_bundle_version_js
   , versionCSS = Package.webpack_bundle_version_css;
-  var ImageminPlugin = require('imagemin-webpack-plugin').default;
-function generateHtmlPlugins (templateDir) {
+
+  function generateHtmlPlugins (templateDir) {
   const fs = require('fs');
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
 
@@ -29,6 +30,7 @@ function generateHtmlPlugins (templateDir) {
           template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
           filename: `${name}.html`,
           mobile: true,
+          pageName: name,
           ...project_config
         })
     })
@@ -54,7 +56,13 @@ module.exports = (env, argv) => ({
     rules: [
       {
         test: /\.hbs$/,
-        loader: "handlebars-loader"
+        loader: "handlebars-loader",
+        options: {
+          helperDirs: path.join(__dirname, 'src/js/handlebarsHelpers'),
+          precompileOptions: {
+            knownHelpersOnly: false,
+          },
+        },
       },
       {
         test: /\.(png|jpe?g|svg|ico|gif)/i,
@@ -102,9 +110,7 @@ module.exports = (env, argv) => ({
       filename: `mlh.v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
     }),
-    new CopyWebpackPlugin([
-      {from:'src/img',to:'img'} 
-    ]),
+    new CopyWebpackPlugin([{from:'src/img',to:'img'}]),
     new ImageminPlugin({ test: /\.(png|jpe?g|svg|ico|gif)/i }),
     new BrowserSyncPlugin({
       open: false,
