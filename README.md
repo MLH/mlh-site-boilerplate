@@ -1,14 +1,13 @@
 # MLH/mlh-site-boilerplate
 
 This is the boilerplate that [Major League Hacking (MLH)][mlh] uses in the
-development of static websites.  It uses [Webpack][webpack] to automate and speed up common development tasks.
+development of static websites.  It combines [Handlebars][handlebars] and [Webpack][webpack] to automate and speed up common development tasks.
 
 ## Setup
 
-Before you start, make sure you have [npm][npm-install] installed.
+Before you start, make sure [npm][npm-install] is installed on your computer.
 
-Now let's install the development dependencies by running the NPM installer and
-bundler:
+Now let's install the development dependencies by running the NPM installer:
 
 ```bash
 $ npm install
@@ -34,17 +33,19 @@ An overview of the NPM commands available:
 Builds static html and assets into the `dist` directory.
 
  - Cleans any precompiled assets in `dist`
- - Lints and compiles SASS
+ - Composes handlebars partials into html
+ - Lints and compiles SASS into CSS, applies vendor prefixes
  - Lints and compiles Javascript
- - Optimizes images
+ - Bundles js and css into minified, versioned files
+ - Optimizes images and builds them to the `img` folder inside `dist`
 
 ### `npm run start`
 
-Spins up webpack dev server for local development and opens the project on port
+Spins up webpack dev server for local development
 
- - Watches the `js/`, `_sass/` inside `_src/` directories for changes
+ - Watches files inside `_src/` directory and updates website on change
  - Builds the assets into `dist` folder and serves them on port `localhost:8080`
- - For easier hosting on github builds `index.html` file into root directory of the project
+ - If you make changes outside the `_src/` directory you'll have to stop the server with Ctrl + C and start it again
 
 ## Structure
 
@@ -54,19 +55,18 @@ Spins up webpack dev server for local development and opens the project on port
 ├── .scss-lint.yml                            # Rules for linting SASS files
 ├── config.js                                 # Site configuration
 ├── README.md                                 # How to use this project
-├── index.html                                # Default html page
 ├── dist/                                     # Folder containing all the resources for the website
+    ├── img/                                  # Optimized images and SVGs
     └── mlh.v.1.0.0.min.css                   # Minified css assets
     └── mlh.v.1.0.0.min.js                    # Minified js assets
+    └── index.html                            # Default html page
 ├── src/                                      # Folder containing all the resources for the website
-    ├── _includes/                            # HTML partials
-        └── head.hbs                          # HTML for the <head> tag
-        └── main_navigation.hbs               # HTML for the <nav> tag
+    ├── _includes/                            # Handlebars partials
+        └── head.hbs                          # Handlebars partial for the <head> tag
+        └── main_navigation.hbs               # Handlebars partial for the <nav> tag
         └── main_navigation_links.hbs         # Links inside of main_navigation.hbs
         ├── tracking/                         # Tracking codes
-            └── google_analytics.hbs          # Google Analytics Tracking Code
-            └── twitter.hbs                   # Twitter Tracking Code
-            └── facebook.hbs                  # Facebook Tracking Code
+            └── segment.hbs                   # Segment menagas all of your different tracking platforms(Facebook, Twitter, Google etc...)
     ├── _sass/                                # Stylesheets directory
         └── _base.scss                        # Base styles
         └── _layout.scss                      # Grid system
@@ -82,12 +82,15 @@ Spins up webpack dev server for local development and opens the project on port
     ├── index.hbs                             # The default HTML page
     ├── js/                                   # Javascript libraries and scripts
         └── app.js                            # The default Javascript file
+        ├── handlebarsHelpers/                # Handlabars can use helper methods in templates
+            └── canonicalGenerator.js         # Builds canonical url index.hbs
         ├── lib/                              # External JS libraries
             └── jquery-2.2.2.min.js           # jQuery
             └── jquery-anchorjumps-1.0.min.js # jQuery
             └── jquery-waypoints.min.js       # jQuery
 ├── webpack.config.js                         # Defines webpack tasks for development
 ├── package.json                              # Javascript Dependencies
+├── package-lock.json                         # Keeps track of the dependency tree
 ```
 
 ## Special Thanks
@@ -97,10 +100,6 @@ for inspiring this project.
 
 [mlh]: http://mlh.io
 [github-pages]: https://pages.github.com
-[jekyll]: https://jekyllrb.com
-[gulp]: http://gulpjs.com/
 [npm-install]: https://nodejs.org/en/download/
-[rvm]: https://rvm.io/
-[bundler]: http://bundler.io/
 [webpack]: https://webpack.js.org/
-[rbenv]: https://github.com/rbenv/rbenv
+[handlebars]: https://handlebarsjs.com/

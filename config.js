@@ -9,7 +9,7 @@ const config = {
   },
   social: {
     facebookAppId: 1612424139009027,
-    facebookImageUrl: 'fb_img',
+    facebookImageUrl: '',
     twitterCard: 'summary_large_image',
     twitterSite: '@MLHacks',
     twitterCreator: '@MLHacks',
