@@ -16,6 +16,8 @@ $current-color: #e45b6b;
 
   .content {
     height: 100%;
+    background-color: white;
+    z-index: 998;
     display: flex;
     align-items: center;
     float: none;
@@ -81,7 +83,7 @@ $current-color: #e45b6b;
       display: flex;
       justify-content: space-between;
       li {
-        margin-left: 40px;
+        margin-left: 30px;
       }
       .current {
         color: $current-color;
@@ -91,32 +93,96 @@ $current-color: #e45b6b;
     
   }
 
+  .current-active {
+    color: $current-color;
+  }
+
+  .content:after {
+    content: none;
+  }
+
   .mobile {
-    display: none;
+    // display: none;
     width: 100%;
-    max-width: 414px;
+    z-index: -1;
+    // max-width: 414px;
     background-color: #f9f9f9;
     position: absolute;
     left: 0;
-    top: 75px;
+    top: -300px;
 
     li {
       padding: 15px 0;
-      padding-left: 65px;
+      transition: background-color .2s ease-out 0s;
+      // padding-left: 65px;
     }
+
+    li:hover {
+      background: #e45b6b;
+      .secondary-nav-link {
+        color: #f9f9f9;
+      };  
+    }
+
+    li:nth-child(1) .secondary-nav-link {
+      transition: 
+        opacity .3s ease 0.01s, 
+        margin .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) 0.01s,
+        color .5s ease 0s;
+    }
+
+    li:nth-child(2) .secondary-nav-link {
+      transition: 
+        opacity .3s ease 0.06s, 
+        margin .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) 0.06s,
+        color .5s ease 0s;
+    }
+    li:nth-child(3) .secondary-nav-link {
+      transition: 
+        opacity .3s ease 0.12s, 
+        margin .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) 0.12s,
+        color .5s ease 0s;
+    }
+    li:nth-child(4) .secondary-nav-link {
+      transition: 
+        opacity .3s ease 0.18s,
+        margin .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) 0.18s,
+        color .5s ease 0s;
+    }
+    li:nth-child(5) .secondary-nav-link {
+      transition: 
+        opacity .3s ease 0.24s, 
+        margin .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) 0.24s,
+        color .5s ease 0s;
+    }
+    li:nth-child(6) .secondary-nav-link {
+      transition: 
+        opacity .3s ease 0.30s, 
+        margin .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) 0.30s,
+        color .5s ease 0s;
+    }
+
     .secondary-nav-link {
       padding: 0;
       margin: 0;
+      opacity: 0;
+      margin-left: -50px;
       color: #e45b6b;
       font-family: "Open Sans";
       font-size: 16px;
       line-height: 16px;
       /* Text style for "Day-Of Res" */
       letter-spacing: -0.2px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
     }
+    
+    .lol {
+      margin-left: 40px;
+      opacity: 1;
+    }
+    
   }
-
-  .content:after {
-    content: none;
-  }  
 }
