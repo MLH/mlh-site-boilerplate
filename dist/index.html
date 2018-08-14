@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,9 @@
     <title>insert_site_title</title>
     <meta name="description" content="insert_site_description">
     
-    <link rel="canonical" href="http://example.mlh.io">
+    <link rel="canonical" href="http://localhost:8080">
     
-    <link rel="icon" href="http://example.mlh.io/img/favicon.ico">
+    <link rel="icon" href="http://localhost:8080/img/favicon.ico">
     
     <meta property="fb:app_id" content="1612424139009027" />
     <meta property="og:site_name" content="Major League Hacking">
@@ -19,7 +20,7 @@
     <meta property="og:type" content="website">
     
     
-    <meta property="og:url" content="http://example.mlh.io">
+    <meta property="og:url" content="http://localhost:8080">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@MLHacks">
@@ -31,52 +32,210 @@
     
   <link href="mlh.v2.0.0.min.css" rel="stylesheet"></head>
 
-  <body>
+  <body  class="" >
 
-    <nav class="site-nav">
+    <nav class="global_nav">
       <div class="content">
-        <a href="">
-          <img src='./img/logos/mlh-logo-color.svg' alt="Major League Hacking" />
+        <a href="#" class="logo col-4 col-sm-8">
+          <img src='img/logos/mlh-logo-color.svg' alt="Major League Hacking" />
         </a>
-        <ul class="hidden-md">
-          <li><a href="#">Link A</a></li>
-          <li><a href="#">Link B</a></li>
-          <li><a href="#">Link C</a></li>
-          <li><a href="#">Link D</a></li>
-          <li><a href="#" class="btn btn-flat-red">CTA 1</a></li>
-          <li><a href="#" class="btn btn-flat-blue">CTA 2</a></li>
-          <li><a href="#" class="btn btn-flat-yellow">CTA 3</a></li>    </ul>
-        <ul class="visible-md">
-          <li>
-            <button class="hamburger hamburger--collapse" type="button">
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </button>
+        <ul class="hidden-md col-8 desktop-nav">
+          <li class="reveal nav-item">
+            Resources
+            <div class="dropdown-wrapper">
+              <ul>
+                <li>
+                  <a href="https://careerlab.mlh.io">
+                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div>
+                      <span class="nav-link-text">Careers & Internships</span>
+                      <p>Find the perfect role for your skillset</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://careerlab.mlh.io">
+                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div>
+                      <span class="nav-link-text">Coding Challenges</span>
+                      <p>Test yourself and hone your abilities</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://careerlab.mlh.io">
+                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div>
+                      <span class="nav-link-text">Freebies & Perks</span>
+                      <p>Free tools and discounted devices</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://careerlab.mlh.io">
+                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div>
+                      <span class="nav-link-text">Organize a Hackathon</span>
+                      <p>Everything you need to host a hackathon</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
+          <li class="reveal nav-item">
+            Hackathons
+            <div class="dropdown-wrapper">
+              <ul>
+                <li>
+                  <a href="https://careerlab.mlh.io">
+                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div>
+                      <span class="nav-link-text">Hackathons</span>
+                      <p>Official MLH Hackathons worldwide</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://careerlab.mlh.io">
+                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div>
+                      <span class="nav-link-text">LocalHost</span>
+                      <p>Hackathons on a smaller scale</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://careerlab.mlh.io">
+                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div>
+                      <span class="nav-link-text">Local Hack Day</span>
+                      <p>Simlutaneous hacking across the globe</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="reveal nav-item">
+            About
+            <div class="dropdown-wrapper">
+              <ul>
+                <li>
+                  <a class="nav-about-group" href="https://careerlab.mlh.io">
+                    <span class="nav-link-text">About Major League Hacking</span>
+                    <p>
+                      MLH is the official student hackathon league, powering over 200 weekend-long invention competitions that inspire innovation, cultivate communities and teach computer science skills to more than 65,000 students worldwide.
+                    </p>
+                  </a>
+                </li>
+                <div class="nav-about-group">
+                  <div class="border"></div>
+                </div>
+                <li>
+                  <a class="nav-about-group" href="https://careerlab.mlh.io">
+                    <span class="nav-link-text">FAQs</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-about-group" href="https://careerlab.mlh.io">              
+                    <span class="nav-link-text">Contact Us</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-about-group" href="https://careerlab.mlh.io">
+                    <span class="nav-link-text">MLH Shop</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <div class="login-btns">
+            <li><a class="nav-btn nav-btn-white nav-item">Log In</a></li>
+            <li><a class="nav-btn nav-item">Sign Up</a></li>
+          </div>
+        </ul>
+        <div class="visible-md col-8 nav-right col-sm-4">
+          <div class="hamburger-button">
+            <div class='hamburger-inner'></div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <div class="close-menu">
+          <div class="close-menu-inner"></div>
+        </div>
+        <ul class="main-links">
+          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Hackathons</span></a></li>
+          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Careers & Internship</span></a></li>
+          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Coding Challenges</span></a></li>
+          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Freebies & Perks</span></a></li>
+          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Organize a Hackathon</span></a></li>
+          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">LocalHost Hackathon</span></a></li>
+          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Lockal Hack Day</span></a></li>
+        </ul>
+        <ul class="about-links">
+          <li class="mobile-about-links"><a href="https://careerlab.mlh.io">About MLH</a></li>
+          <li class="mobile-about-links"><a href="https://careerlab.mlh.io">Contact Us</a></li>
+          <li class="mobile-about-links"><a href="https://careerlab.mlh.io">FAQs</a></li>
+          <li class="mobile-about-links"><a href="https://careerlab.mlh.io">MLH Shop</a></li>
+        </ul>
+        <ul class="login-links">
+          <li><a>Sign Up</a></li>
+          <div class="divider"></div>
+          <li><a>Log In</a></li>
         </ul>
       </div>
+    </nav>    <nav class="site-nav">
+      <div class="content">
+        <div class="sub-nav-left">
+          <a href="/"><img class="logo" src="http://acmelogos.com/images/logo-1.svg"/></a>
+          <div class="sub-nav-control visible-md down"></div>
+        </div>
+        <div class="hidden-md hello">
+          <ul class="sub-nav-right">
+            <li><a class="secondary-nav-link" href="/link1.html">Day-Of Resources</a></li>
+            <li><a class="secondary-nav-link" href="/link2">Workshops</a></li>
+            <li><a class="secondary-nav-link" href="/link3">Activities</a></li>
+            <li><a class="secondary-nav-link" href="">APIs & Freebies</a></li>
+            <li><a class="secondary-nav-link" href="">Sponsors</a></li>
+            <li><a class="secondary-nav-link" href="">Help</a></li>
+          </ul>
+        </div>
     
-      <div class="visible-md">
-        <ul class="hamburger-active-menu">
-            <li><a href="#">Link A</a></li>
-            <li><a href="#">Link B</a></li>
-            <li><a href="#">Link C</a></li>
-            <li><a href="#">Link D</a></li>
-            <li><a href="#" class="btn btn-flat-red">CTA 1</a></li>
-            <li><a href="#" class="btn btn-flat-blue">CTA 2</a></li>
-            <li><a href="#" class="btn btn-flat-yellow">CTA 3</a></li>    </ul>
-        </ul>
+        <div class="visible-md">
+          <div class="current-active"></div>
+          <ul class="sub-nav-right mobile">
+            <li><a class="secondary-nav-link" href="/link1.html">Day-Of Resources</a></li>
+            <li><a class="secondary-nav-link" href="/link2">Workshops</a></li>
+            <li><a class="secondary-nav-link" href="/link3">Activities</a></li>
+            <li><a class="secondary-nav-link" href="">APIs & Freebies</a></li>
+            <li><a class="secondary-nav-link" href="">Sponsors</a></li>
+            <li><a class="secondary-nav-link" href="">Help</a></li>
+          </ul>
+        </div>
       </div>
-    </nav>    
+    </nav>
     <div class="content below-menu">
       <br />
       <h1 class="text-center">Heading 1</h1>
       <h2 class="text-center">Heading 2</h2>
       <h3 class="text-center">Heading 3</h3>
-      <h4 class="text-center">Heading 5</h4>
+      <h4 class="text-center">Heading 4</h4>
+      <h1 class="text-center">Heading 1</h1>
+      <h2 class="text-center">Heading 2</h2>
+      <h3 class="text-center">Heading 3</h3>
+      <h4 class="text-center">Heading 4</h4>
+      <h1 class="text-center">Heading 1</h1>
+      <h2 class="text-center">Heading 2</h2>
+      <h3 class="text-center">Heading 3</h3>
+      <h4 class="text-center">Heading 4</h4>
+      <h1 class="text-center">Heading 1</h1>
+      <h2 class="text-center">Heading 2</h2>
+      <h3 class="text-center">Heading 3</h3>
+      <h4 class="text-center">Heading 4</h4>
     </div>
-    <div></div>
+
     <footer class="site-footer">
       <div class="content">
         <div class="col-5 hidden-xs">
@@ -86,6 +245,5 @@
           <p class="text-right text-center-xs">Major League Hacking, Inc &copy; 2018</p>
         </div>
       </div>
-    </footer>  
-  <script type="text/javascript" src="mlh.v2.0.0.min.js"></script></body>
+    </footer>  <script type="text/javascript" src="mlh.v2.0.0.min.js"></script></body>
 </html>
