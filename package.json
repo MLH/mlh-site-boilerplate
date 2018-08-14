@@ -1,9 +1,9 @@
 {
   "name": "insert_site_name",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "INSERT_PAGE_DESCRIPTION.",
-  "webpack_bundle_version_js": "1.0.0",
-  "webpack_bundle_version_css": "1.0.0",
+  "webpack_bundle_version_js": "2.0.0",
+  "webpack_bundle_version_css": "2.0.0",
   "main": "index.js",
   "browserslist": [
     "last 2 versions"
