@@ -6,9 +6,9 @@
 <title>{{htmlWebpackPlugin.options.site.title}}</title>
 <meta name="description" content="{{htmlWebpackPlugin.options.site.description}}">
 
-<link rel="canonical" href={{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}>
+<link rel="canonical" href="{{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}">
 
-<link rel="icon" href={{htmlWebpackPlugin.options.site.baseUrl}}{{htmlWebpackPlugin.options.site.faviconUrl}}>
+<link rel="icon" href="{{htmlWebpackPlugin.options.site.baseUrl}}{{htmlWebpackPlugin.options.site.faviconUrl}}">
 
 <meta property="fb:app_id" content="{{htmlWebpackPlugin.options.social.facebookAppId}}" />
 <meta property="og:site_name" content="{{htmlWebpackPlugin.options.site.siteName}}">
@@ -23,7 +23,7 @@
   <meta property="og:image:height" content="630">
 {{/if}}
 
-<meta property="og:url" content={{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}>
+<meta property="og:url" content="{{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}">
 
 <meta name="twitter:card" content="{{htmlWebpackPlugin.options.social.twitterCard}}">
 <meta name="twitter:site" content="{{htmlWebpackPlugin.options.social.twitterSite}}">
