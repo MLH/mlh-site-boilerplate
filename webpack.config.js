@@ -1,54 +1,49 @@
 "use strict";
 
-const CleanWebpackPlugin  = require('clean-webpack-plugin'),
-  HtmlWebPackPlugin       = require('html-webpack-plugin'),
-  MiniCssExtractPlugin    = require('mini-css-extract-plugin'),
-  OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
-  Package                 = require('./package.json'),
-  path                    = require('path'),
-  project_config          = require('./config.js'),
-  UglifyJsPlugin          = require('uglifyjs-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+  , CleanWebpackPlugin = require('clean-webpack-plugin')
+  , CopyWebpackPlugin = require('copy-webpack-plugin')
+  , ImageminPlugin = require('imagemin-webpack-plugin').default
+  , HtmlWebPackPlugin = require('html-webpack-plugin')
+  , MiniCssExtractPlugin = require('mini-css-extract-plugin')
+  , OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+  , Package = require('./package.json')
+  , path = require('path')
+  , project_config = require('./config.js')
+  , SassLintPlugin = require('sass-lint-webpack')
+  , UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+  , buildDestination = './dist'
+  , port = 8080
+  , versionJS = Package.webpack_bundle_version_js
+  , versionCSS = Package.webpack_bundle_version_css;
 
-const versionJS        = Package.webpack_bundle_version_js,
-      versionCSS       = Package.webpack_bundle_version_css,
-      buildDestination = './dist';
+function generateHtmlPlugins (templateDir, mode) {
+  const fs = require('fs')
+      , templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
 
-// project_config overwrites default_config, edit project_config to customize the values below or add new fields
-const default_config = {
-  site: {
-    title: "MLH",
-    description: "The official collegiate hackathon league.",
-    baseurl: "/",
-    favicon_url: "img/favicon.ico"
-  }
-}
-
-const site_config = {...default_config, ...project_config};
-
-function generateHtmlPlugins (templateDir) {
-  const fs = require('fs');
-  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir))
+  mode === 'development' ? project_config.site.baseUrl = `http://localhost:${port}` : false
 
   return templateFiles
     .filter(item => item.includes('.hbs'))
     .map(item => {
       const parts = item.split('.')
-        const name = parts[0]
-        const extension = parts[1]
-        return new HtmlWebPackPlugin({
-          template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-          filename: `${name}.html`,
-          mobile: true,
-          ...site_config
-        })
+        , name = parts[0]
+        , extension = parts[1];
+        
+      return new HtmlWebPackPlugin({
+        template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+        filename: `${name}.html`,
+        pageName: name,
+        ...project_config
+      })
     })
 }
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, buildDestination),
-    filename: `index_bundle.v${versionJS}.min.js`
+    filename: `mlh.v${versionJS}.min.js`
   },
   optimization: {
     minimizer: [
@@ -64,7 +59,13 @@ module.exports = {
     rules: [
       {
         test: /\.hbs$/,
-        loader: "handlebars-loader"
+        loader: "handlebars-loader",
+        options: {
+          helperDirs: path.join(__dirname, 'src/js/handlebarsHelpers'),
+          precompileOptions: {
+            knownHelpersOnly: false,
+          },
+        },
       },
       {
         test: /\.(png|jpe?g|svg|ico|gif)/i,
@@ -73,11 +74,8 @@ module.exports = {
             loader: "url-loader",
             options: {
               name: "./img/[name].[ext]",
-              limit: 8000
+              limit: 10 * 1024
             }
-          },
-          {
-            loader: "img-loader"
           }
         ]
       },
@@ -86,8 +84,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          "postcss-loader",
-          "sass-loader"
+          "sass-loader",
         ]
       },
       {
@@ -107,11 +104,19 @@ module.exports = {
     ]
   },
   plugins: [
+    new SassLintPlugin(),
     new CleanWebpackPlugin(buildDestination),
     new MiniCssExtractPlugin({
-      filename: `[name].v${versionCSS}.min.css`,
+      filename: `mlh.v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
     }),
-  ].concat(generateHtmlPlugins('./src')),
-  devServer: { open: false }
-};
+    new CopyWebpackPlugin([{from:'src/img',to:'img'}]),
+    new ImageminPlugin({ test: /\.(png|jpe?g|svg|ico|gif)/i }),
+    new BrowserSyncPlugin({
+      open: false,
+      host: 'localhost',
+      port: port,
+      server: { baseDir: ['./dist']}
+    })
+  ].concat(generateHtmlPlugins('./src', argv.mode)),
+});
