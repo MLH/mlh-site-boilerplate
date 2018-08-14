@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{htmlWebpackPlugin.options.site.title}}</title>
+<meta name="description" content="{{htmlWebpackPlugin.options.site.description}}">
+
+<link rel="canonical" href={{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}>
+
+<link rel="icon" href={{htmlWebpackPlugin.options.site.baseUrl}}{{htmlWebpackPlugin.options.site.faviconUrl}}>
+
+<meta property="fb:app_id" content="{{htmlWebpackPlugin.options.social.facebookAppId}}" />
+<meta property="og:site_name" content="{{htmlWebpackPlugin.options.site.siteName}}">
+<meta property="og:title" content="{{htmlWebpackPlugin.options.site.title}}">
+<meta property="og:description" content="{{htmlWebpackPlugin.options.site.description}}">
+<meta property="og:type" content="website">
+
+{{#if htmlWebpackPlugin.options.site.facebookImageUrl}}
+  <meta property="og:image" content="{{htmlWebpackPlugin.options.social.facebookImageUrl}}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+{{/if}}
+
+<meta property="og:url" content={{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}>
+
+<meta name="twitter:card" content="{{htmlWebpackPlugin.options.social.twitterCard}}">
+<meta name="twitter:site" content="{{htmlWebpackPlugin.options.social.twitterSite}}">
+<meta name="twitter:creator" content="{{htmlWebpackPlugin.options.social.twitterCreator}}">
+<meta name="twitter:title" content="{{htmlWebpackPlugin.options.site.title}}">
+<meta name="twitter:description" content="{{htmlWebpackPlugin.options.site.description}}">
+{{#if htmlWebpackPlugin.options.site.twitterImageUrl}}
+  <meta name="twitter:image" content="{{htmlWebpackPlugin.options.social.twitterImageUrl}}">
+{{/if}}
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+
+{{> ./tracking/segment}}

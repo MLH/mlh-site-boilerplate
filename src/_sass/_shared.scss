@@ -120,7 +120,8 @@ input {
 
           .hamburger-inner,
           .hamburger-inner:before,
-          .hamburger-inner:after { background: $medium-gray; }
+          .hamburger-inner:after { background: $medium-gray; 
+          }
         }
       }
     }
@@ -131,23 +132,25 @@ input {
     display: none;
     margin: -31px 0 0;
 
-    li a {
-      display: block;
+    li { 
+      a {
+        display: block;
 
-      &:not(.btn) {
-        color: $white;
-        padding: 10px;
-
-        &:hover, &:active, &:visited {
-          background: darken($dark-gray, 10%);
+        &:not(.btn) {
           color: $white;
-        }
-      }
+          padding: 10px;
 
-      &.btn {
-        border-radius: 0;
-        padding: 10px 15px;
-        text-align: left;
+          &:hover, &:active, &:visited {
+            background: darken($dark-gray, 10%);
+            color: $white;
+          }
+        }
+
+        &.btn {
+          border-radius: 0;
+          padding: 10px 15px;
+          text-align: left;
+        }
       }
     }
   }
@@ -195,28 +198,28 @@ input {
 // Logos
 
 .mlh-logo.color {
-  background: url('/img/logos/mlh-logo-color.svg');
+  background: url('../img/logos/mlh-logo-color.svg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 
 .mlh-logo.grayscale {
-  background: url('/img/logos/mlh-logo-grayscale.svg');
+  background: url('../img/logos/mlh-logo-grayscale.svg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 
 .mlh-logo.black {
-  background: url('/img/logos/mlh-logo-black.svg');
+  background: url('../img/logos/mlh-logo-black.svg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
 }
 
 .mlh-logo.white {
-  background: url('/img/logos/mlh-logo-white.svg');
+  background: url('../img/logos/mlh-logo-white.svg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
