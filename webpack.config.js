@@ -13,26 +13,29 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   , SassLintPlugin = require('sass-lint-webpack')
   , UglifyJsPlugin = require('uglifyjs-webpack-plugin')
   , buildDestination = './dist'
+  , port = 8080
   , versionJS = Package.webpack_bundle_version_js
   , versionCSS = Package.webpack_bundle_version_css;
 
-  function generateHtmlPlugins (templateDir) {
-  const fs = require('fs');
-  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+function generateHtmlPlugins (templateDir, mode) {
+  const fs = require('fs')
+      , templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+
+  mode === 'development' ? project_config.site.baseUrl = `http://localhost:${port}` : false
 
   return templateFiles
     .filter(item => item.includes('.hbs'))
     .map(item => {
-      const parts = item.split('.');
-        const name = parts[0]
-          , extension = parts[1];
-        return new HtmlWebPackPlugin({
-          template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-          filename: `${name}.html`,
-          mobile: true,
-          pageName: name,
-          ...project_config
-        })
+      const parts = item.split('.')
+        , name = parts[0]
+        , extension = parts[1];
+        
+      return new HtmlWebPackPlugin({
+        template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+        filename: `${name}.html`,
+        pageName: name,
+        ...project_config
+      })
     })
 }
 
@@ -71,11 +74,8 @@ module.exports = (env, argv) => ({
             loader: "url-loader",
             options: {
               name: "./img/[name].[ext]",
-              limit: 8000
+              limit: 10 * 1024
             }
-          },
-          {
-            loader: "img-loader"
           }
         ]
       },
@@ -115,8 +115,8 @@ module.exports = (env, argv) => ({
     new BrowserSyncPlugin({
       open: false,
       host: 'localhost',
-      port: 8080,
+      port: port,
       server: { baseDir: ['./dist']}
     })
-  ].concat(generateHtmlPlugins('./src')),
+  ].concat(generateHtmlPlugins('./src', argv.mode)),
 });

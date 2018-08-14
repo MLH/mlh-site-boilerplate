@@ -1,3 +1,1 @@
-module.exports = function (text) {
-  return 'https://stuff.com' + text
-}
+module.exports = (siteUrl, pageUrl) => siteUrl + pageUrl.replace('index', '')
