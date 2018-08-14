@@ -1,6 +1,7 @@
 "use strict";
 
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+  , CopyWebpackPlugin = require('copy-webpack-plugin')
   , BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   , HtmlWebPackPlugin = require('html-webpack-plugin')
   , MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -13,7 +14,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
   , buildDestination = './dist'
   , versionJS = Package.webpack_bundle_version_js
   , versionCSS = Package.webpack_bundle_version_css;
-
+  var ImageminPlugin = require('imagemin-webpack-plugin').default;
 function generateHtmlPlugins (templateDir) {
   const fs = require('fs');
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -26,7 +27,7 @@ function generateHtmlPlugins (templateDir) {
           , extension = parts[1];
         return new HtmlWebPackPlugin({
           template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-          filename: `../${name}.html`,
+          filename: `${name}.html`,
           mobile: true,
           ...project_config
         })
@@ -101,11 +102,15 @@ module.exports = (env, argv) => ({
       filename: `mlh.v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
     }),
+    new CopyWebpackPlugin([
+      {from:'src/img',to:'img'} 
+    ]),
+    new ImageminPlugin({ test: /\.(png|jpe?g|svg|ico|gif)/i }),
     new BrowserSyncPlugin({
       open: false,
       host: 'localhost',
       port: 8080,
-      server: { baseDir: ['.']}
+      server: { baseDir: ['./dist']}
     })
   ].concat(generateHtmlPlugins('./src')),
 });
