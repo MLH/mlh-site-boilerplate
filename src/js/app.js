@@ -8,9 +8,4 @@ $(document).ready(function () {
   })
 
   $('a[href^="#"]').anchorjump()
-
-  var url = window.location.href
-
-  $("meta[property='og:url']").attr('href', url)
-  $('link[rel=canonical]').attr('content', url)
 })
