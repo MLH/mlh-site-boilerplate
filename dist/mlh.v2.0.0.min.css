@@ -3860,6 +3860,13 @@ input {
     .global_nav .content .desktop-nav .login-btns {
       display: flex; }
 
+@media screen and (max-height: 414px) {
+  .mobile-nav {
+    height: 100vh;
+    overflow: auto;
+    top: 0 !important;
+    width: 100%; } }
+
 .site-nav {
   z-index: 999;
   background-color: white;
