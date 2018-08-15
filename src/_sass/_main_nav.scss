@@ -2,12 +2,10 @@ $nav-blue: #4052a4;
 $nav-bottom-shadow: #f5f5f5;
 $mobile-nav-border: #e5e5e5;
 $hover-color: #f9f9f9;
+// #1c1e20
+// #f1f1f1
 
-.content:after {
-  content: none;
-}
-
-.global_nav {
+.main-nav {
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -17,6 +15,48 @@ $hover-color: #f9f9f9;
   background-color: $white;
   display: flex;
   width: 100%;
+  transition: top cubic-bezier(0.71,-0.04, 0.32, 1.07) .2s;
+
+  .logged-in-btns {
+    display: none;
+
+    ul {
+      padding-top: 0 !important;
+    }
+    .dropdown-item:nth-child(1) {
+      width: 100%;
+      height: 119px;
+      border-bottom: 1px solid #e5e5e5;
+      background-color: #f9f9f9;
+    }
+  }
+
+  .logged-in-btns:hover {
+    .down {
+      transform: rotate(180deg);
+    }
+  }
+
+  .down {
+    margin-left: 10px;
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid black;
+    transition: all .2s ease;
+  }
+
+  .account-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+  .content:after {
+    content: none;
+  }
 
   .mobile-nav {
     display: none;
@@ -27,11 +67,6 @@ $hover-color: #f9f9f9;
     min-width: 360px;
     background: $white;
     border: 1px solid $black;
-    // width: 90%;
-    // margin-left: 5%;
-    // margin-right: 5%;
-    // margin-top: 2.5vh;
-    // max-width: 355px;
     border-radius: 2px;
     box-sizing: border-box;
     border: 1px solid $mobile-nav-border;
@@ -208,8 +243,6 @@ $hover-color: #f9f9f9;
       .hamburger-inner:before {
         top: 9px;
       }
-
-
     }
 
     .desktop-nav {
@@ -231,12 +264,10 @@ $hover-color: #f9f9f9;
         margin-left: 30px;
       }
 
-      li {
+      .dropdown-item {
         color: #1c1e20;
         font-family: "Open Sans";
-        font-size: 16px;
         letter-spacing: -0.2px;
-        // background-color: red;
       }
 
       // border-bottom: 2px solid #4052a4;
@@ -372,7 +403,7 @@ $hover-color: #f9f9f9;
         background-color: $nav-blue;
       }
 
-      .login-btns{
+      .login-btns {
         display: flex;
       }
     }
@@ -380,6 +411,15 @@ $hover-color: #f9f9f9;
 }
 
 @media screen and (max-height: 414px) {
+  .mobile-nav {
+    height: 100vh;
+    overflow: auto;
+    top: 0 !important;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 414px) {
   .mobile-nav {
     height: 100vh;
     overflow: auto;

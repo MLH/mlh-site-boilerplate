@@ -5,8 +5,18 @@ function show () {
   $('.mobile-nav').animate({opacity: 1}, 200)
 }
 
+$('body').on('click', '.login', function () {
+  $('.login-btns').hide()
+  $('.logged-in-btns').css('display', 'flex')
+})
+
+$('body').on('click', '.logout', function () {
+  $('.login-btns').show()
+  $('.logged-in-btns').css('display', 'none')
+})
+
 function hide () {
-  $('.mobile-nav').animate({opacity: 0  }, 200, function () {
+  $('.mobile-nav').animate({opacity: 0}, 200, function () {
     $('.mobile-nav').removeClass('is-active')
     $('.hamburger-button').css('display', 'block')
     $('html').css('overflow', 'auto')
@@ -15,14 +25,12 @@ function hide () {
 
 function showSubNav ($button) {
   $button.addClass('up')
-  $button.removeClass('down')
   $('.mobile').animate({top: '75px'}, 250, function () {
     $('.secondary-nav-link').addClass('lol')
   })
 }
 
 function hideSubNav ($button) {
-  $button.addClass('down')
   $button.removeClass('up')
   $('.mobile').animate({top: '-300px'}, 250)
   $('.secondary-nav-link').removeClass('lol')
@@ -66,9 +74,9 @@ $(document).ready(function () {
     var currentScrollPos = window.pageYOffset
     if (prevScrollpos > currentScrollPos) {
       $('.site-nav').css('top', '72px')
-      $('.global_nav').css('top', '0')
+      $('.main-nav').css('top', '0')
     } else {
-      $('.global_nav').css('top', '-72px')
+      $('.main-nav').css('top', '-72px')
       $('.site-nav').css('top', '0')
     }
     prevScrollpos = currentScrollPos
