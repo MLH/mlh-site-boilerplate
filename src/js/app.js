@@ -2,12 +2,15 @@ function show () {
   $('.mobile-nav').addClass('is-active')
   $('.hamburger-button').css('display', 'none')
   $('html').css('overflow', 'hidden')
+  $('.mobile-nav').animate({opacity: 1}, 200)
 }
 
 function hide () {
-  $('.mobile-nav').removeClass('is-active')
-  $('.hamburger-button').css('display', 'block')
-  $('html').css('overflow', 'auto')
+  $('.mobile-nav').animate({opacity: 0  }, 200, function () {
+    $('.mobile-nav').removeClass('is-active')
+    $('.hamburger-button').css('display', 'block')
+    $('html').css('overflow', 'auto')
+  })
 }
 
 function showSubNav ($button) {

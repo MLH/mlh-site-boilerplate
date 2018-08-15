@@ -3609,6 +3609,9 @@ input {
     background: #676869;
     color: #FFFFFF !important; }
 
+.content:after {
+  content: none; }
+
 .global_nav {
   z-index: 1000;
   position: fixed;
@@ -3618,21 +3621,16 @@ input {
   box-shadow: 0 2px 0 #f5f5f5;
   background-color: #FFFFFF;
   display: flex;
-  width: 100%;
-  transition: top cubic-bezier(0.71, -0.04, 0.32, 1.07) 0.2s; }
+  width: 100%; }
   .global_nav .mobile-nav {
     display: none;
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0 auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    min-width: 360px;
     background: #FFFFFF;
     border: 1px solid #000000;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 2.5vh;
-    max-width: 355px;
     border-radius: 2px;
     box-sizing: border-box;
     border: 1px solid #e5e5e5;
@@ -3643,8 +3641,9 @@ input {
       height: 20px;
       width: 20px;
       position: absolute;
-      top: 7px;
-      right: -1px; }
+      padding: 10px 21px 31px 19px;
+      top: 9px;
+      right: 12px; }
     .global_nav .mobile-nav .close-menu-inner, .global_nav .mobile-nav .close-menu-inner:after {
       content: '';
       width: 3px;
@@ -3723,20 +3722,21 @@ input {
         color: #FFFFFF;
         text-align: center; }
   .global_nav .mobile-nav.is-active {
-    display: block; }
+    display: block;
+    opacity: 0; }
+  .global_nav .mobile-nav.nav-visible {
+    opacity: 1;
+    transition: all .3s; }
   .global_nav .content .logo img {
     margin-top: 8px;
     width: 130px; }
   .global_nav .content .nav-right {
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; }
+    height: 100%; }
     .global_nav .content .nav-right .hamburger-button {
-      float: right;
       width: auto;
       height: 100%;
-      cursor: pointer; }
+      cursor: pointer;
+      float: right; }
     .global_nav .content .nav-right .hamburger-inner {
       position: relative; }
     .global_nav .content .nav-right .hamburger-inner, .global_nav .content .nav-right .hamburger-inner:after, .global_nav .content .nav-right .hamburger-inner:before {
@@ -3931,6 +3931,7 @@ input {
     width: 100%;
     z-index: -1;
     background-color: #f9f9f9;
+    box-shadow: 0px 12px 56px -12px rgba(0, 0, 0, 0.43);
     position: absolute;
     left: 0;
     top: -300px; }
