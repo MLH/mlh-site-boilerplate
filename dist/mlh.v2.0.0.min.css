@@ -3672,7 +3672,6 @@ input {
     display: none;
     position: absolute;
     width: 100%;
-    background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 2px;
     box-sizing: border-box;
@@ -3685,7 +3684,7 @@ input {
       border-top: 1px solid #4052a4; }
       .main-nav .mobile-nav .hi li {
         transition: all 0.2s linear;
-        height: 40px; }
+        height: 60px; }
         .main-nav .mobile-nav .hi li a {
           padding-left: 32px;
           width: 100%;

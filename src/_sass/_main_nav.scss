@@ -89,7 +89,6 @@ $hover-color: #f9f9f9;
     display: none;
     position: absolute;
     width: 100%;
-    background: $white;
     border: 1px solid $black;
     border-radius: 2px;
     box-sizing: border-box;
@@ -104,7 +103,7 @@ $hover-color: #f9f9f9;
       
       li {
         transition: all 0.2s linear;
-        height: 40px;
+        height: 60px;
         a {
           padding-left: 32px;
           width: 100%;
