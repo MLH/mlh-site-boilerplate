@@ -25,7 +25,7 @@ function hide () {
 
 function showSubNav ($button) {
   $button.addClass('up')
-  $('.mobile').animate({top: '75px'}, 250, function () {
+  $('.mobile').animate({top: '72px'}, 250, function () {
     $('.secondary-nav-link').addClass('lol')
   })
 }
