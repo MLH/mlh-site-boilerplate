@@ -81,9 +81,21 @@ $(document).ready(function () {
     }
     prevScrollpos = currentScrollPos
   }
-  if (window.location.pathname !== '/') {
-    $('.current-active').text($('a[href="' + window.location.pathname + '"]').html())
-  }
-  $('a[href="' + window.location.pathname + '"]').addClass('current')
+  // eslint-disable-next-line
+  // debugger
+
+  var siteUrl = window.location.href
+  $('.secondary-nav-link').each((i, link) => {
+    var a = $(link).attr('href')
+    a = a.replace('index.html', '')
+    a = a.replace('.html', '')
+    if (a[0] === '.') {
+      a = a.substr(1)
+    }
+    if (a && siteUrl.indexOf(a) >= 0) {
+      $('.current-active').text($(link).html())
+      $(link).addClass('current')
+    }
+  })
   $('a[href^="#"]').anchorjump()
 })

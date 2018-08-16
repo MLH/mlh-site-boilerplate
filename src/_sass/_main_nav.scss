@@ -2,8 +2,6 @@ $nav-blue: #4052a4;
 $nav-bottom-shadow: #f5f5f5;
 $mobile-nav-border: #e5e5e5;
 $hover-color: #f9f9f9;
-// #1c1e20
-// #f1f1f1
 
 .hamburger-button {
   width: auto;
@@ -149,13 +147,7 @@ $hover-color: #f9f9f9;
           color: $nav-blue !important;
         }
       }
-
-      // li {
-      //   height: 
-      // }
     }
-
-
 
     .close-menu {
       cursor: pointer;
@@ -482,11 +474,6 @@ $hover-color: #f9f9f9;
   }
 }
 
-// @media screen and (max-width: 800px) {
-
-// }
-
-
 @media screen and (max-height: 800px) {
   .mobile-nav {
     height: 100vh;
@@ -499,12 +486,3 @@ $hover-color: #f9f9f9;
     width: 100% !important;
   }
 }
-
-// @media screen and (max-width: 414px) {
-//   .mobile-nav {
-//     height: 100vh;
-//     overflow: auto;
-//     top: 0 !important;
-//     width: 100%;
-//   }
-// }
