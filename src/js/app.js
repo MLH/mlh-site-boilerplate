@@ -81,8 +81,6 @@ $(document).ready(function () {
     }
     prevScrollpos = currentScrollPos
   }
-  // eslint-disable-next-line
-  // debugger
 
   var siteUrl = window.location.href
   $('.secondary-nav-link').each((i, link) => {
