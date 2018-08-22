@@ -1,8 +1,9 @@
-$secondary-nav-color: grey;
-$current-color: #e45b6b;
+$background-nav-color: #e76c7a;
+$secondary-nav-color: white;
+$current-color: white;
 
 .site-nav {
-  background-color: white;
+  background-color: $background-nav-color;
   height: 4.5rem;
   position: fixed;
   top: 4.5rem;
@@ -12,11 +13,12 @@ $current-color: #e45b6b;
 
   .logo {
     margin-top: 0.5625rem;
+    // height: 2.5rem;
   }
 
   .content {
     align-items: center;
-    background-color: white;
+    background-color: $background-nav-color;
     display: flex;
     float: none;
     height: 100%;
@@ -26,8 +28,8 @@ $current-color: #e45b6b;
   }
 
   .sub-nav-left {
-    display: flex;
     align-items: center;
+    display: flex;
   }
 
   .up {

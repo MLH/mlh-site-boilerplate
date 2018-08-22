@@ -30,6 +30,95 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
     
+    <style>
+      .demo-hero {
+        background: url('/img/background.png');
+        background-size: cover;
+        min-height: 400px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+      }
+      .below-menu {
+        padding-top: 144px;
+      }
+      .hero-info {
+        max-width: 502px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .action-button {
+        background: transparent;
+        width: 192px;
+        height: 57px;
+        border-radius: 4px;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        font-family: "Open Sans";
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        margin: 8px;
+        padding-top: 0px;
+      }
+      .action-button:hover {
+        cursor: pointer;
+        padding-bottom: 5px;
+        transition: all .1s ease;
+      }
+      .white-b {
+        background: white;
+        color: #e45b6b;
+      }
+      .action-buttons {
+        display: flex;
+        margin-top: 24px;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 48px;
+      }
+      .my-title {
+        font-family: "Open Sans";
+        font-size: 32px;
+        font-weight: 700;
+        /* Text style for "MLH Local" */
+        letter-spacing: -0.2px;
+        margin-top: 32px;
+        margin-bottom: 8px;
+      }
+      .hero-logo {
+        margin-top: 50px;
+      }
+      .content-wrapper {
+        margin-top: 64px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 64px;
+      }
+      .left-content {
+        padding-right: 20px;
+        width: 50%;
+      }
+      .right-content {
+        padding-left: 20px;        
+        width: 50%;        
+      }
+      .video {
+        width: 500px;
+      }
+      .video-info {
+        color: #959595;
+        font-family: "Open Sans";
+        font-size: 16px;
+        line-height: 24px;
+        /* Text style for "Watch MLH'" */
+        letter-spacing: -0.2px;
+      }
+    </style>
   <link href="mlh.v2.0.0.min.css" rel="stylesheet"></head>
 
   <body  class="" >
@@ -37,7 +126,7 @@
     <nav class="main-nav">
       <div class="nav-content">
         
-        <a href="#" class="logo">
+        <a href="/" class="logo">
           <img src='img/logos/mlh-logo-color.svg' alt="Major League Hacking" />
         </a>
         
@@ -48,7 +137,9 @@
               <ul>
                 <li class="dropdown-item">
                   <a href="https://careerlab.mlh.io">
-                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div class="nav-item-icon">
+                      <img src="img/nav-logos/careers.png"/>
+                    </div>
                     <div>
                       <span class="nav-link-text">Careers & Internships</span>
                       <p>Find the perfect role for your skillset</p>
@@ -57,7 +148,9 @@
                 </li>
                 <li class="dropdown-item">
                   <a href="https://careerlab.mlh.io">
-                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div class="nav-item-icon">
+                      <img src="img/nav-logos/coding.png"/>
+                    </div>
                     <div>
                       <span class="nav-link-text">Coding Challenges</span>
                       <p>Test yourself and hone your abilities</p>
@@ -66,7 +159,9 @@
                 </li>
                 <li class="dropdown-item">
                   <a href="https://careerlab.mlh.io">
-                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div class="nav-item-icon">
+                      <img src="img/nav-logos/gifts.png"/>
+                    </div>
                     <div>
                       <span class="nav-link-text">Freebies & Perks</span>
                       <p>Free tools and discounted devices</p>
@@ -75,7 +170,9 @@
                 </li>
                 <li class="dropdown-item">
                   <a href="https://careerlab.mlh.io">
-                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div class="nav-item-icon">
+                      <img src="img/nav-logos/organize.png"/>
+                    </div>
                     <div>
                       <span class="nav-link-text">Organize a Hackathon</span>
                       <p>Everything you need to host a hackathon</p>
@@ -91,7 +188,9 @@
               <ul>
                 <li class="dropdown-item">
                   <a href="https://careerlab.mlh.io">
-                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div class="nav-item-icon">
+                      <img src="img/nav-logos/hackathons.png"/>
+                    </div>
                     <div>
                       <span class="nav-link-text">Hackathons</span>
                       <p>Official MLH Hackathons worldwide</p>
@@ -100,7 +199,9 @@
                 </li>
                 <li class="dropdown-item">
                   <a href="https://careerlab.mlh.io">
-                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div class="nav-item-icon">
+                      <img src="img/nav-logos/localhost.png"/>
+                    </div>
                     <div>
                       <span class="nav-link-text">LocalHost</span>
                       <p>Hackathons on a smaller scale</p>
@@ -109,7 +210,9 @@
                 </li>
                 <li class="dropdown-item">
                   <a href="https://careerlab.mlh.io">
-                    <img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/>
+                    <div class="nav-item-icon">
+                      <img src="img/nav-logos/hackday.png"/>
+                    </div>
                     <div>
                       <span class="nav-link-text">Local Hack Day</span>
                       <p>Simlutaneous hacking across the globe</p>
@@ -201,13 +304,48 @@
           <div class="close-menu-inner"></div>
         </div>
         <ul class="main-links">
-          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Hackathons</span></a></li>
-          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Careers & Internship</span></a></li>
-          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Coding Challenges</span></a></li>
-          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Freebies & Perks</span></a></li>
-          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Organize a Hackathon</span></a></li>
-          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">LocalHost Hackathon</span></a></li>
-          <li class="mobile-main-links"><a href="https://careerlab.mlh.io"><img class="nav-item-icon" src="https://user-images.githubusercontent.com/37912316/38108463-2d5980dc-3395-11e8-948a-d7fd97647f86.png" class="nav-icon"/><span class="mobile-link-text">Lockal Hack Day</span></a></li>
+          <li class="mobile-main-links">
+            <a href="https://careerlab.mlh.io">
+              <img class="nav-item-icon" src="img/nav-logos/hackathons.png" class="nav-icon"/>
+              <span class="mobile-link-text">Hackathons</span>
+            </a>
+          </li>
+          <li class="mobile-main-links">
+            <a href="https://careerlab.mlh.io">
+              <img class="nav-item-icon" src="img/nav-logos/careers.png" class="nav-icon"/>
+              <span class="mobile-link-text">Careers & Internship</span>
+            </a>
+          </li>
+          <li class="mobile-main-links">
+            <a href="https://careerlab.mlh.io">
+              <img class="nav-item-icon" src="img/nav-logos/coding.png" class="nav-icon"/>
+              <span class="mobile-link-text">Coding Challenges</span>
+            </a>
+          </li>
+          <li class="mobile-main-links">
+            <a href="https://careerlab.mlh.io">
+              <img class="nav-item-icon" src="img/nav-logos/gifts.png" class="nav-icon"/>
+              <span class="mobile-link-text">Freebies & Perks</span>
+            </a>
+          </li>
+          <li class="mobile-main-links">
+            <a href="https://careerlab.mlh.io">
+              <img class="nav-item-icon" src="img/nav-logos/organize.png" class="nav-icon"/>
+              <span class="mobile-link-text">Organize a Hackathon</span>
+            </a>
+          </li>
+          <li class="mobile-main-links">
+            <a href="https://careerlab.mlh.io">
+              <img class="nav-item-icon" src="img/nav-logos/localhost.png" class="nav-icon"/>
+              <span class="mobile-link-text">LocalHost Hackathon</span>
+            </a>
+          </li>
+          <li class="mobile-main-links">
+            <a href="https://careerlab.mlh.io">
+              <img class="nav-item-icon" src="img/nav-logos/hackday.png" class="nav-icon"/>
+              <span class="mobile-link-text">Lockal Hack Day</span>
+            </a>
+          </li>
         </ul>
         <ul class="about-links">
           <li class="mobile-about-links"><a href="https://careerlab.mlh.io">About MLH</a></li>
@@ -253,12 +391,12 @@
     <nav class="site-nav">
       <div class="content">
         <div class="sub-nav-left">
-          <a href="/"><img class="logo" src="http://acmelogos.com/images/logo-1.svg"/></a>
+          <a href="/"><img class="logo" src="/img/logos/localhost.png"/></a>
           <div class="sub-nav-control visible-md down"></div>
         </div>
         <div class="hidden-md hello">
           <ul class="sub-nav-right">
-            <li><a class="secondary-nav-link" href="./link1.html">Day-Of Resources</a></li>
+            <li><a class="secondary-nav-link" href="./page1.html">Day-Of Resources</a></li>
             <li><a class="secondary-nav-link" href="">Workshops</a></li>
             <li><a class="secondary-nav-link" href="">Activities</a></li>
             <li><a class="secondary-nav-link" href="">APIs & Freebies</a></li>
@@ -270,7 +408,7 @@
         <div class="visible-md">
           <div class="current-active"></div>
           <ul class="sub-nav-right mobile">
-            <li><a class="secondary-nav-link" href="/link1.html">Day-Of Resources</a></li>
+            <li><a class="secondary-nav-link" href="/page1.html">Day-Of Resources</a></li>
             <li><a class="secondary-nav-link" href="">Workshops</a></li>
             <li><a class="secondary-nav-link" href="">Activities</a></li>
             <li><a class="secondary-nav-link" href="">APIs & Freebies</a></li>
@@ -279,9 +417,44 @@
           </ul>
         </div>
       </div>
-    </nav>
-    <div class="content below-menu">
-      
+    </nav>    <div class="demo-hero below-menu">
+      <img class="hero-logo" src="/img/logos/localhost-logo.png">
+      <h1 class="my-title">MLH Local Hack day</h1>
+      <div class="content">
+        <p class="hero-info">While these events don't have all the same resources a Member</p>
+        <p class="hero-info">Event gets, they'll still be a great experience for hackers!</p>
+        <div class="action-buttons">
+          <button class="action-button white-b">Submit Project</button>
+          <button class="action-button">Find Event</button>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-wrapper">
+        <div class="left-content">
+          <div class="content-item">
+            <h4>MLH Local Hack Day</h4>
+            <p>
+              Here are some other links that may be useful throughout the day. Below you will find everything from how to submit your project to how to stay in touch with other hackers and more!
+            </p>
+            <p>
+              <a>Connect with the Community on Slack</a> - Join our Slack channel to connect with other hackers and ask for mentorship.
+            </p>
+            <p>
+              <a>Submit your project on Devpost</a> - Post your project on our official DevPost page to share what you made this weekend with the world!
+            </p>
+            <p>
+              <a>Code of Conduct</a> - At MLH we believe that hackathons should be safe and welcoming spaces. This event, like all MLH events, is under the official MLH Code of Conduct, which you can read here.
+            </p>
+          </div>
+        </div>
+        <div class="right-content">
+          <img class="video" src="img/video.png">
+          <p class="video-info">
+            Watch MLH's co-founder, Jon Gottfried, welcome everyone to Local Hack Day. Jon covers what to expect throughout the day and the awesome resources that are available through MLH and our sponsors.
+          </p>
+        </div>
+      </div>
     </div>
 
     <footer class="site-footer">

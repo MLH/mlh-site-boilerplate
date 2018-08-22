@@ -66,6 +66,10 @@ $hover-color: #f9f9f9;
     width: 0;
   }
 
+  .down:hover {
+    cursor: auto !important;
+  }
+
   .account-circle {
     border-radius: 50%;
     height: 3rem;
@@ -372,6 +376,7 @@ $hover-color: #f9f9f9;
             width: 100%;
           }
         }
+        
         ul:after, ul:before {
           content: '';
           display: block;
@@ -381,15 +386,15 @@ $hover-color: #f9f9f9;
         }
 
         ul:after {
-          border-bottom-color: $white;
           border: 0.5rem solid transparent;
+          border-bottom-color: $white;
           left: calc(50% - 0.5rem);
           top: 0.625rem;
         }
 
         ul:before {
-          border-bottom-color: $mobile-nav-border;
           border: 0.5625rem solid transparent;
+          border-bottom-color: $mobile-nav-border;
           left: calc(50% - 0.5625rem);
           top: 0.5rem;
         }
@@ -416,7 +421,11 @@ $hover-color: #f9f9f9;
       .reveal:hover + .down {
         transform: rotate(180deg);
       }
-    
+      
+      .reveal, .nav-btn, .reveal *:hover {
+        cursor: pointer;
+      }
+
       .nav-btn {
         background-color: $nav-blue;
         border-radius: 0.0625rem;
@@ -426,9 +435,8 @@ $hover-color: #f9f9f9;
         height: 3rem;
         padding: 0.8125rem 1.5rem;
       }
-      *:hover {
-        cursor: pointer;
-      }
+      
+      
       .nav-btn:hover {
         background-color: $white;
         border: 0.0625rem solid $nav-blue;

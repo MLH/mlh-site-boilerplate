@@ -3658,6 +3658,8 @@ input {
     margin-left: 0.625rem;
     transition: all .2s ease;
     width: 0; }
+  .main-nav .down:hover {
+    cursor: auto !important; }
   .main-nav .account-circle {
     border-radius: 50%;
     height: 3rem;
@@ -3880,13 +3882,13 @@ input {
           position: absolute;
           width: 0; }
         .main-nav .nav-content .desktop-nav .reveal ul:after {
-          border-bottom-color: #FFFFFF;
           border: 0.5rem solid transparent;
+          border-bottom-color: #FFFFFF;
           left: calc(50% - 0.5rem);
           top: 0.625rem; }
         .main-nav .nav-content .desktop-nav .reveal ul:before {
-          border-bottom-color: #e5e5e5;
           border: 0.5625rem solid transparent;
+          border-bottom-color: #e5e5e5;
           left: calc(50% - 0.5625rem);
           top: 0.5rem; }
         .main-nav .nav-content .desktop-nav .reveal p {
@@ -3902,6 +3904,8 @@ input {
           display: block; }
       .main-nav .nav-content .desktop-nav .reveal:hover + .down {
         transform: rotate(180deg); }
+      .main-nav .nav-content .desktop-nav .reveal, .main-nav .nav-content .desktop-nav .nav-btn, .main-nav .nav-content .desktop-nav .reveal *:hover {
+        cursor: pointer; }
       .main-nav .nav-content .desktop-nav .nav-btn {
         background-color: #4052a4;
         border-radius: 0.0625rem;
@@ -3910,8 +3914,6 @@ input {
         color: #FFFFFF;
         height: 3rem;
         padding: 0.8125rem 1.5rem; }
-      .main-nav .nav-content .desktop-nav *:hover {
-        cursor: pointer; }
       .main-nav .nav-content .desktop-nav .nav-btn:hover {
         background-color: #FFFFFF;
         border: 0.0625rem solid #4052a4;
@@ -3936,7 +3938,7 @@ input {
     width: 100% !important; } }
 
 .site-nav {
-  background-color: white;
+  background-color: #e76c7a;
   height: 4.5rem;
   position: fixed;
   top: 4.5rem;
@@ -3947,7 +3949,7 @@ input {
     margin-top: 0.5625rem; }
   .site-nav .content {
     align-items: center;
-    background-color: white;
+    background-color: #e76c7a;
     display: flex;
     float: none;
     height: 100%;
@@ -3955,14 +3957,14 @@ input {
     padding: 0 1.25em;
     z-index: 998; }
   .site-nav .sub-nav-left {
-    display: flex;
-    align-items: center; }
+    align-items: center;
+    display: flex; }
   .site-nav .up {
     transform: rotate(180deg); }
   .site-nav .down {
     border-left: 0.5rem solid transparent;
     border-right: 0.5rem solid transparent;
-    border-top: 0.5rem solid grey;
+    border-top: 0.5rem solid white;
     height: 0;
     transition: all .2s;
     width: 0; }
@@ -3976,7 +3978,7 @@ input {
     display: flex;
     height: 100%; }
     .site-nav .hello .secondary-nav-link {
-      color: grey;
+      color: white;
       font-family: "Open Sans";
       font-size: 1rem;
       letter-spacing: -0.0125rem;
@@ -3984,7 +3986,7 @@ input {
       padding-bottom: 0.5rem;
       text-decoration: none; }
     .site-nav .hello .secondary-nav-link:hover {
-      border-bottom: 0.125rem solid grey;
+      border-bottom: 0.125rem solid white;
       cursor: pointer; }
     .site-nav .hello ul {
       display: flex;
@@ -3992,10 +3994,10 @@ input {
       .site-nav .hello ul li {
         margin-left: 1.875rem; }
       .site-nav .hello ul .current {
-        border-bottom: 0.125rem solid #e45b6b;
-        color: #e45b6b; }
+        border-bottom: 0.125rem solid white;
+        color: white; }
   .site-nav .current-active {
-    color: #e45b6b; }
+    color: white; }
   .site-nav .content:after {
     content: none; }
   .site-nav .mobile {

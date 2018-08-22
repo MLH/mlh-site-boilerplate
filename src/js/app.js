@@ -76,7 +76,7 @@ $(document).ready(function () {
       $('.site-nav').css('top', '72px')
       $('.main-nav').css('top', '0')
     } else {
-      $('.main-nav').css('top', '-72px')
+      $('.main-nav').css('top', '-74px')
       $('.site-nav').css('top', '0')
     }
     prevScrollpos = currentScrollPos
