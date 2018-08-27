@@ -7,9 +7,10 @@ $current-color: white;
   height: 4.5rem;
   position: fixed;
   top: 4.5rem;
-  transition: top cubic-bezier(0.71,-0.04, 0.32, 1.07) .2s;
+  // transition: top cubic-bezier(0.71,-0.04, 0.32, 1.07) .2s;
   width: 100%;
   z-index: 999;
+  
 
   .logo {
     margin-top: 0.5625rem;
@@ -60,19 +61,44 @@ $current-color: white;
     display: flex;
     height: 100%;
     
+    // .secondary-nav-link {
+    //   color: $secondary-nav-color;
+    //   font-family: "Open Sans";
+    //   font-size: 1rem;
+    //   letter-spacing: -0.0125rem;
+    //   line-height: 1rem;
+    //   padding-bottom: 0.5rem;
+    //   text-decoration: none;
+    // }
+
     .secondary-nav-link {
-      color: $secondary-nav-color;
-      font-family: "Open Sans";
-      font-size: 1rem;
-      letter-spacing: -0.0125rem;
-      line-height: 1rem;
-      padding-bottom: 0.5rem;
+      position: relative;
+      color: white;
       text-decoration: none;
     }
-
+    
+    .secondary-nav-link:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -10px;
+      left: 0;
+      background-color: white;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    
     .secondary-nav-link:hover {
-      border-bottom: 0.125rem solid $secondary-nav-color;
       cursor: pointer;
+    }
+    
+    .secondary-nav-link:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
     }
 
     ul {

@@ -1,105 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    {{> ./_includes/head}}
-    <style>
-      .demo-hero {
-        background: url('/img/background.png');
-        background-size: cover;
-        min-height: 400px;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        color: white;
-      }
-      .below-menu {
-        padding-top: 144px;
-      }
-      .hero-info {
-        max-width: 502px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .action-button {
-        background: transparent;
-        width: 192px;
-        height: 57px;
-        border-radius: 4px;
-        border: 2px solid #ffffff;
-        color: #ffffff;
-        font-family: "Open Sans";
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.2px;
-        margin: 8px;
-        padding-top: 0px;
-      }
-      .action-button:hover {
-        cursor: pointer;
-        padding-bottom: 5px;
-        transition: all .1s ease;
-      }
-      .white-b {
-        background: white;
-        color: #e45b6b;
-      }
-      .action-buttons {
-        display: flex;
-        margin-top: 24px;
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 48px;
-      }
-      .my-title {
-        font-family: "Open Sans";
-        font-size: 32px;
-        font-weight: 700;
-        /* Text style for "MLH Local" */
-        letter-spacing: -0.2px;
-        margin-top: 32px;
-        margin-bottom: 8px;
-      }
-      .hero-logo {
-        margin-top: 50px;
-      }
-      .content-wrapper {
-        margin-top: 64px;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 64px;
-      }
-      .left-content {
-        padding-right: 20px;
-        width: 50%;
-      }
-      .right-content {
-        padding-left: 20px;        
-        width: 50%;        
-      }
-      .video {
-        width: 500px;
-      }
-      .video-info {
-        color: #959595;
-        font-family: "Open Sans";
-        font-size: 16px;
-        line-height: 24px;
-        /* Text style for "Watch MLH'" */
-        letter-spacing: -0.2px;
-      }
-    </style>
-  </head>
-
-  <body {{#if htmlWebpackPlugin.options.site.title}} class="{{ htmlWebpackPlugin.options.site.custom_class }}" {{/if}}>
-
-    {{> ./_includes/main_nav}}
-
-    {{> ./_includes/site_nav}}
+{{#> layouts/default}}
+  {{#*inline "content-block"}}
     <div class="demo-hero below-menu">
-      <img class="hero-logo" src="/img/logos/localhost-logo.png">
+      <img class="hero-logo" src="img/logos/localhost-logo.png">
       <h1 class="my-title">MLH Local Hack day</h1>
       <div class="content">
         <p class="hero-info">While these events don't have all the same resources a Member</p>
@@ -137,7 +39,5 @@
         </div>
       </div>
     </div>
-
-    {{> ./_includes/footer}}
-  </body>
-</html>
+  {{/inline}}
+{{/layouts/default}}

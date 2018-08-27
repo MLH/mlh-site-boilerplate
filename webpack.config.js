@@ -19,9 +19,14 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 function generateHtmlPlugins (templateDir, mode) {
   const fs = require('fs')
+      , dataFiles = fs.readdirSync(path.resolve(__dirname, './src/data'))
       , templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
 
-  mode === 'development' ? project_config.site.baseUrl = `http://localhost:${port}` : false
+  mode === 'development' ? project_config.site.baseUrl = `http://localhost:${port}/` : false
+
+  var data = {}
+  dataFiles.filter( item => item.includes('.json'))
+    .map( fileName => data[fileName.replace('.json','')] = require(__dirname + '/src/data/' + fileName))
 
   return templateFiles
     .filter(item => item.includes('.hbs'))
@@ -34,6 +39,7 @@ function generateHtmlPlugins (templateDir, mode) {
         template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
         filename: `${name}.html`,
         pageName: name,
+        ...data,
         ...project_config
       })
     })
@@ -59,7 +65,7 @@ module.exports = (env, argv) => ({
     rules: [
       {
         test: /\.hbs$/,
-        loader: "handlebars-loader",
+        loader: "handlebars-loader?interpolate=require",
         options: {
           helperDirs: path.join(__dirname, 'src/js/handlebarsHelpers'),
           precompileOptions: {
@@ -102,6 +108,11 @@ module.exports = (env, argv) => ({
         use: [ 'script-loader' ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'handlebars': 'handlebars/dist/handlebars.js'
+    }
   },
   plugins: [
     new SassLintPlugin(),

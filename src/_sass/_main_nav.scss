@@ -3,6 +3,18 @@ $nav-bottom-shadow: #f5f5f5;
 $mobile-nav-border: #e5e5e5;
 $hover-color: #f9f9f9;
 
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-103%);
+}
+
 .hamburger-button {
   cursor: pointer;
   height: 100%;
@@ -36,7 +48,7 @@ $hover-color: #f9f9f9;
   left: 0;
   position: fixed;
   top: 0;
-  transition: top cubic-bezier(0.71,-0.04, 0.32, 1.07) .2s;
+  // transition: top cubic-bezier(0.71,-0.04, 0.32, 1.07) .2s;
   width: 100%;
   z-index: 1000;
 
@@ -411,15 +423,60 @@ $hover-color: #f9f9f9;
           }
         }
       }
+      
+      .underlineable {
+        position: relative;
+        color: #000;
+        text-decoration: none;
+      }
+
+      .underlineable:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $nav-blue;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+      
+      // .reveal:after {
+      //   z-index: 0;
+      //   content: "";
+      //   position: relative;
+      //   margin-top: 50px;
+      //   height: 1px;
+      //   width: 0px;
+      //   background-color: red;
+      //   transition: width .2s ease;
+      // }
 
       .reveal:hover {
-        border-bottom: 0.125rem solid $nav-blue;
+        .bottom-border {
+          width: 100%;
+        }
+
+        .underlineable:before {
+          visibility: visible;
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+        }
+        // border-bottom: 0.125rem solid $nav-blue;
         
         .dropdown-wrapper { display: block};
       }
 
       .reveal:hover + .down {
         transform: rotate(180deg);
+      }
+
+      .reveal:hover + .reveal:after {
+        width: 100%;
       }
       
       .reveal, .nav-btn, .reveal *:hover {

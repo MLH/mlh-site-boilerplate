@@ -1,8 +1,18 @@
+import Headroom from '../js/lib/headroom.min.js'
+
 function show () {
   $('.mobile-nav').addClass('is-active')
   $('.hamburger-button').css('display', 'none')
-  $('html').css('overflow', 'hidden')
   $('.mobile-nav').animate({opacity: 1}, 200)
+  $('html').css('overflow', 'hidden')
+}
+
+function hide () {
+  $('.mobile-nav').animate({opacity: 0}, 200, function () {
+    $('.mobile-nav').removeClass('is-active')
+    $('.hamburger-button').css('display', 'block')
+    $('html').css('overflow', 'auto')
+  })
 }
 
 $('body').on('click', '.login', function () {
@@ -14,14 +24,6 @@ $('body').on('click', '.logout', function () {
   $('.login-btns').show()
   $('.logged-in-btns').css('display', 'none')
 })
-
-function hide () {
-  $('.mobile-nav').animate({opacity: 0}, 200, function () {
-    $('.mobile-nav').removeClass('is-active')
-    $('.hamburger-button').css('display', 'block')
-    $('html').css('overflow', 'auto')
-  })
-}
 
 function showSubNav ($button) {
   $button.addClass('up')
@@ -69,18 +71,12 @@ $(document).ready(function () {
     }
   })
 
-  var prevScrollpos = window.pageYOffset
-  window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset
-    if (prevScrollpos > currentScrollPos) {
-      $('.site-nav').css('top', '72px')
-      $('.main-nav').css('top', '0')
-    } else {
-      $('.main-nav').css('top', '-74px')
-      $('.site-nav').css('top', '0')
-    }
-    prevScrollpos = currentScrollPos
-  }
+  var myElement = document.querySelector('.main-nav')
+  var headroom = new Headroom(myElement)
+  var myElement1 = document.querySelector('.site-nav')
+  var headroom1 = new Headroom(myElement1)
+  headroom.init()
+  headroom1.init()
 
   var siteUrl = window.location.href
   $('.secondary-nav-link').each((i, link) => {

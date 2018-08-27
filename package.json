@@ -8,16 +8,16 @@
   "browserslist": [
     "last 2 versions"
   ],
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack --watch --mode development",
-    "deploy": "npm run build; git push origin --delete gh-pages && git add dist && git commit -m 'deploy'; git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build; gh-pages -d dist"
   },
   "author": "Major League Hacking <hi@mlh.io>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "browser-sync": "^2.24.6",
@@ -32,6 +32,7 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
+    "gh-pages": "^1.2.0",
     "handlebars": "^4.0.11",
     "handlebars-loader": "^1.7.0",
     "html-loader": "^0.5.5",
