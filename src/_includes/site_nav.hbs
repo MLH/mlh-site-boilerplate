@@ -1,23 +1,19 @@
-<nav class="site-nav headroom">
+<nav class="site-nav">
   <div class="content">
     <div class="sub-nav-left">
-      <a href="/"><img class="logo" src="/img/logos/localhost.png"/></a>
-      <div class="sub-nav-control visible-md down"></div>
+      <a href="/"><img class="logo" src="/img/logos/season-19-logo.png"/></a>
+      <div class="sub-nav-control visible-sm down"></div>
     </div>
-    <div class="hidden-md hello">
+    <div class="hidden-sm hello">
       <ul class="sub-nav-right">
-        <li><a class="secondary-nav-link" href="./prizes.html">Prizes</a></li>
-        <li><a class="secondary-nav-link" href="">Software</a></li>
-        <li><a class="secondary-nav-link" href="">Hardware</a></li>
+        {{> site_nav_links }}
       </ul>
     </div>
 
-    <div class="visible-md">
+    <div class="visible-sm">
       <div class="current-active"></div>
       <ul class="sub-nav-right mobile">
-        <li><a class="secondary-nav-link" href="./page1.html">Prizes</a></li>
-        <li><a class="secondary-nav-link" href="">Software</a></li>
-        <li><a class="secondary-nav-link" href="">Hardware</a></li>
+        {{> site_nav_links }}
       </ul>
     </div>
   </div>

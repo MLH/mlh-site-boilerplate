@@ -1,9 +1,10 @@
 {{#> layouts/default}}
   {{#*inline "content-block"}}
-    <div class="{{htmlWebpackPlugin.options.pageName}}">
-      <h1>Prizes</h1>
-      <div>We partnered with some amazing technology companies to get you FREE access to their APIs this weekend.</div>
-    </div>
+    {{> _includes/hero 
+      title="Prizes"
+      description="Win awesome prizes, hacker gear, & swag by competing in one of these challenges and using new APIs."
+      pageClass=htmlWebpackPlugin.options.pageName
+    }}
     <ul>
       {{#each htmlWebpackPlugin.options.prizes}}
         <li>{{this.title}}</li>

@@ -1,9 +1,10 @@
 {{#> layouts/default}}
   {{#*inline "content-block"}}
-    <div class="{{htmlWebpackPlugin.options.pageName}}">
-      <h1>Hardware</h1>
-      <div>We partnered with some amazing technology companies to get you FREE access to their APIs this weekend.</div>
-    </div>
+    {{> _includes/hero 
+      title="Hardware"
+      description="Borrow the latest & greatest hardware devices and components to use in your project this weekend."
+      pageClass=htmlWebpackPlugin.options.pageName
+    }}
     <ul>
       {{#each htmlWebpackPlugin.options.hardware}}
         <li>{{this.product_name}}</li>

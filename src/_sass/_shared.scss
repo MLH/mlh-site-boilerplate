@@ -57,104 +57,6 @@ input {
   }
 }
 
-// .site-nav {
-//   background: $white;
-//   // border-bottom: 1px solid $color-nav-bottom;
-//   height: 4rem;
-//   left: 0;
-//   position: fixed;
-//   right: 0;
-//   top: 74px;
-//   // top: 0;
-//   width: 100%;
-//   z-index: 9999;
-
-//   // scss-lint:disable NestingDepth, SelectorDepth
-//   .content {
-//     padding: 0 0.5rem;
-
-//     img {
-//       float: left;
-//       height: 1.5rem;
-//       margin: 1.25rem 0;
-//     }
-
-//     ul {
-//       float: right;
-//       margin: 1rem 0;
-
-//       &:not(.hamburger-active-menu) li {
-//         margin-left: 20px;
-
-//         .btn:hover { color: inherit; }
-//       }
-
-//       li {
-//         display: block;
-//         float: left;
-//         margin-left: 0.0625rem;
-//         text-align: left;
-
-//         a:not(.btn) {
-//           border-bottom: 0;
-//           color: $dark-gray;
-//           float: left;
-//           font-weight: 200;
-//           line-height: 1rem;
-//           padding: 0.5rem 1rem;
-        
-//           &:hover { color: $dark-gray; }
-//         }
-
-//         .btn {
-//           float: left;
-//           font-size: 0.875rem;
-//           line-height: 1rem;
-//           padding: 10px 15px;
-//           vertical-align: middle;
-//         }
-
-//         .hamburger {
-//           outline: none;
-//           position: relative;
-//           top: -10px;
-
-//           .hamburger-inner,
-//           .hamburger-inner:before,
-//           .hamburger-inner:after { background: $medium-gray; }
-//         }
-//       }
-//     }
-//   }
-
-//   .hamburger-active-menu {
-//     background: $dark-gray;
-//     display: none;
-//     margin: -31px 0 0;
-
-//     li a {
-//       display: block;
-
-//       &:not(.btn) {
-//         color: $white;
-//         padding: 10px;
-
-//         &:hover, &:active, &:visited {
-//           background: darken($dark-gray, 10%);
-//           color: $white;
-//         }
-//       }
-
-//       &.btn {
-//         border-radius: 0;
-//         padding: 10px 15px;
-//         text-align: left;
-//       }
-//     }
-//   }
-//   // scss-lint:enable NestingDepth, SelectorDepth
-// }
-
 .jump-target::before {
   content: '';
   display: block;
@@ -167,30 +69,6 @@ input {
   display: block;
   height: 4rem; // fixed header height
   margin: -4rem 0 0; // negative fixed header height
-}
-
-.site-footer {
-  background: $dark-gray;
-  color: $white;
-  height: 4rem;
-  padding: 1rem 0.5rem;
-
-  img {
-    float: left;
-    height: 2rem;
-  }
-
-  p {
-    line-height: 2rem;
-    vertical-align: middle;
-  }
-
-  .mlh-logo.white {
-    background-position: center left;
-    display: block;
-    height: 30px;
-    width: 100%;
-  }
 }
 
 // Logos

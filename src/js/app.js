@@ -73,10 +73,7 @@ $(document).ready(function () {
 
   var myElement = document.querySelector('.main-nav')
   var headroom = new Headroom(myElement)
-  var myElement1 = document.querySelector('.site-nav')
-  var headroom1 = new Headroom(myElement1)
   headroom.init()
-  headroom1.init()
 
   var siteUrl = window.location.href
   $('.secondary-nav-link').each((i, link) => {

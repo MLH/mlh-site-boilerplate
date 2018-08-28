@@ -1,0 +1,302 @@
+body {
+  background-color: #f3f5f9;
+}
+
+.prizes {
+  background: url('../img/prizes-background.png');
+  .hero-title, .hero-description, .secondary-nav-link {
+    color: black !important;
+  }
+  .secondary-nav-link:before {
+    background: black !important;
+  }
+}
+
+.software {
+  background: url('../img/software-background.png');
+  .hero-title, .hero-description, .secondary-nav-link {
+    color: white !important;
+  }
+
+  .mobile {
+    .secondary-nav-link {
+      color: #0f2382 !important;
+    }
+    li:hover {
+      background-color: #35469d !important;
+      .secondary-nav-link {
+        color: white !important;
+      }
+    }
+  }
+
+  .secondary-nav-link:before {
+    background: white !important;
+  }
+}
+
+.hardware {
+  background: url('../img/hardware-background.png');
+  .hero-title, .hero-description, .secondary-nav-link {
+    color: white !important;
+  }
+  .secondary-nav-link:before {
+    background: white !important;
+  }
+}
+
+.under-nav {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+  min-height: 400px;
+}
+
+.content {
+  margin: 0 auto;
+  .hero-title, .hero-description {
+    text-align: center;
+  }
+}
+
+.site-footer {
+  background: #2d3343;
+  color: $white;
+  height: 110px;
+  padding: 1rem 0.5rem;
+
+  .content {
+    height: 100%;
+  }
+
+  .footer-info {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  img {
+    height: 2rem;
+  }
+
+  p {
+    line-height: 2rem;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  .mlh-logo.white {
+    background-position: center left;
+    display: block;
+    height: 37px;
+    width: 100px;
+  }
+
+}
+
+.footer {
+  background: url('../img/footer-background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.newsletter-wrapper {
+  min-height: 345px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .footer-heading {
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 29px;
+    font-weight: 700;
+    /* Text style for "Join The N" */
+    margin-bottom: 7px;
+    letter-spacing: -0.46px;
+    text-align: center;
+  }
+  .footer-call {
+    text-align: center;
+    color: #c4c5dd;
+    font-family: "Open Sans";
+    font-size: 17px;
+    /* Text style for "Stay up to" */
+    letter-spacing: -0.27px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+
+    input {
+      width: 301px;
+      height: 37px;
+      border-radius: 7px;
+      margin-right: 10px;
+    }
+
+    button {
+      box-shadow: 0 0 10px rgba(44, 193, 45, 0.22);
+      background-color: #32e069;
+      color: white;
+      border: none;
+      padding: 7px 25px;
+      font-family: "Open Sans";
+      font-size: 14px;
+      font-weight: 400;
+      /* Text style for "Submit" */
+      letter-spacing: -0.22px;
+    }
+  }
+}
+
+// styles for software
+
+.sponsor-logo {
+  width: 101px;
+  font-size: 16px;
+}
+
+.software-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 123px;
+}
+.software-item-wrapper {
+  background-color: #ffffff;
+  margin: 2%;
+  width: 46%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+.software-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+
+  .name, .tag-line, .description {
+    max-width: 353px;
+  }
+
+  .sponsor-logo {
+    margin-bottom: 8px;
+  }
+
+  .tag-line {
+    margin-bottom: 16px;
+    color: #239f38;
+    font-family: "Open Sans";
+    font-size: 11px;
+    text-transform: uppercase;
+    /* Text style for "12,000 rec" */
+    letter-spacing: -0.14px;
+  }
+
+  .name {
+    color: #39393a;
+    font-family: "Open Sans";
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    /* Text style for "Algolia Se" */
+    letter-spacing: -0.25pxfont-size;
+    margin-bottom: 0px;
+  }
+
+  .description {
+    margin-bottom: 19px;
+    color: #7f7f7f;
+    font-family: "Open Sans";
+    font-size: 13px;
+    /* Text style for "Authorize." */
+    letter-spacing: -0.16px;
+  }
+
+  .perk-list {
+    align-self: flex-start;
+  }
+
+  .perk-link {
+    a {
+      color: #5a75f0;
+    }
+    font-family: "Open Sans";
+    font-size: 13px;
+    line-height: 16px;
+    /* Text style for "• 1 Free D" */
+    letter-spacing: -0.16px;
+  }
+
+  .perk-link:before {
+    content: "•";
+    color: #5a75f0;
+    margin-right: 5px;
+  }
+
+  .perk-link:hover {
+    cursor: pointer;
+  }
+}
+
+.software-item-wrapper:nth-child(1) {
+  width: 682px;
+  background-color: #ffffff;
+  .name {
+    font-size: 20px;
+  }
+  .tag-line {
+    font-size: 11px;
+  }
+  .sponsor-logo {
+    width: 112px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .perk-link {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: $phone-landscape) {
+  .software-item-wrapper {
+    width: 96%;
+    .software-item {
+      padding: 24px 16px;;
+    }
+  }
+
+  .software-list {
+    margin-bottom: 90px;
+  }
+
+  .newsletter-wrapper {
+    form {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      input {
+        margin: 0;
+      }
+
+      button {
+        width: 100%;
+        max-width: 301px;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .footer-info {
+    justify-content: center !important;
+  } 
+}

@@ -1,27 +1,25 @@
 $background-nav-color: #e76c7a;
 $secondary-nav-color: white;
 $current-color: white;
+$link-text-color: black;
 
 // prizes#172881
 
 .site-nav {
-  background-color: $background-nav-color;
+  background-color: transparent;
   height: 4.5rem;
-  position: fixed;
-  top: 4.5rem;
-  // transition: top cubic-bezier(0.71,-0.04, 0.32, 1.07) .2s;
+  position: relative;
+  margin-top: 4.5rem;
   width: 100%;
   z-index: 999;
-  
 
   .logo {
     margin-top: 0.5625rem;
-    // height: 2.5rem;
   }
 
   .content {
     align-items: center;
-    background-color: $background-nav-color;
+    background-color: transparent;
     display: flex;
     float: none;
     height: 100%;
@@ -62,20 +60,10 @@ $current-color: white;
     align-items: center;
     display: flex;
     height: 100%;
-    
-    // .secondary-nav-link {
-    //   color: $secondary-nav-color;
-    //   font-family: "Open Sans";
-    //   font-size: 1rem;
-    //   letter-spacing: -0.0125rem;
-    //   line-height: 1rem;
-    //   padding-bottom: 0.5rem;
-    //   text-decoration: none;
-    // }
 
     .secondary-nav-link {
       position: relative;
-      color: white;
+      color: black;
       text-decoration: none;
     }
     
@@ -86,7 +74,7 @@ $current-color: white;
       height: 2px;
       bottom: -10px;
       left: 0;
-      background-color: white;
+      background-color: $link-text-color;
       visibility: hidden;
       -webkit-transform: scaleX(0);
       transform: scaleX(0);
@@ -109,9 +97,9 @@ $current-color: white;
       li {
         margin-left: 1.875rem;
       }
-      .current {
-        border-bottom: 0.125rem solid $current-color;    
-        color: $current-color;
+      .current:before {
+        visibility: visible;
+        transform: scaleX(1);
       }
     }
     
@@ -192,7 +180,6 @@ $current-color: white;
     .lol {
       margin-left: 2.5rem;
       opacity: 1;
-    }
-    
+    } 
   }
 }
