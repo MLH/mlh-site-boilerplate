@@ -2,7 +2,7 @@ const config = {
   site: {
     title: 'insert_site_title',
     description: 'insert_site_description',
-    baseUrl: 'http://example.mlh.io',
+    baseUrl: 'https://levytsroman.github.io/mlh-site-boilerplate',
     faviconUrl: '/img/favicon.ico',
     siteName: "Major League Hacking",
   },
