@@ -1,0 +1,13 @@
+{{#> layouts/default}}
+  {{#*inline "content-block"}}
+    <div class="{{htmlWebpackPlugin.options.pageName}}">
+      <h1>Software</h1>
+      <div>We partnered with some amazing technology companies to get you FREE access to their APIs this weekend.</div>
+    </div>
+    <ul>
+      {{#each htmlWebpackPlugin.options.software}}
+        <li>{{this.name}}</li>
+      {{/each}}
+    </ul>
+  {{/inline}}
+{{/layouts/default}}
