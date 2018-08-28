@@ -4035,9 +4035,9 @@ input {
       justify-content: space-between; }
       .site-nav .hello ul li {
         margin-left: 1.875rem; }
-      .site-nav .hello ul .current {
-        border-bottom: 0.125rem solid white;
-        color: white; }
+      .site-nav .hello ul .current:before {
+        visibility: visible;
+        transform: scaleX(1); }
   .site-nav .current-active {
     color: white; }
   .site-nav .content:after {

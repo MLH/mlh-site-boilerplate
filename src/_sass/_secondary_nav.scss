@@ -107,9 +107,9 @@ $current-color: white;
       li {
         margin-left: 1.875rem;
       }
-      .current {
-        border-bottom: 0.125rem solid $current-color;    
-        color: $current-color;
+      .current:before {
+        visibility: visible;
+        transform: scaleX(1);
       }
     }
     
