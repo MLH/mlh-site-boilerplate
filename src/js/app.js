@@ -72,7 +72,7 @@ $(document).ready(function () {
   })
 
   var myElement = document.querySelector('.main-nav')
-  var headroom = new Headroom(myElement)
+  var headroom = new Headroom(myElement, {offset: '72'})
   headroom.init()
 
   var siteUrl = window.location.href

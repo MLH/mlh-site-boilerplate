@@ -13,6 +13,17 @@ $link-text-color: black;
   width: 100%;
   z-index: 999;
 
+  .logo-text {
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-left: 14px;
+    /* Text style for "2019 Hacka" */
+    letter-spacing: -0.2px;
+  }
+
   .logo {
     margin-top: 0.5625rem;
   }
@@ -120,7 +131,7 @@ $link-text-color: black;
     position: absolute;
     top: -18.75rem;
     width: 100%;
-    z-index: -1;
+    z-index: 1000;
 
     li {
       padding: 0.9375rem 0;
@@ -137,7 +148,7 @@ $link-text-color: black;
     @mixin animation_delay($seconds) {
       transition: 
         color .5s ease 0s,
-        margin .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) $seconds,
+        left .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) $seconds,
         opacity .3s ease 0.01s;
     }
 
@@ -162,6 +173,7 @@ $link-text-color: black;
     }
 
     .secondary-nav-link {
+      position: absolute;
       color: #e45b6b;
       display: block;
       font-family: "Open Sans";
@@ -169,7 +181,7 @@ $link-text-color: black;
       height: 100%;
       letter-spacing: -0.0125rem;
       line-height: 1rem;
-      margin-left: -3.125rem;
+      left: -3.125rem;
       margin: 0;
       opacity: 0;
       padding: 0;
@@ -178,7 +190,7 @@ $link-text-color: black;
     }
     
     .lol {
-      margin-left: 2.5rem;
+      left: 2.5rem;
       opacity: 1;
     } 
   }

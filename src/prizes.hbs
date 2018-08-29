@@ -1,14 +1,72 @@
 {{#> layouts/default}}
   {{#*inline "content-block"}}
-    {{> _includes/hero 
-      title="Prizes"
-      description="Win awesome prizes, hacker gear, & swag by competing in one of these challenges and using new APIs."
-      pageClass=htmlWebpackPlugin.options.pageName
-    }}
-    <ul>
-      {{#each htmlWebpackPlugin.options.prizes}}
-        <li>{{this.title}}</li>
-      {{/each}}
-    </ul>
+    <div style="background: #f8f8f8; margin-bottom: -20px;">
+      {{> _includes/hero 
+        title="Prizes"
+        description="Win awesome prizes, hacker gear, & swag by competing in one of these challenges and using new APIs."
+        pageClass=htmlWebpackPlugin.options.pageName
+      }}
+    </div>
+    <div class="prizes-content">
+      <div class="featured">
+        <div class="content">
+          <ul>
+            {{#each htmlWebpackPlugin.options.prizes}}
+              {{#if this.featured}}
+              <li class="prize-item">
+                <div class="prize-info">
+                  <h4 class="prize-title">{{this.title}}</h4>
+                  <p class="prize-name">{{this.prize_name}}</p>
+                  <p class="prize-description">{{this.description}}</p>
+                  <a class="prize-link" href="{{this.link}}">{{this.button-text}}</a>
+                </div>
+                <img src="{{this.img_url}}" alt="">
+              </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="more-prizes">
+        <div class="content">
+          <h3 class="heading">And More Prizes...</h3>
+          <ul class="more-prizes-wrapper">
+            {{#each htmlWebpackPlugin.options.prizes}}
+              {{#unless this.featured}}
+                <li class="prize-item">
+                  <img src="{{this.img_url}}" alt="">
+                  <div class="header-group">
+                    <h4 class="prize-title">{{this.title}}</h4>
+                    <p class="prize-name">{{this.prize_name}}</p>
+                    <div class="underline"></div>
+                  </div>
+                  <p class="prize-description">{{this.description}}</p>
+                  <a class="prize-link" href="{{this.link}}">{{this.button-text}}</a>
+                </li>
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="medals-container">
+      <div class="content">
+        <h2 class="medals-title">Top Team Overall - MLH Winner Medals</h2>
+        <p class="medals-description">Place in the top group of teams at any MLH Member Event.  Each winning team member will receive an MLH 2019 Hackathon Season medal.</p>
+        <div class="medals">
+          <ul class="medals-wrapper">
+            {{#each htmlWebpackPlugin.options.medals}}
+              <div class="medal">
+                <img src="{{this.url}}" alt="">
+                <div>
+                  <h4>{{this.medal_name}}</h4>
+                  <p>{{this.medal_description}}</p>
+                </div>
+              </div>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
   {{/inline}}
 {{/layouts/default}}

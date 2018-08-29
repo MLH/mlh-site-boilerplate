@@ -1,10 +1,10 @@
 body {
-  background-color: #f3f5f9;
+  background-color: white;
 }
 
 .prizes {
   background: url('../img/prizes-background.png');
-  .hero-title, .hero-description, .secondary-nav-link {
+  .hero-title, .hero-description, .secondary-nav-link, .logo-text {
     color: black !important;
   }
   .secondary-nav-link:before {
@@ -57,6 +57,7 @@ body {
   margin: 0 auto;
   .hero-title, .hero-description {
     text-align: center;
+    padding: 0 8px;
   }
 }
 
@@ -166,7 +167,7 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 123px;
+  padding-bottom: 123px;
 }
 .software-item-wrapper {
   background-color: #ffffff;
@@ -300,3 +301,303 @@ body {
     justify-content: center !important;
   } 
 }
+
+// end styles for software
+
+// styles for prizes
+.prizes-content {
+  background: white;
+}
+
+.more-prizes {
+  .heading {
+    color: #2c2d41;
+    font-family: "Open Sans";
+    font-size: 25px;
+    /* Text style for "And More P" */
+    letter-spacing: -0.31px;
+    text-align: center;
+  }
+}
+
+.more-prizes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .prize-item {
+    width: 25%;
+    margin: 2.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .prize-item:last-child {
+    margin-right: auto;
+    margin-left: 8%;
+  }
+
+  .prize-title {
+    color: #32414e;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 29px;
+    /* Text style for "Best use o" */
+    letter-spacing: -0.2px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .prize-name {
+    color: #565963;
+    font-family: "Open Sans";
+    font-size: 13px;
+    line-height: 29px;
+    /* Text style for "Casio CA-5" */
+    letter-spacing: -0.16px;
+    margin-bottom: 0;
+  }
+
+  .prize-description {
+    color: #565963;
+    font-family: "Open Sans";
+    font-size: 14px;
+    /* Text style for "Use Algoli" */
+    letter-spacing: -0.06px;
+    font-style: italic;
+  }
+
+  .prize-link {
+    max-width: 150px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #1d7eff;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 700;
+    /* Text style for "Getting St" */
+    letter-spacing: -0.17px;
+    padding: 8px 16px;
+  }
+
+  .underline {
+    width: 99px;
+    height: 1px;
+    margin-bottom: 24px;
+    background-color:  #979797;
+  }
+
+  .header-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.featured {
+  background: url('../img/featured-background.png');
+  background-size: cover; 
+  padding-bottom: 100px;
+  background-position: -100px;
+  .prize-item {
+    width: 100%;
+    padding: 70px 50px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+
+    .prize-info {
+      width: 65%;
+      padding: 8px;
+    }
+
+    .prize-title {
+      color: #1f243d;
+      font-family: "Open Sans";
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: -0.25px;
+      margin-bottom: 0;
+    }
+
+    .prize-name {
+      font-family: "Open Sans";
+      font-size: 16px;
+      line-height: 29px;
+      font-style: italic;
+      font-weight: 200;
+      margin-bottom: 32px;
+      letter-spacing: -0.2px;
+    }
+
+    .prize-description {
+      color: #383838;
+      font-family: "Open Sans";
+      font-size: 14px;
+      line-height: 25px;
+      /* Text style for "Use Author" */
+      letter-spacing: -0.17px;
+      margin-bottom: 32px;
+      padding-right: 32px;
+    }
+
+    .prize-link {
+      border-radius: 4px;
+      background-color: #1d7eff;
+      color: white;
+      display: inline-block;
+      padding: 0 32px;
+      line-height: 33px;
+      transition: background-color .2s ease;
+    }
+
+    .prize-link:hover {
+      background: #0f2382;
+      text-decoration: none;
+    }
+  }
+
+  .prize-item:not(:last-child):after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background:#b5b3b3;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.medals-container {
+  background: url("../img/medals.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.medals-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.medals-title {
+  text-align: center;
+  color: #32414e;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 25px;
+  font-weight: 600;
+  /* Text style for "Top Teams" */
+  letter-spacing: -0.31px;
+  margin-bottom: 0;
+}
+
+.medals-description {
+  margin: 0 auto;
+  margin-top: 16px;
+  margin-bottom: 52px;
+  max-width: 557px;
+  color: #32414e;
+  font-family: "Open Sans";
+  font-weight: 200;
+  font-size: 17px;
+  font-weight: 300;
+  /* Text style for "Place in t" */
+  letter-spacing: -0.21px;
+  padding: 0 8px;
+}
+
+.medal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px;
+
+  img {
+    width: 90%;
+    margin-bottom: 14px;
+  }
+
+  img:hover {
+    margin-top: -2px;
+    margin-bottom: 16px;
+  }
+
+  h4 {
+    color: #32414e;
+    font-family: "Open Sans";
+    font-size: 25px;
+    font-weight: 600;
+    /* Text style for "First Plac" */
+    letter-spacing: -0.31px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  p {
+    color: #32414e;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 26px;
+    /* Text style for "For many o" */
+    letter-spacing: -0.19px;
+    text-align: center;
+    max-width: 311px;
+    padding: 0 16px;
+  }
+}
+.prize-link:hover {
+  background: #0f2382;
+  text-decoration: none;
+}
+
+@media screen and (max-width: $phone-landscape) {
+  .featured {
+    .prize-item {
+      flex-direction: column-reverse;
+      
+      .prize-info {
+        width: 100%;
+        align-items: center;
+      }
+    }
+  }
+  .more-prizes {
+    .prize-item {
+      width: 45%;
+    }
+  }
+
+  .medals-wrapper {
+    flex-direction: column;
+    .medal {
+      flex-direction: row;
+      margin-bottom: 15px;
+    }
+    img {
+      width: 40%;
+    }
+    .medal:nth-child(2) {
+      flex-direction: row-reverse;
+    }
+  }  
+}
+
+@media screen and (max-width: $phone-portrait) {
+  .more-prizes {
+    .prize-item {
+      width: 95%;
+    }
+  }
+}
+// end of styles

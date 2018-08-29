@@ -1,0 +1,17 @@
+[
+  {
+    "url": "/img/medals/first.svg",
+    "medal_name": "First Place",
+    "medal_description": "For many of us, our very first experience of learning about the celestial bodies begins when we saw our first full moon in the sky."
+  },
+  {
+    "url": "/img/medals/second.svg",
+    "medal_name": "Second Place",
+    "medal_description": "For many of us, our very first experience of learning about the celestial bodies begins when we saw our first full moon in the sky."
+  },
+  {
+    "url": "/img/medals/third.svg",
+    "medal_name": "Third Place",
+    "medal_description": "For many of us, our very first experience of learning about the celestial bodies begins when we saw our first full moon in the sky."
+  }
+]

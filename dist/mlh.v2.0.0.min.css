@@ -3960,6 +3960,15 @@ input {
   margin-top: 4.5rem;
   width: 100%;
   z-index: 999; }
+  .site-nav .logo-text {
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-left: 14px;
+    /* Text style for "2019 Hacka" */
+    letter-spacing: -0.2px; }
   .site-nav .logo {
     margin-top: 0.5625rem; }
   .site-nav .content {
@@ -4033,7 +4042,7 @@ input {
     position: absolute;
     top: -18.75rem;
     width: 100%;
-    z-index: -1; }
+    z-index: 1000; }
     .site-nav .mobile li {
       padding: 0.9375rem 0;
       transition: background-color .2s ease-out 0s; }
@@ -4042,18 +4051,19 @@ input {
       .site-nav .mobile li:hover .secondary-nav-link {
         color: #f9f9f9; }
     .site-nav .mobile li:nth-child(1) .secondary-nav-link {
-      transition: color 0.5s ease 0s, margin 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.01s, opacity 0.3s ease 0.01s; }
+      transition: color 0.5s ease 0s, left 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.01s, opacity 0.3s ease 0.01s; }
     .site-nav .mobile li:nth-child(2) .secondary-nav-link {
-      transition: color 0.5s ease 0s, margin 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.06s, opacity 0.3s ease 0.01s; }
+      transition: color 0.5s ease 0s, left 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.06s, opacity 0.3s ease 0.01s; }
     .site-nav .mobile li:nth-child(3) .secondary-nav-link {
-      transition: color 0.5s ease 0s, margin 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.12s, opacity 0.3s ease 0.01s; }
+      transition: color 0.5s ease 0s, left 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.12s, opacity 0.3s ease 0.01s; }
     .site-nav .mobile li:nth-child(4) .secondary-nav-link {
-      transition: color 0.5s ease 0s, margin 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.18s, opacity 0.3s ease 0.01s; }
+      transition: color 0.5s ease 0s, left 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.18s, opacity 0.3s ease 0.01s; }
     .site-nav .mobile li:nth-child(5) .secondary-nav-link {
-      transition: color 0.5s ease 0s, margin 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.24s, opacity 0.3s ease 0.01s; }
+      transition: color 0.5s ease 0s, left 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.24s, opacity 0.3s ease 0.01s; }
     .site-nav .mobile li:nth-child(6) .secondary-nav-link {
-      transition: color 0.5s ease 0s, margin 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.3s, opacity 0.3s ease 0.01s; }
+      transition: color 0.5s ease 0s, left 0.3s cubic-bezier(0.74, -0.21, 0.47, 1.46) 0.3s, opacity 0.3s ease 0.01s; }
     .site-nav .mobile .secondary-nav-link {
+      position: absolute;
       color: #e45b6b;
       display: block;
       font-family: "Open Sans";
@@ -4061,14 +4071,14 @@ input {
       height: 100%;
       letter-spacing: -0.0125rem;
       line-height: 1rem;
-      margin-left: -3.125rem;
+      left: -3.125rem;
       margin: 0;
       opacity: 0;
       padding: 0;
       text-decoration: none;
       width: 100%; }
     .site-nav .mobile .lol {
-      margin-left: 2.5rem;
+      left: 2.5rem;
       opacity: 1; }
 
 .demo-hero {
@@ -4161,11 +4171,11 @@ input {
   letter-spacing: -0.2px; }
 
 body {
-  background-color: #f3f5f9; }
+  background-color: white; }
 
 .prizes {
   background: url(./img/prizes-background.png); }
-  .prizes .hero-title, .prizes .hero-description, .prizes .secondary-nav-link {
+  .prizes .hero-title, .prizes .hero-description, .prizes .secondary-nav-link, .prizes .logo-text {
     color: black !important; }
   .prizes .secondary-nav-link:before {
     background: black !important; }
@@ -4200,7 +4210,8 @@ body {
 .content {
   margin: 0 auto; }
   .content .hero-title, .content .hero-description {
-    text-align: center; }
+    text-align: center;
+    padding: 0 8px; }
 
 .site-footer {
   background: #2d3343;
@@ -4282,7 +4293,7 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 123px; }
+  padding-bottom: 123px; }
 
 .software-item-wrapper {
   background-color: #ffffff;
@@ -4375,4 +4386,233 @@ body {
       margin-top: 12px; }
   .footer-info {
     justify-content: center !important; } }
+
+.prizes-content {
+  background: white; }
+
+.more-prizes .heading {
+  color: #2c2d41;
+  font-family: "Open Sans";
+  font-size: 25px;
+  /* Text style for "And More P" */
+  letter-spacing: -0.31px;
+  text-align: center; }
+
+.more-prizes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .more-prizes-wrapper .prize-item {
+    width: 25%;
+    margin: 2.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
+  .more-prizes-wrapper .prize-item:last-child {
+    margin-right: auto;
+    margin-left: 8%; }
+  .more-prizes-wrapper .prize-title {
+    color: #32414e;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 29px;
+    /* Text style for "Best use o" */
+    letter-spacing: -0.2px;
+    margin-bottom: 0;
+    text-align: center; }
+  .more-prizes-wrapper .prize-name {
+    color: #565963;
+    font-family: "Open Sans";
+    font-size: 13px;
+    line-height: 29px;
+    /* Text style for "Casio CA-5" */
+    letter-spacing: -0.16px;
+    margin-bottom: 0; }
+  .more-prizes-wrapper .prize-description {
+    color: #565963;
+    font-family: "Open Sans";
+    font-size: 14px;
+    /* Text style for "Use Algoli" */
+    letter-spacing: -0.06px;
+    font-style: italic; }
+  .more-prizes-wrapper .prize-link {
+    max-width: 150px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #1d7eff;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 700;
+    /* Text style for "Getting St" */
+    letter-spacing: -0.17px;
+    padding: 8px 16px; }
+  .more-prizes-wrapper .underline {
+    width: 99px;
+    height: 1px;
+    margin-bottom: 24px;
+    background-color: #979797; }
+  .more-prizes-wrapper .header-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+.featured {
+  background: url(./img/featured-background.png);
+  background-size: cover;
+  padding-bottom: 100px;
+  background-position: -100px; }
+  .featured .prize-item {
+    width: 100%;
+    padding: 70px 50px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    align-items: center; }
+    .featured .prize-item .prize-info {
+      width: 65%;
+      padding: 8px; }
+    .featured .prize-item .prize-title {
+      color: #1f243d;
+      font-family: "Open Sans";
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 29px;
+      letter-spacing: -0.25px;
+      margin-bottom: 0; }
+    .featured .prize-item .prize-name {
+      font-family: "Open Sans";
+      font-size: 16px;
+      line-height: 29px;
+      font-style: italic;
+      font-weight: 200;
+      margin-bottom: 32px;
+      letter-spacing: -0.2px; }
+    .featured .prize-item .prize-description {
+      color: #383838;
+      font-family: "Open Sans";
+      font-size: 14px;
+      line-height: 25px;
+      /* Text style for "Use Author" */
+      letter-spacing: -0.17px;
+      margin-bottom: 32px;
+      padding-right: 32px; }
+    .featured .prize-item .prize-link {
+      border-radius: 4px;
+      background-color: #1d7eff;
+      color: white;
+      display: inline-block;
+      padding: 0 32px;
+      line-height: 33px;
+      transition: background-color .2s ease; }
+    .featured .prize-item .prize-link:hover {
+      background: #0f2382;
+      text-decoration: none; }
+  .featured .prize-item:not(:last-child):after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: #b5b3b3;
+    position: absolute;
+    bottom: 0; }
+
+.medals-container {
+  background: url(./img/medals.png);
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 100px; }
+
+.medals-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.medals-title {
+  text-align: center;
+  color: #32414e;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 25px;
+  font-weight: 600;
+  /* Text style for "Top Teams" */
+  letter-spacing: -0.31px;
+  margin-bottom: 0; }
+
+.medals-description {
+  margin: 0 auto;
+  margin-top: 16px;
+  margin-bottom: 52px;
+  max-width: 557px;
+  color: #32414e;
+  font-family: "Open Sans";
+  font-weight: 200;
+  font-size: 17px;
+  font-weight: 300;
+  /* Text style for "Place in t" */
+  letter-spacing: -0.21px;
+  padding: 0 8px; }
+
+.medal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px; }
+  .medal img {
+    width: 90%;
+    margin-bottom: 14px; }
+  .medal img:hover {
+    margin-top: -2px;
+    margin-bottom: 16px; }
+  .medal h4 {
+    color: #32414e;
+    font-family: "Open Sans";
+    font-size: 25px;
+    font-weight: 600;
+    /* Text style for "First Plac" */
+    letter-spacing: -0.31px;
+    text-align: center;
+    margin-bottom: 10px; }
+  .medal p {
+    color: #32414e;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 26px;
+    /* Text style for "For many o" */
+    letter-spacing: -0.19px;
+    text-align: center;
+    max-width: 311px;
+    padding: 0 16px; }
+
+.prize-link:hover {
+  background: #0f2382;
+  text-decoration: none; }
+
+@media screen and (max-width: 640px) {
+  .featured .prize-item {
+    flex-direction: column-reverse; }
+    .featured .prize-item .prize-info {
+      width: 100%;
+      align-items: center; }
+  .more-prizes .prize-item {
+    width: 45%; }
+  .medals-wrapper {
+    flex-direction: column; }
+    .medals-wrapper .medal {
+      flex-direction: row;
+      margin-bottom: 15px; }
+    .medals-wrapper img {
+      width: 40%; }
+    .medals-wrapper .medal:nth-child(2) {
+      flex-direction: row-reverse; } }
+
+@media screen and (max-width: 480px) {
+  .more-prizes .prize-item {
+    width: 95%; } }
 

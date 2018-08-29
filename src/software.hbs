@@ -1,28 +1,30 @@
 {{#> layouts/default}}
   {{#*inline "content-block"}}
-    {{> _includes/hero 
-      title="Software"
-      description="We partnered with some amazing technology companies to get you FREE access to their APIs this weekend."
-      pageClass=htmlWebpackPlugin.options.pageName
-    }}
-    <div class="content">
-      <ul class="software-list">
-        {{#each htmlWebpackPlugin.options.software}}
-          <li class="software-item-wrapper">
-            <div class="software-item">
-              <img class="sponsor-logo" src="{{this.logo}}">
-              <h4 class="name">{{this.name}}</h4>
-              <span class="tag-line">{{this.tag_line}}</span>
-              <p class="description">{{this.description}}</p>
-              <ul class="perk-list">
-                {{#each this.perks}}
-                  <li class="perk-link"><a>{{this}}</a></li>
-                {{/each}}
-              </ul>
-            </div>
-          </li>
-        {{/each}}
-      </ul>
+    <div style="background-color: #f3f5f9;">
+      {{> _includes/hero 
+        title="Software"
+        description="We partnered with some amazing technology companies to get you FREE access to their APIs this weekend."
+        pageClass=htmlWebpackPlugin.options.pageName
+      }}
+      <div class="content">
+        <ul class="software-list">
+          {{#each htmlWebpackPlugin.options.software}}
+            <li class="software-item-wrapper">
+              <div class="software-item">
+                <img class="sponsor-logo" src="{{this.logo}}">
+                <h4 class="name">{{this.name}}</h4>
+                <span class="tag-line">{{this.tag_line}}</span>
+                <p class="description">{{this.description}}</p>
+                <ul class="perk-list">
+                  {{#each this.perks}}
+                    <li class="perk-link"><a>{{this}}</a></li>
+                  {{/each}}
+                </ul>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
   {{/inline}}
 {{/layouts/default}}

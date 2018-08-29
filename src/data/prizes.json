@@ -4,13 +4,89 @@
     "prize_name": "LS20 Gaming Headsets",
     "description": "Use Authorize.Net’s payment solutions (API, SDK, etc.) in your project. Each winning team member will receive an L20 Gaming Headset.",
     "link": "",
-    "img_url": ""
+    "img_url": "img/prizes/authorize.png",
+    "button-text": "Getting Started With Authorize.net",
+    "featured": true
   },
   {
-    "title": "",
-    "prize_name": "",
-    "description": "",
+    "title": "Snap Kit Weekly Challenge",
+    "prize_name": "Spectacles by Snapchat",
+    "description": "Use Snap Kit in your hack. One winning team will be selected from all MLH Member Events each weekend and top entries will be reviewed by Snap engineers. Each winning team member will receive a pair of Spectacles by Snapchat.",
     "link": "",
-    "img_url": ""
+    "img_url": "img/prizes/snapchat.png",
+    "button-text": "Get Started with Snap Kit",
+    "featured": true
+  },
+  {
+    "title": "Best use of the Cisco Webex Teams API",
+    "prize_name": "20000 mAh power banks",
+    "description": "Use the Webex Teams API or mobile SDK in your project.  One winning team will be selected from all MLH Member Events each weekend.  Each member of the winning team will receive a power bank.",
+    "link": "",
+    "img_url": "img/prizes/cisco.png",
+    "button-text": "Get Started with the Cisco Webex Teams API",
+    "featured": true
+  },
+  {
+    "title": "Best use of Algolia API",
+    "prize_name": "Casio CA-506C-5A Calculator Watches",
+    "description": "Use Algolia's search API in your project. Each winning team member will receive a Casio Calculator Watch.",
+    "link": "",
+    "img_url": "img/prizes/algolia.png",
+    "button-text": "Getting Started With Algolia",
+    "featured": false
+  },
+  {
+    "title": "Best Domain Registered with Domain.com",
+    "prize_name": "Raspberry Pis & PiHut Essential Kits",
+    "description": "Register a domain using Domain.com during the weekend. Each team may submit one entry per person on the team.  Each winning team member will receive a Raspberry Pi & PiHut Essential Kit.",
+    "link": "",
+    "img_url": "img/prizes/domain.png",
+    "button-text": "Register Your FREE DOMAIN",
+    "featured": false
+  },
+  {
+    "title": "Best Octocat Drawing",
+    "prize_name": "Octocat Statue",
+    "description": "Draw a picture of the GitHub Octocat.  Tweet a picture of your drawing at @GitHubEducation with both the hackathon's hastag and #MyOctocat.  The winner at each event will receive an Octocat Statue.",
+    "link": "",
+    "img_url": "img/prizes/github.png",
+    "button-text": "Get Inspired by #MyOctocat",
+    "featured": false
+  },
+  {
+    "title": "Best use of HERE.com",
+    "prize_name": "Hacker gear & swag from HERE.com",
+    "description": "Use HERE.com's mapping API or SDK in your project.",
+    "link": "",
+    "img_url": "img/prizes/here.png",
+    "button-text": "Getting Started With Here.com",
+    "featured": false
+  },
+  {
+    "title": "Best IoT Hack using a Qualcomm Device",
+    "prize_name": "DragonBoard 410Cs",
+    "description": "Use a Qualcomm device, like the Dragonboard 410C, in your IoT project.  Each winning team member will receive their own DragonBoard 410C.",
+    "link": "",
+    "img_url": "img/prizes/qualcomm.png",
+    "button-text": "Get Started with the Dragonboard 410C",
+    "featured": false
+  },
+  {
+    "title": "Best use of Clarifai's API",
+    "prize_name": "Hacker gear from Clarifai",
+    "description": "Use Clarifai's image or video recognition API or SDK in your project.  One winning team will be selected from all MLH Member Events each weekend.",
+    "link": "",
+    "img_url": "img/prizes/clarifai.png",
+    "button-text": "Getting Started With Clarifai",
+    "featured": false
+  },
+  {
+    "title": "Best Social Good Hack",
+    "prize_name": "$50 Gift Cards",
+    "description": "Demo a project that makes the world a better place through social good. One winning team will be selected from all MLH Member Events each weekend.",
+    "link": "",
+    "img_url": "img/prizes/social.png",
+    "button-text": "Getting Started",
+    "featured": false
   }
 ]
