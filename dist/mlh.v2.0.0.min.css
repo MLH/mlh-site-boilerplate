@@ -4768,6 +4768,8 @@ body {
   margin-bottom: 82px; }
 
 @media screen and (max-width: 640px) {
+  .under-nav {
+    min-height: 450px; }
   .content {
     padding: 0 16px; }
   .component-list-wrapper .component-list li {
@@ -4780,6 +4782,8 @@ body {
       width: fit-content; } }
 
 @media screen and (max-width: 480px) {
+  .under-nav {
+    min-height: 550px; }
   .component-list-wrapper .component-list li {
     flex: 1 0 95%; } }
 

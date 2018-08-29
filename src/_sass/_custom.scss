@@ -779,6 +779,10 @@ body {
 }
 
 @media screen and (max-width: $phone-landscape) {
+  .under-nav {
+    min-height: 450px;
+  }
+
   .content {
     padding: 0 16px;
   }
@@ -802,6 +806,10 @@ body {
 }
 
 @media screen and (max-width: $phone-portrait) {
+  .under-nav {
+    min-height: 550px;
+  }
+
   .component-list-wrapper {
     .component-list {
       li {
