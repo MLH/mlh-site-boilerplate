@@ -3,12 +3,48 @@
     {{> _includes/hero 
       title="Hardware"
       description="Borrow the latest & greatest hardware devices and components to use in your project this weekend."
+      logo="img/digikey.png"
       pageClass=htmlWebpackPlugin.options.pageName
     }}
-    <ul>
-      {{#each htmlWebpackPlugin.options.hardware}}
-        <li>{{this.product_name}}</li>
-      {{/each}}
-    </ul>
+    <div class="browse-devices">
+      <h2>Components & Sensors</h2>
+      <p>All the materials you need to bring your hardware project to life, provided by our friends at Digi-Key</p>
+      <button>Browse & Request Devices</button>
+    </div>
+    <div class="hardware-list-wrapper">
+      <div class="content">
+        <ul>
+          {{#each htmlWebpackPlugin.options.hardware}}
+            <li class="hardware-item">
+              <img class="hardware-img" src="{{this.img_url}}" alt="">
+              <div class="hardware-info">
+                <h3 class="hardware-sponsor-name">{{this.product_name}}</h3>
+                <img class="hardware-partner" src="{{this.partner_logo}}" alt="">
+                <p>{{this.description}}</p>
+                <div class="partner-buttons">
+                  <button class="partner-button">Shop</button>
+                  <button class="partner-button">Getting Started</button>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="component-list-wrapper">
+      <div class="content">
+        <div class="components-box">
+          <h2>Components Available</h2>
+          <img src="/img/gear.png" alt="">
+          <ul class="component-list">
+            {{#each htmlWebpackPlugin.options.components}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+          <p>All the materials you need to bring your hardware project to life, provided by our friends at Digi-Key.</p>
+          <button>Browse & Request Devices</button>
+        </div>
+      </div>
+    </div>
   {{/inline}}
 {{/layouts/default}}

@@ -1,8 +1,57 @@
 [
   {
+    "partner_logo": "img/hardware/logos/alexa.svg",
     "product_name": "Amazon Echo",
-    "partner_logo_link": "",
+    "img_url": "img/hardware/alexa.png",
     "description": "Amazon Echo is a smart, hands-free speaker you control with your voice.",
+    "shop_link": "",
+    "get_started_link": ""
+  },
+  {
+    "partner_logo": "img/hardware/logos/xps.png",
+    "product_name": "Dell XPS",
+    "img_url": "img/hardware/xps.png",
+    "description": "The Dell XPS laptop provides breakthrough, thoughtful designs to change the way you think about computers.",
+    "shop_link": "",
+    "get_started_link": ""
+  },
+  {
+    "partner_logo": "img/hardware/logos/fitbit.svg",
+    "product_name": "Fitbit Ionic",
+    "img_url": "img/hardware/fitbit.png",
+    "description": "The Fitbit Ionic smartwatch is packed with fitness guidance, health insights, music storage, apps & more.",
+    "shop_link": "",
+    "get_started_link": ""
+  },
+  {
+    "partner_logo": "img/hardware/logos/google-cloud.svg",
+    "product_name": "Google Home",
+    "img_url": "img/hardware/google-home.png",
+    "description": "No description",
+    "shop_link": "",
+    "get_started_link": ""
+  },
+  {
+    "partner_logo": "img/hardware/logos/oculus.svg",
+    "product_name": "Oculus Rift",
+    "img_url": "img/hardware/oculus.png",
+    "description": "The Oculus Rift is a virtual reality headset that lets players step inside their favorite games and virtual worlds.",
+    "shop_link": "",
+    "get_started_link": ""
+  },
+  {
+    "partner_logo": "img/hardware/logos/gear-vr.png",
+    "product_name": "Samsung GearVR",
+    "img_url": "img/hardware/gear-vr.png",
+    "description": "With Samsung GearVR powered by Oculus, any Samsung GALAXY smartphone can take hackers to another world. It’s virtual reality, anytime, anywhere.",
+    "shop_link": "",
+    "get_started_link": ""
+  },
+  {
+    "partner_logo": "img/hardware/logos/qualcomm.svg",
+    "product_name": "DragonBoard 410c",
+    "img_url": "img/hardware/dragonboard.png",
+    "description": "The DragonBoard 410c features advanced processing power, Wi-Fi, Bluetooth connectivity, and GPS, all packed into a development board the size of a credit card.",
     "shop_link": "",
     "get_started_link": ""
   }

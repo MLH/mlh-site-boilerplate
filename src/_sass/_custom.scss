@@ -51,6 +51,11 @@ body {
   background-position-x: center;
   background-position-y: top;
   min-height: 400px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .content {
@@ -600,4 +605,209 @@ body {
     }
   }
 }
-// end of styles
+// end of prizes styles
+
+// hardware styles
+
+.hardware-list-wrapper {
+  background-color: #f3f5f9;
+  background-size: cover;
+  background-position: center;
+  .hardware-partner {
+    height: 16px;
+    margin-bottom: 16px;
+  }  
+}
+
+.component-list-wrapper {
+  background: url('../img/bottom.png');
+  background-color: #f3f5f9;
+  background-size: cover;
+  padding-top: 200px;
+}
+
+.hardware-item {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 50px 0;
+}
+
+.hardware-item:not(:last-child):after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  background-color: #ba9797;
+  position: absolute;
+  bottom: 1;
+}
+
+.hardware-info {
+  margin-left: 46px;
+}
+
+.hardware-sponsor-name {
+  position: relative;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 22px;
+  font-weight: 700;
+  /* Text style for "Amazon Ech" */
+  letter-spacing: -0.27px;
+  margin-bottom: 12px;
+}
+
+.hardware-sponsor-name:after {
+  content: '';
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  border-radius: 2px;
+  background: #ac0808;
+}
+
+.partner-button {
+  width: 108px;
+  height: 33px;
+  border-radius: 4px;
+  background-color: #ac0808;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 700;
+  /* Text style for "Shop" */
+  letter-spacing: -0.15px;
+  border: none;
+}
+
+.browse-devices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 70px;
+  h2 {
+    color: #232323;
+    font-family: "Open Sans";
+    font-size: 25px;
+    /* Text style for "Components" */
+    letter-spacing: -0.31px;
+  }
+
+  p {
+    color: #232323;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 200;
+    /* Text style for "All the ma" */
+    letter-spacing: -0.25px;
+    padding: 0 16px;
+  }
+  button {
+    height: 73px;
+    border-radius: 4px;
+    background-color: #1d7eff;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 700;
+    /* Text style for "Browse & R" */
+    letter-spacing: -0.22px;
+    border: none;
+  }
+}
+
+.component-list-wrapper {
+  .components-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .component-list {
+    display: flex; 
+    flex-wrap: wrap;
+    
+    li {
+      flex: 1 0 30%;
+      margin: 5px;
+      color: #ffffff;
+      font-family: "Open Sans";
+      font-size: 13px;
+      line-height: 26.5px;
+      /* Text style for "EL Wire -" */
+      letter-spacing: -0.16px;
+    }
+
+  }
+  h2 {
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 35px;
+    font-weight: 600;
+    /* Text style for "Coponents" */
+    letter-spacing: -0.44px;
+  }
+  p {
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 300;
+    /* Text style for "All the ma" */
+    letter-spacing: -0.25px;
+    margin-top: 64px;
+  }
+
+  img {
+    margin-bottom: 26px;
+  }
+
+  button {
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 700;
+    /* Text style for "Browse & R" */
+    letter-spacing: -0.22px;
+    height: 73px;
+    border: none;
+    margin-bottom: 82px;
+  }
+}
+
+@media screen and (max-width: $phone-landscape) {
+  .content {
+    padding: 0 16px;
+  }
+  .component-list-wrapper {
+    .component-list {
+      li {
+        flex: 1 0 45%;
+      }
+    }
+  }
+
+  .hardware-item {
+    display: flex;
+    flex-direction: column;
+    
+    .hardware-img {
+      margin-left: 46px;
+      width: fit-content;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-portrait) {
+  .component-list-wrapper {
+    .component-list {
+      li {
+        flex: 1 0 95%;
+      }
+    }
+  }
+}
+// end of hardware
