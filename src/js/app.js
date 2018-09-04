@@ -1,28 +1,56 @@
 import Headroom from '../js/lib/headroom.min.js'
 
 function show () {
-  $('.mobile-nav').addClass('is-active')
+  $('.nav-menu').addClass('is-active')
   $('.hamburger-button').css('display', 'none')
-  $('.mobile-nav').animate({opacity: 1}, 200)
   $('html').css('overflow', 'hidden')
 }
 
 function hide () {
-  $('.mobile-nav').animate({opacity: 0}, 200, function () {
-    $('.mobile-nav').removeClass('is-active')
-    $('.hamburger-button').css('display', 'block')
-    $('html').css('overflow', 'auto')
-  })
+  $('.nav-menu').removeClass('is-active')
+  $('.hamburger-button').css('display', 'block')
+  $('html').css('overflow', 'auto')
 }
 
 $('body').on('click', '.login', function () {
-  $('.login-btns').hide()
+  $('.signed-out').hide()
   $('.logged-in-btns').css('display', 'flex')
 })
 
 $('body').on('click', '.logout', function () {
-  $('.login-btns').show()
+  $('.signed-out').show()
   $('.logged-in-btns').css('display', 'none')
+})
+
+// mobile-nv menu
+$('body').on('click', '.mobile-nav .underlineable', function (e) {
+  var lol = $(e.target).parent().find('.dropdown-wrapper')
+  if (lol.length === 0) {
+    lol = $(e.target).parent()
+  }
+
+  if (lol.hasClass('menu-open')) {
+    lol.removeClass('menu-open')
+    lol.find('.underlineable').remove()
+  } else {
+    lol.prepend('<span class="underlineable">' + $(e.target).text() + '</span><div class="close-menu"><div class="close-menu-inner"></div></div>')
+    lol.addClass('menu-open')
+  }
+})
+
+$('body').on('click', '.logout', function () {
+  $('.account-menu').removeClass('is-active')
+})
+
+// account-menu mobile
+$('body').on('click', '.mobile-account-circle', function () {
+  hide()
+  $('.account-menu').addClass('is-active')
+})
+
+$('.demo-hero').click(function () {
+  hide()
+  $('.account-menu').removeClass('is-active')
 })
 
 function showSubNav ($button) {
@@ -49,9 +77,11 @@ $(document).ready(function () {
 
   $('.hamburger-button').click(function () {
     show()
+    $('.account-menu').removeClass('is-active')
   })
 
   $('.close-menu').click(function () {
+    $('.account-menu').removeClass('is-active')
     hide()
   })
 
