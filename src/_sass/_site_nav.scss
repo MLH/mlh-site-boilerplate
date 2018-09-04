@@ -7,14 +7,11 @@ $current-color: white;
   height: 4.5rem;
   position: fixed;
   top: 4.5rem;
-  // transition: top cubic-bezier(0.71,-0.04, 0.32, 1.07) .2s;
   width: 100%;
   z-index: 999;
   
-
   .logo {
     margin-top: 0.5625rem;
-    // height: 2.5rem;
   }
 
   .content {
@@ -56,49 +53,15 @@ $current-color: white;
     cursor: pointer;
   }
 
-  .hello {
+  .desktop-nav {
     align-items: center;
     display: flex;
     height: 100%;
-    
-    // .secondary-nav-link {
-    //   color: $secondary-nav-color;
-    //   font-family: "Open Sans";
-    //   font-size: 1rem;
-    //   letter-spacing: -0.0125rem;
-    //   line-height: 1rem;
-    //   padding-bottom: 0.5rem;
-    //   text-decoration: none;
-    // }
 
     .secondary-nav-link {
       position: relative;
       color: white;
       text-decoration: none;
-    }
-    
-    .secondary-nav-link:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -10px;
-      left: 0;
-      background-color: white;
-      visibility: hidden;
-      -webkit-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.3s ease-in-out 0s;
-      transition: all 0.3s ease-in-out 0s;
-    }
-    
-    .secondary-nav-link:hover {
-      cursor: pointer;
-    }
-    
-    .secondary-nav-link:hover:before {
-        visibility: visible;
-        transform: scaleX(1);
     }
 
     ul {
@@ -132,6 +95,10 @@ $current-color: white;
     width: 100%;
     z-index: -1;
 
+    li:last-child {
+      padding-bottom: 32px;
+    }
+
     li {
       padding: 0.9375rem 0;
       transition: background-color .2s ease-out 0s;
@@ -158,15 +125,19 @@ $current-color: white;
     li:nth-child(2) .secondary-nav-link {
       @include animation_delay(.06s)
     }
+
     li:nth-child(3) .secondary-nav-link {
       @include animation_delay(.12s)
     }
+
     li:nth-child(4) .secondary-nav-link {
       @include animation_delay(.18s)
     }
+
     li:nth-child(5) .secondary-nav-link {
       @include animation_delay(.24s)
     }
+    
     li:nth-child(6) .secondary-nav-link {
       @include animation_delay(.30s)
     }
