@@ -4,12 +4,14 @@ function show () {
   $('.nav-menu').addClass('is-active')
   $('.hamburger-button').css('display', 'none')
   $('html').css('overflow', 'hidden')
+  $('.secondary-nav-link').addClass('lol')
 }
 
 function hide () {
   $('.nav-menu').removeClass('is-active')
   $('.hamburger-button').css('display', 'block')
   $('html').css('overflow', 'auto')
+  $('.secondary-nav-link').removeClass('lol')
 }
 
 $('body').on('click', '.login', function () {
@@ -32,9 +34,12 @@ $('body').on('click', '.mobile-nav .underlineable', function (e) {
   if (lol.hasClass('menu-open')) {
     lol.removeClass('menu-open')
     lol.find('.underlineable').remove()
+    lol.find('.close-menu').remove()
+    $('.nav-menu').css('overflow', 'auto')
   } else {
     lol.prepend('<span class="underlineable">' + $(e.target).text() + '</span><div class="close-menu"><div class="close-menu-inner"></div></div>')
     lol.addClass('menu-open')
+    $('.nav-menu').css('overflow', 'hidden')
   }
 })
 
@@ -80,9 +85,12 @@ $(document).ready(function () {
     $('.account-menu').removeClass('is-active')
   })
 
-  $('.close-menu').click(function () {
+  $('body').on('click', '.close-menu', function () {
     $('.account-menu').removeClass('is-active')
     hide()
+    $('.menu-open').find('.underlineable').remove()
+    $('.menu-open').find('.close-menu').remove()
+    $('.menu-open').removeClass('menu-open')
   })
 
   $(window).resize(function () {
