@@ -4,12 +4,10 @@
     {{> ../_includes/head}}
   </head>
 
-  <body>
+  <body class="{{htmlWebpackPlugin.options.pageName}}-body">
     <div class="prevent-overflow">
       {{#> nav-block}}
         {{> ../_includes/main_nav}}
-
-        {{> ../_includes/site_nav}}
       {{/nav-block}}
 
       {{#> content-block}}{{/content-block}}

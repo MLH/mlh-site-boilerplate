@@ -106,6 +106,10 @@ module.exports = (env, argv) => ({
       {
         test: /\.exec\.js$/,
         use: [ 'script-loader' ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: "file-loader"
       }
     ]
   },

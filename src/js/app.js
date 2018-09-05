@@ -122,11 +122,7 @@ $(document).ready(function () {
   var myElement = document.querySelector('.main-nav')
   var headroom = new Headroom(myElement)
   headroom.init()
-  var myElement1 = document.querySelector('.site-nav')
-  if (myElement1) {
-    var headroom1 = new Headroom(myElement1)
-    headroom1.init()
-  }
+  
   var siteUrl = window.location.href
   $('.secondary-nav-link').each((i, link) => {
     var a = $(link).attr('href')
@@ -140,5 +136,6 @@ $(document).ready(function () {
       $(link).addClass('current')
     }
   })
+  
   $('a[href^="#"]').anchorjump()
 })

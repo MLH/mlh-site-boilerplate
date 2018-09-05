@@ -1,11 +1,96 @@
+@font-face {
+  font-family: 'BigNoodle';
+  src: url(../fonts/big_noodle_titling.ttf);
+}
+
+.lego-btn {
+  cursor: pointer;
+}
+
+.lego-btn.lego-btn-red {
+  color: white;
+  background-color: #ac0808;
+  border: 0.0625rem solid #ac0808;
+}
+
+.lego-btn.lego-btn-red:hover {
+  color: #ac0808;
+  background-color: white;
+}
+
+.lego-btn.lego-btn-wbt {
+  color: black;
+  background-color: white;
+  border: 0.0625rem solid white;
+}
+
+.lego-btn.lego-btn-wbt:hover {
+  color: white;
+  background-color: black;
+  border: 0.0625rem solid black;
+}
+
 body {
   background-color: white;
 }
 
+.hero-title {
+  margin-bottom: 0;
+}
+
+.prizes-body {
+  .sub-nav-mobile {
+    .mobile {
+      background: #f1ce0f;
+      .secondary-nav-link {
+        color: black;
+      }
+      .underlineable::before {
+        background: black;
+      }
+    }
+  }
+}
+
+.software-body {
+  .sub-nav-mobile {
+    .mobile {
+      background: #172881;
+      .secondary-nav-link {
+        color: white;
+      }
+      .underlineable::before {
+        background: white;
+      }
+    }
+  }
+}
+
+.hardware-body {
+  .sub-nav-mobile {
+    .mobile {
+      background: #ac0808;
+      .secondary-nav-link {
+        color: white;
+      }
+      .underlineable::before {
+        background: white;
+      }
+    }
+  }
+}
+
 .prizes {
   background: url('../img/prizes-background.png');
-  .hero-title, .hero-description, .secondary-nav-link, .logo-text {
+  .hero-title, 
+  .hero-description, 
+  .secondary-nav-link, 
+  .logo-text,
+  .current-active {
     color: black !important;
+  }
+  .underlineable:before {
+    background: #000000 !important;
   }
   .secondary-nav-link:before {
     background: black !important;
@@ -37,6 +122,7 @@ body {
 
 .hardware {
   background: url('../img/hardware-background.png');
+  background-color: #f3f5f9;
   .hero-title, .hero-description, .secondary-nav-link {
     color: white !important;
   }
@@ -50,7 +136,8 @@ body {
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: top;
-  min-height: 400px;
+  min-height: 500px;
+  padding-top: 5rem;
 
   img {
     display: block;
@@ -60,9 +147,16 @@ body {
 
 .content {
   margin: 0 auto;
+  .hero-title {
+    font-family: 'BigNoodle';
+  }
   .hero-title, .hero-description {
     text-align: center;
     padding: 0 8px;
+  }
+  .hero-description {
+    max-width: 330px;
+    margin: 0 auto;
   }
 }
 
@@ -174,19 +268,28 @@ body {
   justify-content: center;
   padding-bottom: 123px;
 }
+
 .software-item-wrapper {
   background-color: #ffffff;
   margin: 2%;
   width: 46%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 24px 0;
+
+  .action-btn {
+    width: 90%;
+    margin-top: 20px;
+  }
 }
+
 .software-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 350px;
+  justify-content: center;
 
   .name, .tag-line, .description {
     max-width: 353px;
@@ -213,7 +316,7 @@ body {
     line-height: 20px;
     font-weight: 400;
     /* Text style for "Algolia Se" */
-    letter-spacing: -0.25pxfont-size;
+    letter-spacing: -0.25px;
     margin-bottom: 0px;
   }
 
@@ -229,7 +332,7 @@ body {
   .perk-list {
     align-self: flex-start;
   }
-
+  
   .perk-link {
     a {
       color: #5a75f0;
@@ -269,6 +372,15 @@ body {
   }
   .perk-link {
     font-size: 13px;
+  }
+
+  .software-item {
+    width: 80%;
+    div {
+      .description {
+        max-width: none;
+      }
+    }
   }
 }
 
@@ -336,7 +448,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .prize-item:last-child {
@@ -416,7 +528,7 @@ body {
     flex-direction: row;
     position: relative;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 
     .prize-info {
       width: 65%;
@@ -453,21 +565,6 @@ body {
       margin-bottom: 32px;
       padding-right: 32px;
     }
-
-    .prize-link {
-      border-radius: 4px;
-      background-color: #1d7eff;
-      color: white;
-      display: inline-block;
-      padding: 0 32px;
-      line-height: 33px;
-      transition: background-color .2s ease;
-    }
-
-    .prize-link:hover {
-      background: #0f2382;
-      text-decoration: none;
-    }
   }
 
   .prize-item:not(:last-child):after {
@@ -477,7 +574,14 @@ body {
     background:#b5b3b3;
     position: absolute;
     bottom: 0;
+    left: 0;
   }
+}
+
+.btn-text-wrap {
+  white-space: normal;
+  height: auto;
+  width: fit-content;
 }
 
 .medals-container {
@@ -579,6 +683,7 @@ body {
   }
   .more-prizes {
     .prize-item {
+      align-items: center;
       width: 45%;
     }
   }
@@ -608,6 +713,15 @@ body {
 // end of prizes styles
 
 // hardware styles
+.hardware {
+  button {
+    margin: 0 auto;
+  }
+
+  .hero-description {
+    margin-bottom: 14px;
+  }
+}
 
 .hardware-list-wrapper {
   background-color: #f3f5f9;
@@ -628,6 +742,7 @@ body {
 
 .hardware-item {
   display: flex;
+  align-items: flex-start;
   flex-direction: row;
   position: relative;
   padding: 50px 0;
@@ -669,18 +784,12 @@ body {
   background: #ac0808;
 }
 
-.partner-button {
-  width: 108px;
-  height: 33px;
-  border-radius: 4px;
-  background-color: #ac0808;
-  color: #ffffff;
-  font-family: "Open Sans";
-  font-size: 12px;
-  font-weight: 700;
-  /* Text style for "Shop" */
-  letter-spacing: -0.15px;
-  border: none;
+.partner-buttons {
+  display: flex;
+
+  button {
+    margin-right: 20px;
+  }
 }
 
 .browse-devices {
@@ -729,7 +838,8 @@ body {
   .component-list {
     display: flex; 
     flex-wrap: wrap;
-    
+    background-color: rgba(0,0,0,0.12);
+    margin-bottom: 25px;
     li {
       flex: 1 0 30%;
       margin: 5px;
@@ -739,6 +849,7 @@ body {
       line-height: 26.5px;
       /* Text style for "EL Wire -" */
       letter-spacing: -0.16px;
+      text-align: center;
     }
 
   }
@@ -751,13 +862,14 @@ body {
     letter-spacing: -0.44px;
   }
   p {
+    max-width: 492px;
+    // height: 55px;
     color: #ffffff;
     font-family: "Open Sans";
     font-size: 20px;
     font-weight: 300;
-    /* Text style for "All the ma" */
     letter-spacing: -0.25px;
-    margin-top: 64px;
+    margin-bottom: 38px;
   }
 
   img {
@@ -765,24 +877,11 @@ body {
   }
 
   button {
-    border-radius: 4px;
-    background-color: #ffffff;
-    font-family: "Open Sans";
-    font-size: 18px;
-    font-weight: 700;
-    /* Text style for "Browse & R" */
-    letter-spacing: -0.22px;
-    height: 73px;
-    border: none;
     margin-bottom: 82px;
   }
 }
 
 @media screen and (max-width: $phone-landscape) {
-  .under-nav {
-    min-height: 450px;
-  }
-
   .content {
     padding: 0 16px;
   }

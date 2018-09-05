@@ -5,12 +5,8 @@
       description="Borrow the latest & greatest hardware devices and components to use in your project this weekend."
       logo="img/digikey.png"
       pageClass=htmlWebpackPlugin.options.pageName
+      button="Browse & Request Devices"
     }}
-    <div class="browse-devices">
-      <h2>Components & Sensors</h2>
-      <p>All the materials you need to bring your hardware project to life, provided by our friends at Digi-Key</p>
-      <button>Browse & Request Devices</button>
-    </div>
     <div class="hardware-list-wrapper">
       <div class="content">
         <ul>
@@ -22,8 +18,8 @@
                 <img class="hardware-partner" src="{{this.partner_logo}}" alt="">
                 <p>{{this.description}}</p>
                 <div class="partner-buttons">
-                  <button class="partner-button">Shop</button>
-                  <button class="partner-button">Getting Started</button>
+                  <button class="lego-btn lego-btn-red partner-button">Shop</button>
+                  <button class="lego-btn lego-btn-red partner-button">Getting Started</button>
                 </div>
               </div>
             </li>
@@ -34,15 +30,14 @@
     <div class="component-list-wrapper">
       <div class="content">
         <div class="components-box">
-          <h2>Components Available</h2>
-          <img src="/img/gear.png" alt="">
+          <h2>Components & Sensors</h2>
+          <p>All the materials you need to bring your hardware project to life, provided by our friends at Digi-Key.</p>
           <ul class="component-list">
             {{#each htmlWebpackPlugin.options.components}}
               <li>{{this}}</li>
             {{/each}}
           </ul>
-          <p>All the materials you need to bring your hardware project to life, provided by our friends at Digi-Key.</p>
-          <button>Browse & Request Devices</button>
+          <button class="lego-btn lego-btn-wbt">Browse & Request Devices</button>
         </div>
       </div>
     </div>

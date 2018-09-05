@@ -4,11 +4,23 @@
     "logo": "/img/sponsors/algolia.svg",
     "tag_line": "12,000 records & 100,000 operations",
     "description": "Algolia is a search API that gives developers a complete toolkit for building search into their products.",
+    "button": {
+      "text": "Get 12,000 records & 100,000 operations",
+      "link": "google.com"
+    },
     "perks": [
-      "Get 12,000 records & 100,000 operations",
-      "Use Coupon Code: MLH18",
-      "Documentation",
-      "Support Forum"
+      {
+        "link": "google.com",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "google.com",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   },
   {
@@ -16,11 +28,23 @@
     "logo": "/img/sponsors/authorize_net.svg",
     "tag_line": "Sign up for a free Sandbox Account",
     "description": "Authorize.Net is more than a payment gateway with over 900 technology integrations and solutions for everything a business needs as it grows, including invoicing, account updater, subscriptions, fraud management, accounting, tokenization, and more.",
+    "button": {
+      "text": "Sign Up for a Free Sandbox Account",
+      "link": "google.com"
+    },
     "perks": [
-      "1 Free Domain (.com, .org, or .net) & 1 Year of Domain Privacy",
-      "https://www.domain.com/mlh",
-      "Documentation",
-      "Support Forum"
+      {
+        "link": "",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   },
   {
@@ -28,11 +52,23 @@
     "logo": "/img/sponsors/cisco.svg",
     "tag_line": "Sign up for a free Sandbox Account",
     "description": "Webex Teams is an app for continuous teamwork with video meetings, group messaging, file sharing and white boarding.",
+    "button": {
+      "text": "Much domain, many FREE",
+      "link": ""
+    },
     "perks": [
-      "Sign up for a Free Sandbox Account",
-      "https://developer.webex.com/",
-      "Get Started",
-      "Support Center"
+      {
+        "link": "",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   },
   {
@@ -40,9 +76,23 @@
     "logo": "/img/sponsors/clarifai.svg",
     "tag_line": "50,000 lifetime operations, 10,000 inputs, and 50 custom concepts",
     "description": "Clarifai is an artificial intelligence company that makes it easy to add image & video recognition to your project.",
+    "button": {
+      "text": "Much domain, many FREE",
+      "link": ""
+    },
     "perks": [
-      "Get 50,000 lifetime operations, 10,000 inputs, and 50 custom concepts",
-      "MLH coupon code for Clarifai is MLH-AI-2018"
+      {
+        "link": "",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   },
   {
@@ -50,10 +100,23 @@
     "logo": "/img/sponsors/algolia.svg",
     "tag_line": "$100 in Google Cloud Platform credit",
     "description": "Bring your project to the next level using Google Cloud Platform's infinitely scalable virtual machines, world class databases and analytics, and powerful machine learning technologies.",
+    "button": {
+      "text": "Much domain, many FREE",
+      "link": ""
+    },
     "perks": [
-      "Get $100 in Google Cloud Platform credit",
-      "Google Cloud Platform Docs",
-      "TBA"
+      {
+        "link": "",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   },
   {
@@ -61,9 +124,23 @@
     "logo": "/img/sponsors/domain.svg",
     "tag_line": "1 Free Domain (.com, .org, or .net) & 1 Year of Domain Privacy",
     "description": "Domain.com provides all the domain services you need from registration to hosting to SSL certificates & beyond.",
+    "button": {
+      "text": "Much domain, many FREE",
+      "link": ""
+    },
     "perks": [
-      "1 Free Domain (.com, .org, or .net) & 1 Year of Domain Privacy",
-      "https://www.domain.com/mlh"
+      {
+        "link": "",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   },
   {
@@ -71,10 +148,23 @@
     "logo": "/img/sponsors/github.svg",
     "tag_line": "The GitHub Student Developer Pack gives hackers free access to the best developer tools, all in one place.",
     "description": "Millions of developers use GitHub to build personal projects, support their businesses, and work together on open source technologies.",
+    "button": {
+      "text": "Much domain, many FREE",
+      "link": ""
+    },
     "perks": [
-      "The GitHub Student Developer Pack gives hackers free access to the best developer tools, all in one place.",
-      "https://education.github.com/pack",
-      "Learn To Use Github"
+      {
+        "link": "",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   },
   {
@@ -82,9 +172,23 @@
     "logo": "/img/sponsors/here.svg",
     "tag_line": "Free access to most HERE Location Services via REST APIs and mobile SDKs:",
     "description": "HERE, the Open Location Platform company, provides APIs and SDKs for maps and location-aware web and mobile apps.",
+    "button": {
+      "text": "Much domain, many FREE",
+      "link": ""
+    },
     "perks": [
-      "Free access to most HERE Location Services via REST APIs and mobile SDKs:",
-      "https://developer.here.com/"
+      {
+        "link": "",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   },
   {
@@ -92,10 +196,23 @@
     "logo": "/img/sponsors/twillio.svg",
     "tag_line": "Sign up for a Free Twilio Account",
     "description": "Twilio makes it easy to add messaging, voice, and video in your web and mobile applications.",
+    "button": {
+      "text": "Much domain, many FREE",
+      "link": ""
+    },
     "perks": [
-      "Sign up for a Free Twilio Account",
-      "https://education.github.com/pack",
-      "Learn To Use Github"
+      {
+        "link": "",
+        "text": "Use Coupon Code: MLH18"
+      },
+      {
+        "link": "",
+        "text": "Documentation"
+      },
+      {
+        "link": "",
+        "text": "Support Forum"
+      }
     ]
   }
 ]

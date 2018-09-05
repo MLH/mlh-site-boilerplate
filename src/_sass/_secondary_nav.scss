@@ -3,14 +3,40 @@ $background-secondary-color: #e35c6b;
 $secondary-nav-color: white;
 $current-color: white;
 
+.current {
+  color: $current-color;
+}
+.current.underlineable:before {
+  background-color: white;
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
 .site-nav {
-  background-color: $background-nav-color;
+  background-color: transparent;
   height: 4.5rem;
-  position: fixed;
-  top: 4.5rem;
+  position: relative;
   width: 100%;
   z-index: 999;
-  
+
+  .sub-nav-left {
+    a {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-text {
+      color: #ffffff;
+      font-family: "Open Sans";
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-left: 14px;
+      letter-spacing: -0.2px;
+    }
+  }
+
   .current-active {
     color: $current-color;
   }
@@ -24,7 +50,7 @@ $current-color: white;
 
   .content {
     align-items: center;
-    background-color: $background-nav-color;
+    background-color: transparent;
     display: flex;
     float: none;
     height: 100%;
@@ -54,15 +80,6 @@ $current-color: white;
       justify-content: space-between;
       li {
         margin-left: 1.875rem;
-      }
-      .current {
-        color: $current-color;
-      }
-      .current.underlineable:before {
-        background-color: white;
-        visibility: visible;
-        opacity: 1;
-        transform: scale(1);
       }
     } 
   }
@@ -104,7 +121,6 @@ $current-color: white;
     transition: 
       color .5s ease 0s,
       left .3s ease $seconds,
-      // left .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) $seconds,
       opacity .3s ease 0.01s;
   }
 

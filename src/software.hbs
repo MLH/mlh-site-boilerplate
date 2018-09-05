@@ -14,13 +14,16 @@
                 <img class="sponsor-logo" src="{{this.logo}}">
                 <h4 class="name">{{this.name}}</h4>
                 <span class="tag-line">{{this.tag_line}}</span>
-                <p class="description">{{this.description}}</p>
-                <ul class="perk-list">
-                  {{#each this.perks}}
-                    <li class="perk-link"><a>{{this}}</a></li>
-                  {{/each}}
-                </ul>
+                <div>
+                  <p class="description">{{this.description}}</p>
+                  <ul class="perk-list">
+                    {{#each this.perks}}
+                      <li class="perk-link"><a href="{{this.link}}">{{this.text}}</a></li>
+                    {{/each}}
+                  </ul>
+                </div>
               </div>
+              <a href="{{this.button.link}}" class="lego-btn action-btn">{{this.button.text}}</a>
             </li>
           {{/each}}
         </ul>
