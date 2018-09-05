@@ -3674,7 +3674,7 @@ a:hover {
   margin-top: 0.5rem;
   width: 8.125rem; }
 
-.pointable:hover {
+.pointable {
   cursor: pointer; }
 
 .underlineable {
@@ -3841,7 +3841,8 @@ a:hover {
   min-height: 100vh;
   height: 100%;
   left: 0;
-  transform: translateX(-105%); }
+  transform: translateX(-110%);
+  padding-bottom: 100px; }
   .nav-menu .chevron-right:hover:after {
     transform: rotate(-135deg); }
   .nav-menu .chevron-right:after {
@@ -3864,7 +3865,7 @@ a:hover {
   .nav-menu .reveal .dropdown-wrapper {
     position: fixed;
     left: 0;
-    transform: translateX(-105%);
+    transform: translateX(-110%);
     transition: all .2s ease;
     height: 100%;
     min-height: 100vh;
@@ -3894,7 +3895,8 @@ a:hover {
       transform: rotate(-225deg); }
   .nav-menu .reveal .menu-open {
     z-index: 100;
-    transform: translateX(0%); }
+    transform: translateX(0%);
+    padding-bottom: 100px; }
     .nav-menu .reveal .menu-open .close-menu {
       z-index: 101; }
 
@@ -3991,15 +3993,13 @@ a:hover {
 @media screen and (max-width: 768px) {
   .main-logo {
     position: absolute;
-    width: 6rem;
+    width: 7rem;
     left: 50%;
     transform: translateX(-50%); }
   .signed-out {
     height: 2rem;
     padding: 0.5rem;
-    font-size: 0.8rem; }
-  .main-nav .nav-content {
-    padding: 0 8px; } }
+    font-size: 0.8rem; } }
 
 .site-nav {
   background-color: #e76c7a;
@@ -4008,6 +4008,15 @@ a:hover {
   top: 4.5rem;
   width: 100%;
   z-index: 999; }
+  .site-nav .logo {
+    width: 100%; }
+  .site-nav .current-active {
+    color: white; }
+    .site-nav .current-active .underlineable:before {
+      color: white;
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1); }
   .site-nav .content {
     align-items: center;
     background-color: #e76c7a;
@@ -4022,7 +4031,8 @@ a:hover {
     display: flex;
     height: 100%; }
     .site-nav .desktop-nav .underlineable:before {
-      background: white; }
+      background: white;
+      bottom: -5px; }
     .site-nav .desktop-nav .secondary-nav-link {
       position: relative;
       color: white;
@@ -4093,6 +4103,8 @@ a:hover {
   background: #f9f9f9;
   padding-top: 16px;
   padding-bottom: 16px;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
   width: 100%; }
   .mobile .secondary-nav-link {
     color: #e76c7a;

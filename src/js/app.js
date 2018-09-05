@@ -3,14 +3,18 @@ import Headroom from '../js/lib/headroom.min.js'
 function show () {
   $('.nav-menu').addClass('is-active')
   $('.hamburger-button').css('display', 'none')
-  $('html').css('overflow', 'hidden')
+  $('.prevent-overflow').css('overflow', 'hidden')
+  $('html').css('position', 'fixed')
+  $('body').css('position', 'fixed')
   $('.secondary-nav-link').addClass('lol')
 }
 
 function hide () {
   $('.nav-menu').removeClass('is-active')
   $('.hamburger-button').css('display', 'block')
-  $('html').css('overflow', 'auto')
+  $('.prevent-overflow').css('overflow', 'auto')
+  $('html').css('position', 'relative')
+  $('body').css('position', 'relative')
   $('.secondary-nav-link').removeClass('lol')
 }
 
@@ -51,11 +55,17 @@ $('body').on('click', '.logout', function () {
 $('body').on('click', '.mobile-account-circle', function () {
   hide()
   $('.account-menu').addClass('is-active')
+  $('.prevent-overflow').css('overflow', 'hidden')
+  $('html').css('position', 'fixed')
+  $('body').css('position', 'fixed')
 })
 
 $('.demo-hero').click(function () {
   hide()
   $('.account-menu').removeClass('is-active')
+  $('.prevent-overflow').css('overflow', 'auto')
+  $('html').css('position', 'relative')
+  $('body').css('position', 'relative')
 })
 
 function showSubNav ($button) {
@@ -111,11 +121,12 @@ $(document).ready(function () {
 
   var myElement = document.querySelector('.main-nav')
   var headroom = new Headroom(myElement)
-  var myElement1 = document.querySelector('.site-nav')
-  var headroom1 = new Headroom(myElement1)
   headroom.init()
-  headroom1.init()
-
+  var myElement1 = document.querySelector('.site-nav')
+  if (myElement1) {
+    var headroom1 = new Headroom(myElement1)
+    headroom1.init()
+  }
   var siteUrl = window.location.href
   $('.secondary-nav-link').each((i, link) => {
     var a = $(link).attr('href')
