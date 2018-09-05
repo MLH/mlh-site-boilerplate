@@ -86,7 +86,7 @@ a:hover {
   width: 8.125rem;
 }
 
-.pointable:hover {
+.pointable {
   cursor: pointer;
 }
 
@@ -318,7 +318,8 @@ a:hover {
   min-height: 100vh;
   height: 100%;
   left: 0;
-  transform: translateX(-105%);
+  transform: translateX(-110%);
+  padding-bottom: 100px;
   
   .chevron-right:hover:after {
     transform: rotate(-135deg);
@@ -351,7 +352,7 @@ a:hover {
       position: fixed;
       // left: -100%;
       left: 0;
-      transform: translateX(-105%);
+      transform: translateX(-110%);
       transition: all .2s ease;
       height: 100%;
       min-height: 100vh;
@@ -389,6 +390,7 @@ a:hover {
     .menu-open {
       z-index: 100;
       transform: translateX(0%);
+      padding-bottom: 100px;
 
       .close-menu {
         z-index: 101;
@@ -520,7 +522,7 @@ a:hover {
 @media screen and (max-width: $tablet-portrait) {
   .main-logo {
     position: absolute;
-    width: 6rem;
+    width: 7rem;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -529,11 +531,5 @@ a:hover {
     height: 2rem;
     padding: 0.5rem;
     font-size: 0.8rem;
-  }
-
-  .main-nav {
-    .nav-content {
-      padding: 0 8px;
-    }
   }
 }

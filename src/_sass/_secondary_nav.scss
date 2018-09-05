@@ -10,6 +10,21 @@ $current-color: white;
   top: 4.5rem;
   width: 100%;
   z-index: 999;
+  
+  .logo {
+    width: 100%;
+  }
+
+  .current-active {
+    color: $current-color;
+    
+    .underlineable:before {
+      color: white;
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
   .content {
     align-items: center;
@@ -29,6 +44,7 @@ $current-color: white;
 
     .underlineable:before {
       background: $current-color;
+      bottom: -5px;
     }
     
     .secondary-nav-link {
@@ -55,8 +71,8 @@ $current-color: white;
   background: #f9f9f9;
   padding-top: 16px;
   padding-bottom: 16px;
-  // border-top: 2px solid $background-secondary-color;
-  // border-bottom: 2px solid $background-secondary-color;
+  border-top: 2px solid #f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
   width: 100%;
 
   .secondary-nav-link {
