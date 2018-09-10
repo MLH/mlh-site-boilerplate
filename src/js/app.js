@@ -1,144 +1,131 @@
-import Headroom from '../js/lib/headroom.min.js'
+import Headroom from './lib/headroom.min';
+import './login';
 
-function show () {
-  $('.nav-menu').addClass('is-active')
-  $('.hamburger-button').css('display', 'none')
-  $('.prevent-overflow').css('overflow', 'hidden')
-  $('html').css('position', 'fixed')
-  $('body').css('position', 'fixed')
-  $('.secondary-nav-link').addClass('lol')
+function disableBodyScroll() {
+  $('html,body').addClass('position-fixed');
+  $('.prevent-overflow').css('overflow', 'hidden');
 }
 
-function hide () {
-  $('.nav-menu').removeClass('is-active')
-  $('.hamburger-button').css('display', 'block')
-  $('.prevent-overflow').css('overflow', 'auto')
-  $('html').css('position', 'relative')
-  $('body').css('position', 'relative')
-  $('.secondary-nav-link').removeClass('lol')
+function enableBodyScroll() {
+  $('html,body').removeClass('position-fixed');
+  $('.prevent-overflow').css('overflow', 'auto');
 }
 
-$('body').on('click', '.login', function () {
-  $('.signed-out').hide()
-  $('.logged-in-btns').css('display', 'flex')
-})
+function showGlobalMenu() {
+  $('.nav-menu,.secondary-nav-link').addClass('is-active');
+  disableBodyScroll();
+}
 
-$('body').on('click', '.logout', function () {
-  $('.signed-out').show()
-  $('.logged-in-btns').css('display', 'none')
-})
+function resetNavigationState() {
+  const $menu = $('.menu-open');
 
-// mobile-nv menu
-$('body').on('click', '.mobile-nav .underlineable', function (e) {
-  var lol = $(e.target).parent().find('.dropdown-wrapper')
-  if (lol.length === 0) {
-    lol = $(e.target).parent()
+  $menu.find('.underlineable').remove();
+  $menu.find('.close-menu').remove();
+  $menu.removeClass('menu-open');
+}
+
+function hideGlobalMenu() {
+  $('.nav-menu,.secondary-nav-link').removeClass('is-active');
+  enableBodyScroll();
+  resetNavigationState();
+}
+
+function showUserMenu() {
+  hideGlobalMenu();
+  $('.account-menu').addClass('is-active');
+  disableBodyScroll();
+}
+
+function hideUserMenu() {
+  $('.account-menu').removeClass('is-active');
+}
+
+// TODO: refactor
+function openMobileSubMenu(e) {
+  let dropdownOpener = $(e.target).parent().find('.dropdown-wrapper');
+  if (dropdownOpener.length === 0) {
+    dropdownOpener = $(e.target).parent();
   }
 
-  if (lol.hasClass('menu-open')) {
-    lol.removeClass('menu-open')
-    lol.find('.underlineable').remove()
-    lol.find('.close-menu').remove()
-    $('.nav-menu').css('overflow', 'auto')
+  if (dropdownOpener.hasClass('menu-open')) {
+    dropdownOpener.removeClass('menu-open');
+    dropdownOpener.find('.underlineable').remove();
+    dropdownOpener.find('.close-menu').remove();
+    $('.nav-menu').css('overflow', 'auto');
   } else {
-    lol.prepend('<span class="underlineable">' + $(e.target).text() + '</span><div class="close-menu"><div class="close-menu-inner"></div></div>')
-    lol.addClass('menu-open')
-    $('.nav-menu').css('overflow', 'hidden')
+    dropdownOpener.prepend(`<span class="underlineable">${$(e.target).text()}</span><div class="close-menu"><div class="close-menu-inner"></div></div>`);
+    dropdownOpener.addClass('menu-open');
+    $('.nav-menu').css('overflow', 'hidden');
   }
-})
-
-$('body').on('click', '.logout', function () {
-  $('.account-menu').removeClass('is-active')
-})
-
-// account-menu mobile
-$('body').on('click', '.mobile-account-circle', function () {
-  hide()
-  $('.account-menu').addClass('is-active')
-  $('.prevent-overflow').css('overflow', 'hidden')
-  $('html').css('position', 'fixed')
-  $('body').css('position', 'fixed')
-})
-
-$('.demo-hero').click(function () {
-  hide()
-  $('.account-menu').removeClass('is-active')
-  $('.prevent-overflow').css('overflow', 'auto')
-  $('html').css('position', 'relative')
-  $('body').css('position', 'relative')
-})
-
-function showSubNav ($button) {
-  $button.addClass('up')
-  $('.mobile').animate({top: '72px'}, 250, function () {
-    $('.secondary-nav-link').addClass('lol')
-  })
 }
 
-function hideSubNav ($button) {
-  $button.removeClass('up')
-  $('.mobile').animate({top: '-300px'}, 250)
-  $('.secondary-nav-link').removeClass('lol')
+function sugnUpForNewsLetter(e) {
+  e.preventDefault();
+
+  const email = $('.news-letter-email').val();
+  $(e.target).parent()[0].reset();
+  // eslint-disable-next-line
+  console.log(email);
 }
 
-$(document).ready(function () {
-  // Hamburger Menu & Anchor Jump
-  // This exists on every page.
+$(document).ready(() => {
+  $('.hamburger-button').click(() => {
+    showGlobalMenu();
+    hideUserMenu();
+  });
 
-  $('.hamburger').click(function () {
-    $(this).toggleClass('is-active')
-    $('.hamburger-active-menu').fadeToggle()
-  })
+  $('body').on('click', '.mobile-account-circle', showUserMenu);
 
-  $('.hamburger-button').click(function () {
-    show()
-    $('.account-menu').removeClass('is-active')
-  })
+  $('body').on('click', '.close-menu', () => {
+    hideUserMenu();
+    hideGlobalMenu();
+  });
 
-  $('body').on('click', '.close-menu', function () {
-    $('.account-menu').removeClass('is-active')
-    hide()
-    $('.menu-open').find('.underlineable').remove()
-    $('.menu-open').find('.close-menu').remove()
-    $('.menu-open').removeClass('menu-open')
-  })
+  $('body').on('click', '.newsletter-sign-up', sugnUpForNewsLetter);
 
-  $(window).resize(function () {
+  // expands sub sections of main nav mobile
+  // function needs some work,
+  // - don't like prepending html
+  // - same function handles both closing and opening the subnav, maybe I should separate them
+  // - same element with same class in different location gets clicked for both open and close,
+  // might need to change that
+
+  $('body').on('click', '.mobile-nav .underlineable:not(.secondary-nav-link)', openMobileSubMenu);
+
+  // if window is resized when mobile nav is open, closes it
+  $(window).resize(() => {
     if ($(window).width() > 1024) {
-      hide()
-      hideSubNav($('.sub-nav-control'))
+      hideGlobalMenu();
+      hideUserMenu();
     }
-  })
+  });
 
-  $('.sub-nav-control').on('click', function (e) {
-    var $button = $(e.target)
-    if ($button.hasClass('up')) {
-      hideSubNav($button)
-    } else {
-      showSubNav($button)
-    }
-  })
+  // hide/show nav on scroll
+  const globalNav = document.querySelector('.main-nav');
+  const headroom = new Headroom(globalNav);
+  headroom.init();
 
-  var myElement = document.querySelector('.main-nav')
-  var headroom = new Headroom(myElement)
-  headroom.init()
-  var myElement1 = document.querySelector('.site-nav')
-  if (myElement1) {
-    var headroom1 = new Headroom(myElement1)
-    headroom1.init()
-  }
-  var siteUrl = window.location.href
+  const siteNav = document.querySelector('.site-nav');
+  const headroom1 = new Headroom(siteNav);
+  headroom1.init();
+
+  // TODO: Remove this in the future
+  // It adds underline to active subnav page, can be removed in favor of a
+  // helper handlebars function.
+  const siteUrl = window.location.href;
+
   $('.secondary-nav-link').each((i, link) => {
-    var a = $(link).attr('href')
-    a = a.replace('index.html', '')
-    a = a.replace('.html', '')
-    if (a[0] === '.') {
-      a = a.substr(1)
+    let linkHref = $(link).attr('href');
+    linkHref = linkHref.replace('index.html', '');
+    linkHref = linkHref.replace('.html', '');
+    if (linkHref[0] === '.') {
+      linkHref = linkHref.substr(1);
     }
-    if (a && siteUrl.indexOf(a) >= 0) {
-      $('.current-active').text($(link).html())
-      $(link).addClass('current')
+    if (linkHref && siteUrl.indexOf(linkHref) >= 0) {
+      $('.current-active').text($(link).html());
+      $(link).addClass('current');
     }
-  })
-  $('a[href^="#"]').anchorjump()
-})
+  });
+
+  $('a[href^="#"]').anchorjump();
+});

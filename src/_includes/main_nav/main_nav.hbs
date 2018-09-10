@@ -1,0 +1,35 @@
+<nav class="main-nav headroom headroom">
+  <div class="nav-content content">
+    <div class="visible-sm hamburger-button">
+      <div class='hamburger-inner'></div>
+    </div>
+    <a href="https://mlh.io" class="logo main-logo nav-left">
+      <img src='/img/logos/mlh-logo-color.svg' alt="Major League Hacking" />
+    </a>
+    <ul class="main-nav-links-wrapper hidden-sm">
+      {{> main_nav_links}}
+    </ul>
+    <div class="visible-sm">
+      <a class="lego-btn lego-btn-white login signed-out pointable" href="https://my.mlh.io/oauth/authorize?client_id={{ htmlWebpackPlugin.options.myMLH.clientId }}&redirect_uri={{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}&response_type=token&scope=email+event">Log In</a>
+      <img class="nav-item-icon account-circle logged-in-btns mobile-account-circle pointable" src="https://randomuser.me/api/portraits/thumb/women/65.jpg"/>
+    </div>
+  </div>
+  <div class="mobile-nav">
+    <div class="nav-menu">
+      <div class="close-menu">
+        <div class="close-menu-inner"></div>
+      </div>
+      <ul class="main-nav-links-wrapper">
+        {{> main_nav_links}}
+      </ul>
+    </div>
+    <div class="account-menu">
+      <div class="close-menu">
+        <div class="close-menu-inner"></div>
+      </div>
+      <ul class="revealed-menu">
+        {{> main_nav_user_links}}
+      </ul>
+    </div>
+  </div>
+</nav>

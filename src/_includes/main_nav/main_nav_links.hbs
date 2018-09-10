@@ -1,0 +1,140 @@
+<li class="reveal nav-item pointable">
+  <span class="underlineable chevron-right">Resources</span>
+  <div class="dropdown-wrapper">
+    <ul class="revealed-menu">
+      <li class="dropdown-item">
+        <a class="nav-link-group" href="https://careerlab.mlh.io">
+          <img class="nav-item-icon" src="/img/nav-logos/careers.png"/>
+          <div>
+            <span class="nav-link-text">Careers & Internships</span>
+            <p>Find the perfect role for your skillset</p>
+          </div>
+        </a>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-link-group" href="https://challenges.mlh.io/">
+          <img class="nav-item-icon" src="/img/nav-logos/coding.png"/>
+          <div>
+            <span class="nav-link-text">Coding Challenges</span>
+            <p>Test yourself and hone your abilities</p>
+          </div>
+        </a>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-link-group" href="http://hack.mlh.io/software">
+          <img class="nav-item-icon" src="/img/nav-logos/gifts.png"/>
+          <div>
+            <span class="nav-link-text">Freebies & Perks</span>
+            <p>Free tools and discounted devices</p>
+          </div>
+        </a>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-link-group" href="https://mlh.io/become-an-official-event">
+          <img class="nav-item-icon" src="/img/nav-logos/organize.png"/>
+          <div>
+            <span class="nav-link-text">Organize a Hackathon</span>
+            <p>Everything you need to host a hackathon</p>
+          </div>
+        </a>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-link-group" href="https://careerlab.mlh.io">
+          <img class="nav-item-icon" src="/img/nav-logos/localhost.png"/>
+          <div>
+            <span class="nav-link-text">LocalHost</span>
+            <p>Pre-built workshops & hacker activities in-a-box</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+<li class="reveal nav-item pointable">
+  <span class="underlineable chevron-right">Hackathons</span>
+  <div class="dropdown-wrapper">
+    <ul class="revealed-menu">
+      <li class="dropdown-item">
+        <a class="nav-link-group" href="https://mlh.io/events">
+          <img class="nav-item-icon" src="/img/nav-logos/hackathons.png"/>
+          <div>
+            <span class="nav-link-text">Hackathons (NA)</span>
+            <p>Official MLH Hackathons in North America.</p>
+          </div>
+        </a>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-link-group" href="https://mlh.io/eu">
+          <img class="nav-item-icon" src="/img/nav-logos/hackathons.png"/>
+          <div>
+            <span class="nav-link-text">Hackathons (EU)</span>
+            <p>Official MLH Hackathons in Europe.</p>
+          </div>
+        </a>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-link-group" href="https://localhackday.mlh.io/">
+          <img class="nav-item-icon" src="/img/nav-logos/hackday.png"/>
+          <div>
+            <span class="nav-link-text">Local Hack Day</span>
+            <p>Simlutaneous hacking across the globe</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+<li class="reveal nav-item pointable">
+  <span class="underlineable chevron-right">About</span>
+  <div class="dropdown-wrapper">
+    <ul class="revealed-menu">
+      <li class="dropdown-item">
+        <a class="nav-about-group nav-link-group" href="https://mlh.io/about">
+          <span class="nav-link-text">About Major League Hacking</span>
+          <p>
+            MLH is the official student hackathon league, powering over 200 weekend-long invention competitions that inspire innovation, cultivate communities and teach computer science skills to more than 65,000 students worldwide.
+          </p>
+        </a>
+      </li>
+      <li class="nav-about-group">
+        <div class="border"></div>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-about-group nav-link-group" href="https://mlh.io/faq">
+          <span class="nav-link-text">FAQs</span>
+        </a>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-about-group nav-link-group" href="https://mlh.io/contact">
+          <span class="nav-link-text">Contact Us</span>
+        </a>
+      </li>
+      <li class="dropdown-item">
+        <a class="nav-about-group nav-link-group" href="https://shop.mlh.io/">
+          <span class="nav-link-text">MLH Shop</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+<li class="sub-nav-mobile">
+  <ul class="sub-nav-right mobile">
+    {{> ../site_nav_links}}
+  </ul>
+</li>
+<li class="nav-item pointable login-wrapper signed-out">
+  <a class="lego-btn lego-btn-white login" href="https://my.mlh.io/oauth/authorize?client_id={{ htmlWebpackPlugin.options.myMLH.clientId }}&redirect_uri={{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}&response_type=token&scope=email+event">Log In</a>
+</li>
+<li class="nav-item pointable signed-out">
+  <a class="lego-btn" href="https://my.mlh.io/oauth/authorize?client_id={{ htmlWebpackPlugin.options.myMLH.clientId }}&redirect_uri={{[canonicalGenerator] htmlWebpackPlugin.options.site.baseUrl htmlWebpackPlugin.options.pageName}}&response_type=token&scope=email+event">Sign Up</a>
+</li>
+<li class="reveal nav-item pointable reveal nav-item logged-in-btns">
+  <span class="underlineable username-short"></span>
+  <div class="dropdown-wrapper">
+    <ul class="revealed-menu">
+      {{> main_nav_user_links}}
+    </ul>
+  </div>
+  <div class="down"></div>
+  <img class="account-circle" src=""/>
+</li>

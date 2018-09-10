@@ -99,7 +99,10 @@ module.exports = (env, argv) => ({
         exclude: [/node_modules/, path.resolve(__dirname, "src/js/lib"),path.resolve(__dirname, "config.js")],
         use: [
           {
-            loader: `eslint-loader`
+            loader: `eslint-loader`,
+            options: {
+              fix: true,
+            }
           }
         ]
       },

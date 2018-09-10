@@ -6,6 +6,11 @@ $link-text-color: #1c1e20;
 $link-description-color: #959595;
 $nav-link-border-color: #d5d5d5;
 // shared styling below
+
+.position-fixed {
+  position: fixed;
+}
+
 nav {
   min-width: 240px;
   .content::after {
@@ -116,6 +121,30 @@ a:hover {
 // above shared styling
 
 // below global-nav-styling
+.nav-content {
+  .sub-nav-mobile {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  .login-wrapper {
+    display: none;
+  }
+
+  .logged-in-btns.active {
+    display: none;
+  }
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
 .headroom {
   will-change: transform;
   transition: transform 200ms linear;
@@ -147,7 +176,7 @@ a:hover {
     padding: 0 20px;
     align-items: center;
 
-    .desktop-nav {
+    .main-nav-links-wrapper {
       align-items: center;
       display: flex;
       height: 100%;
@@ -268,12 +297,16 @@ a:hover {
           }
           
         }
-        
       }
+
+      .logged-in-btns.active {
+        display: flex;
+      }
+
       .logged-in-btns {
         display: none;
         align-items: center;
-        
+
         .down {
           border-left: 0.25rem solid transparent;
           border-right: 0.25rem solid transparent;
@@ -304,6 +337,10 @@ a:hover {
 
 .logged-in-btns {
   display: none;
+}
+
+.logged-in-btns.active {
+  display: flex;
 }
 
 .nav-menu {
@@ -337,7 +374,7 @@ a:hover {
     transform: rotate(-225deg);
   }
 
-  .desktop-nav {
+  .main-nav-links-wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -517,6 +554,14 @@ a:hover {
   .revealed-menu {
     padding-top: 15px;
   }
+}
+
+.signed-out {
+  display: flex;
+}
+
+.signed-out.active {
+  display: none;
 }
 
 @media screen and (max-width: $tablet-portrait) {

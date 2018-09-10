@@ -1,6 +1,5 @@
 files:
   ignore:
-    - "src/_sass/*"
     - "src/_sass/lib/*.s+(a|c)ss"
     - "node_modules/**/*.s+(a|c)ss"
 rules: 
