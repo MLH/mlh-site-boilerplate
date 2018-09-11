@@ -66,14 +66,14 @@
   background: $secondary-nav-color;
   border-bottom: 2px solid $current-color;
   border-top: 2px solid $current-color;
-  padding-bottom: 16px;
-  padding-top: 16px;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
   width: 100%;
 
   .secondary-nav-link {
     color: $background-nav-color;
     left: -50%;
-    margin-left: 20px;
+    margin-left: 1.25rem;
   }
   
   .secondary-nav-link.underlineable:before {
@@ -85,20 +85,13 @@
   }
 
   .secondary-nav-link.is-active {
-    left: 20px;
+    left: 1.25rem;
     opacity: 1;
   }
 
   li {
     padding: 0.5rem 0;
     transition: background-color 0.3s ease-out 0s;
-  }
-
-  @mixin animation_delay($seconds) {
-    transition: 
-      color 0.5s ease 0s,
-      left 0.3s ease $seconds,
-      opacity 0.3s ease 0.01s;
   }
 
   li:nth-child(1) .secondary-nav-link {
