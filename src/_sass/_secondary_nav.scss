@@ -1,8 +1,3 @@
-$background-nav-color: #e76c7a;
-$background-secondary-color: #e35c6b;
-$secondary-nav-color: white;
-$current-color: white;
-
 .site-nav {
   background-color: $background-nav-color;
   height: 4.5rem;
@@ -19,10 +14,10 @@ $current-color: white;
     color: $current-color;
     
     .underlineable:before {
-      color: white;
-      visibility: visible;
+      color: $current-color;
       opacity: 1;
       transform: scale(1);
+      visibility: visible;
     }
   }
 
@@ -48,8 +43,8 @@ $current-color: white;
     }
     
     .secondary-nav-link {
+      color: $current-color;
       position: relative;
-      color: white;
       text-decoration: none;
     }
 
@@ -68,17 +63,17 @@ $current-color: white;
 }
 
 .mobile {
-  background: #f9f9f9;
-  padding-top: 16px;
+  background: $secondary-nav-color;
+  border-bottom: 2px solid $current-color;
+  border-top: 2px solid $current-color;
   padding-bottom: 16px;
-  border-top: 2px solid #f5f5f5;
-  border-bottom: 2px solid #f5f5f5;
+  padding-top: 16px;
   width: 100%;
 
   .secondary-nav-link {
     color: $background-nav-color;
-    margin-left: 20px;
     left: -50%;
+    margin-left: 20px;
   }
   
   .secondary-nav-link.underlineable:before {
@@ -96,41 +91,39 @@ $current-color: white;
 
   li {
     padding: 0.5rem 0;
-    transition: background-color .3s ease-out 0s;
+    transition: background-color 0.3s ease-out 0s;
   }
 
   @mixin animation_delay($seconds) {
     transition: 
-      color .5s ease 0s,
-      left .3s ease $seconds,
-      // left .3s cubic-bezier(0.74,-0.21, 0.47, 1.46) $seconds,
-      opacity .3s ease 0.01s;
+      color 0.5s ease 0s,
+      left 0.3s ease $seconds,
+      opacity 0.3s ease 0.01s;
   }
 
   li:nth-child(1) .secondary-nav-link {
-    @include animation_delay(.01s)
+    @include animation_delay(0.01s)
   }
 
   li:nth-child(2) .secondary-nav-link {
-    @include animation_delay(.06s)
+    @include animation_delay(0.06s)
   }
 
   li:nth-child(3) .secondary-nav-link {
-    @include animation_delay(.12s)
+    @include animation_delay(0.12s)
   }
 
   li:nth-child(4) .secondary-nav-link {
-    @include animation_delay(.18s)
+    @include animation_delay(0.18s)
   }
 
   li:nth-child(5) .secondary-nav-link {
-    @include animation_delay(.24s)
+    @include animation_delay(0.24s)
   }
   
   li:nth-child(6) .secondary-nav-link {
-    @include animation_delay(.30s)
+    @include animation_delay(0.3s)
   }
-
 }
 
 .sub-nav-mobile {

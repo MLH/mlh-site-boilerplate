@@ -59,14 +59,4 @@ $(document).ready(() => {
   }
 
   $('.logout').click(logout);
-
-  $('.login').click((e) => {
-    e.preventDefault();
-
-    login({
-      first_name: 'Roman',
-      last_name: 'Levytskyy',
-      gravatar: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
-    });
-  });
 });

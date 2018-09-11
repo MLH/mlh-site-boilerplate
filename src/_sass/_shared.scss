@@ -11,6 +11,113 @@ $flat-green: #2ECC71;
   width: 100%;
 }
 
+.position-fixed {
+  position: fixed;
+}
+
+nav {
+  min-width: 240px;
+
+  .content {
+    &::after {
+      content: none;
+    }
+  }
+}
+
+a {
+  &, &:hover {
+    text-decoration: none;
+  }
+}
+
+.lego-btn {
+  align-items: center;
+  background-color: $nav-blue;
+  border: 1px solid $nav-blue;
+  border-radius: 1px;
+  color: $white;
+  display: flex;
+  font-size: 1rem;
+  height: 3rem;
+  overflow: hidden;
+  padding: 0.81rem 1.5rem;
+  transition: 0.15s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $white;
+    border: 1px solid $nav-blue;
+    color: $nav-blue;
+  }
+
+}
+
+.lego-btn.lego-btn-white {
+  background-color: $white;
+  color: $nav-blue;
+
+  &:hover {
+    background-color: $nav-blue;
+    color: $white;
+  }
+}
+
+.hamburger-button {
+  cursor: pointer;
+  height: 100%;
+  width: 3rem;
+}
+
+.hamburger-inner {
+  position: relative;
+
+  &,
+  &::after,
+  &::before {
+    background-color: $nav-blue;
+    border-radius: 0.13rem;
+    height: 0.19rem;
+    width: 1.5rem;
+  }
+
+  &::after {
+    top: -0.56rem;
+  }
+
+  &::before {
+    top: 0.56rem;
+  }
+}
+
+.pointable {
+  cursor: pointer;
+}
+
+.underlineable {
+  position: relative;
+
+  &::before {
+    background-color: $nav-blue;
+    bottom: 0;
+    content: '';
+    height: 2.08px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: 0.15s ease-in-out 0s;
+    visibility: hidden;
+    width: 100%;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      visibility: visible;
+    }
+  }
+}
+
 input {
   border: 1px solid $medium-gray;
   border-radius: 1px;

@@ -15,6 +15,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   , buildDestination = './dist'
   , port = 8080
   , versionJS = Package.webpack_bundle_version_js
+  , cssnano = require("cssnano")
   , versionCSS = Package.webpack_bundle_version_css;
 
 function generateHtmlPlugins (templateDir, mode) {
@@ -37,7 +38,8 @@ function generateHtmlPlugins (templateDir, mode) {
         
       return new HtmlWebPackPlugin({
         template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-        filename: `${name}.html`,
+        minify: true,
+        filename: name === 'index' ? 'index.html' : `${name}/index.html`,
         pageName: name,
         ...data,
         ...project_config
@@ -117,14 +119,33 @@ module.exports = (env, argv) => ({
       'handlebars': 'handlebars/dist/handlebars.js'
     }
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({
+
+      })
+    ]
+  },
   plugins: [
-    new SassLintPlugin(),
+    new SassLintPlugin({
+      configFile: '.sass-lint.yml',
+      quiet: true,
+    }),
     new CleanWebpackPlugin(buildDestination),
     new MiniCssExtractPlugin({
       filename: `mlh.v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
     }),
-    new CopyWebpackPlugin([{from:'src/img',to:'img'}]),
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssnano,
+      canPrint: false,
+    }),
+    new CopyWebpackPlugin([{from:'src/img', to:'img'}]),
     new ImageminPlugin({ test: /\.(png|jpe?g|svg|ico|gif)/i }),
     new BrowserSyncPlugin({
       open: false,

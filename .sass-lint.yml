@@ -2,5 +2,20 @@ files:
   ignore:
     - "src/_sass/lib/*.s+(a|c)ss"
     - "node_modules/**/*.s+(a|c)ss"
-rules: 
-  pseudo-element: 0
+options:
+  formatter: stylish
+  merge-default-rules: false
+rules:
+  hex-length:
+    - 1
+    - style: long
+  hex-notation:
+    - 1
+    - style: uppercase
+  leading-zero:
+    - 1
+    - include: true
+  nesting-depth:
+    - 1
+    - max-depth: 4
+  single-line-per-selector: 0

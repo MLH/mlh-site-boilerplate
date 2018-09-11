@@ -32,6 +32,21 @@ $soft-red: #C53C02;
 $soft-blue: #265A8F;
 $soft-yellow: #FDEE00;
 
+$nav-blue: #4052A4;
+$nav-bottom-shadow: #F5F5F5;
+$mobile-nav-border: #E5E5E5;
+$hover-color: #F9F9F9;
+$link-text-color: #1C1E20;
+$link-description-color: #959595;
+$nav-link-border-color: #D5D5D5;
+$transparent-grey: rgba(0,0,0,0.5);
+
+$background-nav-color: #E76C7A;
+$background-secondary-color: #E35C6B;
+$secondary-nav-color: #F9F9F9;
+$current-color: #F5F5F5;
+
+
 // Media Queries
 $phone-portrait:   480px;  //Extra Small
 $phone-landscape:  640px;
@@ -58,4 +73,3 @@ $xxl-desktop:      10000px;
 @import 'shared';
 @import 'main_nav';
 @import 'secondary_nav';
-@import 'demo'

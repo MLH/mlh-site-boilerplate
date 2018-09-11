@@ -40,7 +40,19 @@ function hideUserMenu() {
   $('.account-menu').removeClass('is-active');
 }
 
+function hideShowNavOnScroll(className) {
+  const nav = document.querySelector(className);
+  const headroom = new Headroom(nav);
+  headroom.init();
+}
+
 // TODO: refactor
+// expands sub sections of main nav mobile
+// function needs some work,
+// - don't like prepending html
+// - same function handles both closing and opening the subnav, maybe I should separate them
+// - same element with same class in different location gets clicked for both open and close,
+// might need to change that
 function openMobileSubMenu(e) {
   let dropdownOpener = $(e.target).parent().find('.dropdown-wrapper');
   if (dropdownOpener.length === 0) {
@@ -59,15 +71,6 @@ function openMobileSubMenu(e) {
   }
 }
 
-function sugnUpForNewsLetter(e) {
-  e.preventDefault();
-
-  const email = $('.news-letter-email').val();
-  $(e.target).parent()[0].reset();
-  // eslint-disable-next-line
-  console.log(email);
-}
-
 $(document).ready(() => {
   $('.hamburger-button').click(() => {
     showGlobalMenu();
@@ -81,18 +84,8 @@ $(document).ready(() => {
     hideGlobalMenu();
   });
 
-  $('body').on('click', '.newsletter-sign-up', sugnUpForNewsLetter);
-
-  // expands sub sections of main nav mobile
-  // function needs some work,
-  // - don't like prepending html
-  // - same function handles both closing and opening the subnav, maybe I should separate them
-  // - same element with same class in different location gets clicked for both open and close,
-  // might need to change that
-
   $('body').on('click', '.mobile-nav .underlineable:not(.secondary-nav-link)', openMobileSubMenu);
 
-  // if window is resized when mobile nav is open, closes it
   $(window).resize(() => {
     if ($(window).width() > 1024) {
       hideGlobalMenu();
@@ -100,32 +93,8 @@ $(document).ready(() => {
     }
   });
 
-  // hide/show nav on scroll
-  const globalNav = document.querySelector('.main-nav');
-  const headroom = new Headroom(globalNav);
-  headroom.init();
-
-  const siteNav = document.querySelector('.site-nav');
-  const headroom1 = new Headroom(siteNav);
-  headroom1.init();
-
-  // TODO: Remove this in the future
-  // It adds underline to active subnav page, can be removed in favor of a
-  // helper handlebars function.
-  const siteUrl = window.location.href;
-
-  $('.secondary-nav-link').each((i, link) => {
-    let linkHref = $(link).attr('href');
-    linkHref = linkHref.replace('index.html', '');
-    linkHref = linkHref.replace('.html', '');
-    if (linkHref[0] === '.') {
-      linkHref = linkHref.substr(1);
-    }
-    if (linkHref && siteUrl.indexOf(linkHref) >= 0) {
-      $('.current-active').text($(link).html());
-      $(link).addClass('current');
-    }
-  });
+  hideShowNavOnScroll('.main-nav');
+  hideShowNavOnScroll('.site-nav');
 
   $('a[href^="#"]').anchorjump();
 });
