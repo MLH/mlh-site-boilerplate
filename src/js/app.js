@@ -1,6 +1,8 @@
 import Headroom from './lib/headroom.min';
 import './login';
 
+const navMenuItems = $('.nav-content .revealed-menu');
+
 function disableBodyScroll() {
   $('html,body').addClass('position-fixed');
   $('.prevent-overflow').css('overflow', 'hidden');
@@ -71,6 +73,20 @@ function openMobileSubMenu(e) {
   }
 }
 
+function adjustRevealedNavMenuHeight() {
+  const windowHeight = $(window).height();
+
+  for (let i = 0, l = navMenuItems.length; i < l; i++) {
+    const $revealedMEnu = $(navMenuItems[i]);
+    const currentMenuHeight = $revealedMEnu.height();
+    if (currentMenuHeight > windowHeight) {
+      $revealedMEnu.css('max-height', `${windowHeight}px`);
+    } else {
+      $revealedMEnu.css('max-height', 'unset');
+    }
+  }
+}
+
 $(document).ready(() => {
   $('.hamburger-button').click(() => {
     showGlobalMenu();
@@ -87,14 +103,18 @@ $(document).ready(() => {
   $('body').on('click', '.mobile-nav .underlineable:not(.secondary-nav-link)', openMobileSubMenu);
 
   $(window).resize(() => {
+    console.log('i werked');
     if ($(window).width() > 1024) {
       hideGlobalMenu();
       hideUserMenu();
     }
+
+    adjustRevealedNavMenuHeight();
   });
 
   hideShowNavOnScroll('.main-nav');
   hideShowNavOnScroll('.site-nav');
 
+  adjustRevealedNavMenuHeight();
   $('a[href^="#"]').anchorjump();
 });
