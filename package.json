@@ -17,9 +17,6 @@
   },
   "author": "Major League Hacking <hi@mlh.io>",
   "license": "MIT",
-  "dependencies": {
-    "stylelint": "^9.5.0"
-  },
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "browser-sync": "^2.24.6",

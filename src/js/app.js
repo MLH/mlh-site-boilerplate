@@ -76,11 +76,11 @@ function openMobileSubMenu(e) {
 function adjustRevealedNavMenuHeight() {
   const windowHeight = $(window).height();
 
-  for (let i = 0, l = navMenuItems.length; i < l; i++) {
+  for (let i = 0, l = navMenuItems.length; i < l; i += 1) {
     const $revealedMEnu = $(navMenuItems[i]);
     const currentMenuHeight = $revealedMEnu.height();
     if (currentMenuHeight > windowHeight) {
-      $revealedMEnu.css('max-height', `${windowHeight}px`);
+      $revealedMEnu.css('max-height', `${windowHeight - 72}px`);
     } else {
       $revealedMEnu.css('max-height', 'unset');
     }
@@ -103,7 +103,6 @@ $(document).ready(() => {
   $('body').on('click', '.mobile-nav .underlineable:not(.secondary-nav-link)', openMobileSubMenu);
 
   $(window).resize(() => {
-    console.log('i werked');
     if ($(window).width() > 1024) {
       hideGlobalMenu();
       hideUserMenu();

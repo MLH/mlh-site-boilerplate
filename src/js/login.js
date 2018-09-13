@@ -29,6 +29,7 @@ function parseURLHash() {
 
     for (let i = 0; i < params.length; i += 1) {
       param = params[i].split('=');
+      // eslint-disable-next-line
       hash[param[0]] = param[1];
     }
 

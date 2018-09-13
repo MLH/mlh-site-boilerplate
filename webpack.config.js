@@ -58,7 +58,12 @@ module.exports = (env, argv) => ({
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true
+        sourceMap: true,
+        uglifyOptions: {
+          mangle: {
+            reserved: ["CryptoJS"]
+          }
+        }
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
