@@ -48,29 +48,16 @@ function hideShowNavOnScroll(className) {
   headroom.init();
 }
 
-// TODO: refactor
-// expands sub sections of main nav mobile
-// function needs some work,
-// - don't like prepending html
-// - same function handles both closing and opening the subnav, maybe I should separate them
-// - same element with same class in different location gets clicked for both open and close,
-// might need to change that
 function openMobileSubMenu(e) {
-  let dropdownOpener = $(e.target).parent().find('.dropdown-wrapper');
-  if (dropdownOpener.length === 0) {
-    dropdownOpener = $(e.target).parent();
-  }
+  const dropdownOpener = $(e.target).parent().find('.dropdown-wrapper');
+  dropdownOpener.addClass('menu-open');
+  $('.nav-menu').css('overflow', 'hidden');
+}
 
-  if (dropdownOpener.hasClass('menu-open')) {
-    dropdownOpener.removeClass('menu-open');
-    dropdownOpener.find('.underlineable').remove();
-    dropdownOpener.find('.close-menu').remove();
-    $('.nav-menu').css('overflow', 'auto');
-  } else {
-    dropdownOpener.prepend(`<span class="underlineable">${$(e.target).text()}</span><div class="close-menu"><div class="close-menu-inner"></div></div>`);
-    dropdownOpener.addClass('menu-open');
-    $('.nav-menu').css('overflow', 'hidden');
-  }
+function closeMobileSubMenu(e) {
+  const dropdownOpener = $(e.target).parent();
+  dropdownOpener.removeClass('menu-open');
+  $('.nav-menu').css('overflow', 'auto');
 }
 
 function adjustRevealedNavMenuHeight() {
@@ -101,6 +88,7 @@ $(document).ready(() => {
   });
 
   $('body').on('click', '.mobile-nav .underlineable:not(.secondary-nav-link)', openMobileSubMenu);
+  $('body').on('click', '.nav-section-title', closeMobileSubMenu);
 
   $(window).resize(() => {
     if ($(window).width() > 1024) {
