@@ -66,5 +66,8 @@
   "bugs": {
     "url": "https://github.com/MLH/mlh-site-boilerplate/issues"
   },
-  "homepage": "https://github.com/MLH/mlh-site-boilerplate#readme"
+  "homepage": "https://github.com/MLH/mlh-site-boilerplate#readme",
+  "dependencies": {
+    "npm-test-mlh-bilerplate": "^1.0.0"
+  }
 }

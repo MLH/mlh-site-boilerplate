@@ -81,13 +81,13 @@ module.exports = (env, argv) => ({
         },
       },
       {
-        test: /\.(png|jpe?g|svg|ico|gif)/i,
+        test: /\.(png|jpe?g|ico|gif)/i,
         use: [
           {
             loader: "url-loader",
             options: {
               name: "./img/[name].[ext]",
-              limit: 10 * 1024
+              limit: 1024
             }
           }
         ]
