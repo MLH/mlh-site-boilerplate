@@ -1,5 +1,4 @@
 import Cookies from './lib/js.cookie-2.2.0.min';
-import CryptoJS from './lib/cryptojs.md5-3.1.2.min';
 
 function updateUserInfo(user) {
   $('.username').text(`${user.first_name} ${user.last_name}`);

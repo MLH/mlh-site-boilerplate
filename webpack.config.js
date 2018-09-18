@@ -124,18 +124,6 @@ module.exports = (env, argv) => ({
       'handlebars': 'handlebars/dist/handlebars.js'
     }
   },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
-      new OptimizeCSSAssetsPlugin({
-
-      })
-    ]
-  },
   plugins: [
     new SassLintPlugin({
       configFile: '.sass-lint.yml',
