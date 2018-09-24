@@ -1,10 +1,10 @@
 import './_sass/main.scss';
 
-import 'mlh-styles/index';
+import 'mlh-styles';
 
 import './js/app';
 
-import MLHAuth from 'mlh-javascript';
+import MLH from 'mlh-javascript';
 
 function updateUserInfo(user) {
   $('.username').text(`${user.first_name} ${user.last_name}`);
@@ -25,7 +25,8 @@ function logout() {
 }
 
 $(document).ready(() => {
-  MLHAuth.login(login);
+  MLH.auth.login(login);
 
-  $('body').on('click', '.logout', logout);
+  $('body').on('click', '.logout', () => MLH.auth.logout(logout));
+  $('a[href^="#"]').anchorjump();
 });
