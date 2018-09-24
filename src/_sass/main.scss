@@ -1,3 +1,24 @@
 
 // DO NOT REMOVE
 @import '~mlh-styles/_sass/main';
+
+.codeblock {
+  background: $light-gray;
+}
+
+.grid {
+  [class*="col-"] {
+    border: 1px solid $white;
+    background: $deep-red;
+    height: 100%;
+    white-space: nowrap;
+  }
+
+  .col-6 {
+    background: $deep-blue;
+    color: $white;
+  }
+  .col-xs-4 {
+    background: $deep-yellow;
+  }
+}
