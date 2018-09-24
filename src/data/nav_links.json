@@ -1,0 +1,89 @@
+[
+  {
+    "sectionTitle": "Resources",
+    "sectionLinks": [
+      {
+        "url": "https://careerlab.mlh.io",
+        "text": "Careers & Internships",
+        "logo": "/img/nav-logos/careers.png",
+        "description": "Find the perfect role for your skillset"
+      },
+      {
+        "url": "https://challenges.mlh.io/",
+        "text": "Coding Challenges",
+        "logo": "/img/nav-logos/coding.png",
+        "description": "Test yourself and hone your abilities"
+      },
+      {
+        "url": "http://hack.mlh.io/software",
+        "text": "Freebies & Perks",
+        "logo": "/img/nav-logos/gifts.png",
+        "description": "Free tools and discounted devices"
+      },
+      {
+        "url": "https://mlh.io/become-an-official-event",
+        "text": "Organize a Hackathon",
+        "logo": "/img/nav-logos/organize.png",
+        "description": "Everything you need to host a hackathon"
+      },
+      {
+        "url": "https://careerlab.mlh.io",
+        "text": "LocalHost",
+        "logo": "/img/nav-logos/localhost.png",
+        "description": "Pre-built workshops & hacker activities in-a-box"
+      }
+    ]
+  },
+  {
+    "sectionTitle": "Hackathons",
+    "sectionLinks": [
+      {
+        "url": "https://careerlab.mlh.io",
+        "text": "Hackathons (NA)",
+        "logo": "/img/nav-logos/hackathons.png",
+        "description": "Official MLH Hackathons in North America"
+      },
+      {
+        "url": "https://challenges.mlh.io/",
+        "text": "Hackathons (EU)",
+        "logo": "/img/nav-logos/hackathons.png",
+        "description": "Official MLH Hackathons in Europe"
+      },
+      {
+        "url": "https://localhackday.mlh.io/",
+        "text": "Local Hack Day",
+        "logo": "/img/nav-logos/hackday.png",
+        "description": "Simlutaneous hacking across the globe"
+      }
+    ]
+  },
+  {
+    "sectionTitle": "About",
+    "sectionLinks": [
+      {
+        "url": "https://mlh.io/about",
+        "text": "About Major League Hacking",
+        "logo": "",
+        "description": "MLH is the official student hackathon league, powering over 200 weekend-long invention competitions that inspire innovation, cultivate communities and teach computer science skills to more than 65,000 students worldwide."
+      },
+      {
+        "url": "https://mlh.io/faq",
+        "text": "FAQs",
+        "logo": "",
+        "description": ""
+      },
+      {
+        "url": "https://mlh.io/contact",
+        "text": "Contact Us",
+        "logo": "",
+        "description": ""
+      },
+      {
+        "url": "https://shop.mlh.io/",
+        "text": "MLH Shop",
+        "logo": "",
+        "description": ""
+      }
+    ]
+  }
+]

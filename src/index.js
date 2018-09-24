@@ -1,7 +1,32 @@
-import './_sass/main.scss'
+import './_sass/main.scss';
 
-// eslint-disable-next-line
-import 'script-loader!./js/lib/jquery-2.2.2.min.js'
-import './js/lib/jquery.anchorjump-1.0.min.js'
-import './js/lib/jquery.waypoints.min.js'
-import './js/app.js'
+import 'mlh-styles';
+
+import './js/app';
+
+import MLH from 'mlh-javascript';
+
+function updateUserInfo(user) {
+  $('.username').text(`${user.first_name} ${user.last_name}`);
+  $('.username-short').text(`${user.first_name} ${user.last_name.charAt(0)}.`);
+  $('.account-circle').attr('src', user.gravatar);
+}
+
+function login(currentUser) {
+  updateUserInfo(currentUser);
+  $('.logged-in-btns').addClass('active');
+  $('.signed-out').addClass('active');
+}
+
+function logout() {
+  $('.logged-in-btns').removeClass('active');
+  $('.signed-out').removeClass('active');
+  $('.account-menu').removeClass('is-active');
+}
+
+$(document).ready(() => {
+  MLH.auth.login(login);
+
+  $('body').on('click', '.logout', () => MLH.auth.logout(logout));
+  $('a[href^="#"]').anchorjump();
+});

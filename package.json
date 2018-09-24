@@ -11,11 +11,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack --watch --mode development"
+    "lint:fix": "sass-lint-auto-fix",
+    "start": "webpack --watch --mode development",
+    "deploy": "npm run build; gh-pages -d dist"
   },
   "author": "Major League Hacking <hi@mlh.io>",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "browser-sync": "^2.24.6",
@@ -23,13 +24,20 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
-    "eslint": "^4.19.1",
+    "cssnano": "^4.1.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-loader": "^2.1.0",
-    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^3.1.0",
+    "extract-loader": "^3.0.0",
+    "file-loader": "^2.0.0",
+    "gh-pages": "^1.2.0",
     "handlebars": "^4.0.11",
     "handlebars-loader": "^1.7.0",
     "html-loader": "^0.5.5",
@@ -37,9 +45,10 @@
     "imagemin-webpack-plugin": "^2.2.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.3",
-    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^2.1.6",
     "sass-lint": "^1.12.1",
+    "sass-lint-auto-fix": "^0.12.0",
     "sass-lint-webpack": "^1.0.0",
     "sass-loader": "^7.1.0",
     "sasslint-loader": "0.0.1",
@@ -57,5 +66,9 @@
   "bugs": {
     "url": "https://github.com/MLH/mlh-site-boilerplate/issues"
   },
-  "homepage": "https://github.com/MLH/mlh-site-boilerplate#readme"
+  "homepage": "https://github.com/MLH/mlh-site-boilerplate#readme",
+  "dependencies": {
+    "mlh-javascript": "^0.2.1",
+    "mlh-styles": "^0.1.2"
+  }
 }

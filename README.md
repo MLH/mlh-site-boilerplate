@@ -47,6 +47,13 @@ Spins up webpack dev server for local development
  - Builds the assets into `dist` folder and serves them on port `localhost:8080`
  - If you make changes outside the `_src/` directory you'll have to stop the server with Ctrl + C and start it again
 
+### `npm run deploy`
+
+Generates the website from master and deploys it to the gh-pages branch. This is so you can write custom logic in  and still have it deployed on a static hosting provider like GitHub Pages
+
+  - Builds all assets into a static folder `dist`
+  - Pushes up the folder to gh-pages branch on github
+
 ## Structure
 
 ```bash
