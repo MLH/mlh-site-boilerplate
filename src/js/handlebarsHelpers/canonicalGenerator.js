@@ -1,1 +1,1 @@
-module.exports = (siteUrl, pageUrl) => siteUrl + pageUrl.replace('index', '')
+module.exports = (siteUrl, pageUrl) => siteUrl + pageUrl.replace('index', '');

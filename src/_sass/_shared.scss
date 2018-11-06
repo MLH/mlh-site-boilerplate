@@ -11,6 +11,113 @@ $flat-green: #2ECC71;
   width: 100%;
 }
 
+.position-fixed {
+  position: fixed;
+}
+
+nav {
+  min-width: 240px;
+
+  .content {
+    &::after {
+      content: none;
+    }
+  }
+}
+
+a {
+  &, &:hover {
+    text-decoration: none;
+  }
+}
+
+.lego-btn {
+  align-items: center;
+  background-color: $nav-blue;
+  border: 1px solid $nav-blue;
+  border-radius: 1px;
+  color: $white;
+  display: flex;
+  font-size: 1rem;
+  height: 3rem;
+  overflow: hidden;
+  padding: 0.81rem 1.5rem;
+  transition: 0.15s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $white;
+    border: 1px solid $nav-blue;
+    color: $nav-blue;
+  }
+
+}
+
+.lego-btn.lego-btn-white {
+  background-color: $white;
+  color: $nav-blue;
+
+  &:hover {
+    background-color: $nav-blue;
+    color: $white;
+  }
+}
+
+.hamburger-button {
+  cursor: pointer;
+  height: 100%;
+  width: 3rem;
+}
+
+.hamburger-inner {
+  position: relative;
+
+  &,
+  &::after,
+  &::before {
+    background-color: $nav-blue;
+    border-radius: 0.13rem;
+    height: 0.19rem;
+    width: 1.5rem;
+  }
+
+  &::after {
+    top: -0.56rem;
+  }
+
+  &::before {
+    top: 0.56rem;
+  }
+}
+
+.pointable {
+  cursor: pointer;
+}
+
+.underlineable {
+  position: relative;
+
+  &::before {
+    background-color: $nav-blue;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: 0.15s ease-in-out 0s;
+    visibility: hidden;
+    width: 100%;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      visibility: visible;
+    }
+  }
+}
+
 input {
   border: 1px solid $medium-gray;
   border-radius: 1px;
@@ -55,106 +162,6 @@ input {
   &:hover {
     background: $deep-blue;
   }
-}
-
-.site-nav {
-  background: $white;
-  border-bottom: 1px solid $color-nav-bottom;
-  height: 4rem;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-
-  // scss-lint:disable NestingDepth, SelectorDepth
-  .content {
-    padding: 0 0.5rem;
-
-    img {
-      float: left;
-      height: 1.5rem;
-      margin: 1.25rem 0;
-    }
-
-    ul {
-      float: right;
-      margin: 1rem 0;
-
-      &:not(.hamburger-active-menu) li {
-        margin-left: 20px;
-
-        .btn:hover { color: inherit; }
-      }
-
-      li {
-        display: block;
-        float: left;
-        margin-left: 0.0625rem;
-        text-align: left;
-
-        a:not(.btn) {
-          border-bottom: 0;
-          color: $dark-gray;
-          float: left;
-          font-weight: 200;
-          line-height: 1rem;
-          padding: 0.5rem 1rem;
-        
-          &:hover { color: $dark-gray; }
-        }
-
-        .btn {
-          float: left;
-          font-size: 0.875rem;
-          line-height: 1rem;
-          padding: 10px 15px;
-          vertical-align: middle;
-        }
-
-        .hamburger {
-          outline: none;
-          position: relative;
-          top: -10px;
-
-          .hamburger-inner,
-          .hamburger-inner:before,
-          .hamburger-inner:after { background: $medium-gray; 
-          }
-        }
-      }
-    }
-  }
-
-  .hamburger-active-menu {
-    background: $dark-gray;
-    display: none;
-    margin: -31px 0 0;
-
-    li { 
-      a {
-        display: block;
-
-        &:not(.btn) {
-          color: $white;
-          padding: 10px;
-
-          &:hover, &:active, &:visited {
-            background: darken($dark-gray, 10%);
-            color: $white;
-          }
-        }
-
-        &.btn {
-          border-radius: 0;
-          padding: 10px 15px;
-          text-align: left;
-        }
-      }
-    }
-  }
-  // scss-lint:enable NestingDepth, SelectorDepth
 }
 
 .jump-target::before {

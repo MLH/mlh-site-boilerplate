@@ -1,0 +1,124 @@
+.site-nav {
+  background-color: $background-nav-color;
+  height: 4.5rem;
+  position: fixed;
+  top: 4.5rem;
+  width: 100%;
+  z-index: 999;
+  
+  .logo {
+    width: 100%;
+  }
+
+  .current-active {
+    color: $current-color;
+    
+    .underlineable:before {
+      color: $current-color;
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+  }
+
+  .content {
+    align-items: center;
+    background-color: $background-nav-color;
+    display: flex;
+    float: none;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 1.25em;
+    z-index: 998;
+  }
+
+  .desktop-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+
+    .underlineable:before {
+      background: $current-color;
+      bottom: -5px;
+    }
+    
+    .secondary-nav-link {
+      color: $current-color;
+      position: relative;
+      text-decoration: none;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        margin-left: 1.875rem;
+      }
+      .current:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    } 
+  }
+}
+
+.mobile {
+  background: $secondary-nav-color;
+  border-bottom: 2px solid $current-color;
+  border-top: 2px solid $current-color;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  width: 100%;
+
+  .secondary-nav-link {
+    color: $background-nav-color;
+    left: -50%;
+    margin-left: 1.25rem;
+  }
+  
+  .secondary-nav-link.underlineable:before {
+    background: $background-nav-color;
+  }
+  
+  .secondary-nav-link:hover {
+    color: $background-nav-color;
+  }
+
+  .secondary-nav-link.is-active {
+    left: 1.25rem;
+    opacity: 1;
+  }
+
+  li {
+    padding: 0.5rem 0;
+    transition: background-color 0.3s ease-out 0s;
+  }
+
+  li:nth-child(1) .secondary-nav-link {
+    @include animation_delay(0.01s)
+  }
+
+  li:nth-child(2) .secondary-nav-link {
+    @include animation_delay(0.06s)
+  }
+
+  li:nth-child(3) .secondary-nav-link {
+    @include animation_delay(0.12s)
+  }
+
+  li:nth-child(4) .secondary-nav-link {
+    @include animation_delay(0.18s)
+  }
+
+  li:nth-child(5) .secondary-nav-link {
+    @include animation_delay(0.24s)
+  }
+  
+  li:nth-child(6) .secondary-nav-link {
+    @include animation_delay(0.3s)
+  }
+}
+
+.sub-nav-mobile {
+  width: 100%;
+}

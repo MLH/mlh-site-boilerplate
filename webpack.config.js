@@ -15,13 +15,19 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
   , buildDestination = './dist'
   , port = 8080
   , versionJS = Package.webpack_bundle_version_js
+  , cssnano = require("cssnano")
   , versionCSS = Package.webpack_bundle_version_css;
 
 function generateHtmlPlugins (templateDir, mode) {
   const fs = require('fs')
+      , dataFiles = fs.readdirSync(path.resolve(__dirname, './src/data'))
       , templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
 
-  mode === 'development' ? project_config.site.baseUrl = `http://localhost:${port}` : false
+  mode === 'development' ? project_config.site.baseUrl = `http://localhost:${port}/` : false
+
+  var data = {}
+  dataFiles.filter( item => item.includes('.json'))
+    .map( fileName => data[fileName.replace('.json','')] = require(__dirname + '/src/data/' + fileName))
 
   return templateFiles
     .filter(item => item.includes('.hbs'))
@@ -32,8 +38,10 @@ function generateHtmlPlugins (templateDir, mode) {
         
       return new HtmlWebPackPlugin({
         template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-        filename: `${name}.html`,
+        minify: true,
+        filename: name === 'index' ? 'index.html' : `${name}/index.html`,
         pageName: name,
+        ...data,
         ...project_config
       })
     })
@@ -50,7 +58,12 @@ module.exports = (env, argv) => ({
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true
+        sourceMap: true,
+        uglifyOptions: {
+          mangle: {
+            reserved: ["CryptoJS"]
+          }
+        }
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
@@ -59,7 +72,7 @@ module.exports = (env, argv) => ({
     rules: [
       {
         test: /\.hbs$/,
-        loader: "handlebars-loader",
+        loader: "handlebars-loader?interpolate=require",
         options: {
           helperDirs: path.join(__dirname, 'src/js/handlebarsHelpers'),
           precompileOptions: {
@@ -93,7 +106,10 @@ module.exports = (env, argv) => ({
         exclude: [/node_modules/, path.resolve(__dirname, "src/js/lib"),path.resolve(__dirname, "config.js")],
         use: [
           {
-            loader: `eslint-loader`
+            loader: `eslint-loader`,
+            options: {
+              fix: true,
+            }
           }
         ]
       },
@@ -103,14 +119,38 @@ module.exports = (env, argv) => ({
       }
     ]
   },
+  resolve: {
+    alias: {
+      'handlebars': 'handlebars/dist/handlebars.js'
+    }
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({
+
+      })
+    ]
+  },
   plugins: [
-    new SassLintPlugin(),
+    new SassLintPlugin({
+      configFile: '.sass-lint.yml',
+      quiet: true,
+    }),
     new CleanWebpackPlugin(buildDestination),
     new MiniCssExtractPlugin({
       filename: `mlh.v${versionCSS}.min.css`,
       chunkFilename: "[id].min.css"
     }),
-    new CopyWebpackPlugin([{from:'src/img',to:'img'}]),
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssnano,
+      canPrint: false,
+    }),
+    new CopyWebpackPlugin([{from:'src/img', to:'img'}]),
     new ImageminPlugin({ test: /\.(png|jpe?g|svg|ico|gif)/i }),
     new BrowserSyncPlugin({
       open: false,
